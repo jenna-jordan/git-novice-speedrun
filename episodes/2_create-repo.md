@@ -1,6 +1,6 @@
 ---
 title: "[Pre-workshop] Create GitHub Repository"
-teaching: 10
+teaching: 0
 exercises: 2
 ---
 
@@ -12,8 +12,7 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Install VS Code and other needed software
-- Connect VS Code to GitHub
+- Create `planets` repository on GitHub
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

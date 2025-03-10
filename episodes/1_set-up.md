@@ -1,6 +1,6 @@
 ---
 title: "[Pre-workshop] Software Setup"
-teaching: 10
+teaching: 0
 exercises: 2
 ---
 
