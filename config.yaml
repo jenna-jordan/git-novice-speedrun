@@ -8,29 +8,28 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-# 
-# This option supports custom types so lessons can be branded
-# and themed with your own logo and alt-text (see `carpentry_description`)
-# See https://carpentries.github.io/sandpaper-docs/editing.html#adding-a-custom-logo
+# Note that you can also use a custom carpentry type. For more info,
+# see the documentation: https://carpentries.github.io/sandpaper-docs/editing.html
 carpentry: 'incubator'
 
-# Alt-text description of the lesson.
-carpentry_description: 'Combines the SWC git novice lesson, Incubator git branches lesson, and LC GitHub lesson for a 1 hour lesson introducing learners to working with git, GitHub, branches, and PRs'
+# Custom carpentry description
+# This will be used as the alt text for the logo
+# carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
 title: 'Git and GitHub in 1 hour'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2025-03-08 
+created: '2025-03-08'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'git, GitHub, branches, PRs' 
+keywords: 'git, GitHub, branches, PRs'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
 life_cycle: 'pre-alpha'
 
-# License of the lesson
+# License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
@@ -66,7 +65,9 @@ contact: 'jenna.jrdn@gmail.com'
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
+- 0_introduction.md
+- 1_set-up.md
+- 2_create-repo.md
 
 # Information for Learners
 learners: 
@@ -82,4 +83,6 @@ profiles:
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-
+carpentry_description: Combines the SWC git novice lesson, Incubator git branches
+  lesson, and LC GitHub lesson for a 1 hour lesson introducing learners to working
+  with git, GitHub, branches, and PRs
