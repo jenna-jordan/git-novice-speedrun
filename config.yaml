@@ -69,6 +69,8 @@ episodes:
 - 1_set-up.md
 - 2_create-repo.md
 - 3_git-intro.md
+- 4_track-changes.md
+- 5_push-changes.md
 
 # Information for Learners
 learners: 
