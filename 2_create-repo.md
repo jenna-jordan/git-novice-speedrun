@@ -6,7 +6,7 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- TBA
+- How do I create a new repository on GitHub?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
