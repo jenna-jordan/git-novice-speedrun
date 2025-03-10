@@ -65,12 +65,12 @@ contact: 'jenna.jrdn@gmail.com'
 
 # Order of episodes in your lesson
 episodes: 
-- 0_introduction.md
 - 1_set-up.md
 - 2_create-repo.md
 - 3_git-intro.md
 - 4_track-changes.md
 - 5_push-changes.md
+- 6_branches.md
 
 # Information for Learners
 learners: 
