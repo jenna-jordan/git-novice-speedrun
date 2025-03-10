@@ -118,11 +118,11 @@
   Git and GitHub in 1 hour
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 74%" class="percentage">
-    74%
+<aside class="col-md-12 lesson-progress"><div style="width: 46%" class="percentage">
+    46%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 74%" aria-valuenow="74" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 46%" aria-valuenow="46" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -263,7 +263,16 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="6_branches.html">6. [Pre-workshop] Software Setup</a>
+        <a href="6_branches.html">6. Branches</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="7_pull-request.html">7. Pull Requests</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -321,7 +330,7 @@
           Previous: Tracking Changes
         </a>
         <a class="chapter-link float-end" href="../instructor/6_branches.html" rel="next">
-          Next: [Pre-workshop]...
+          Next: Branches...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -447,24 +456,7 @@ To https://github.com/vlad/planets.git
 </div>
 <p>Our local and remote repositories are now in this state:</p>
 <figure><img src="../fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" class="figure mx-auto d-block"><div class="figcaption">GitHub Repository After First Push</div>
-</figure><div id="the--u-flag" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="the--u-flag" class="callout-inner">
-<h3 class="callout-title">The ‘-u’ Flag</h3>
-<div class="callout-content">
-<p>You may see a <code>-u</code> option used with <code>git push</code>
-in some documentation. This option is synonymous with the
-<code>--set-upstream-to</code> option for the <code>git branch</code>
-command, and is used to associate the current branch with a remote
-branch so that the <code>git pull</code> command can be used without any
-arguments. To do this, simply use <code>git push -u origin main</code>
-once the remote has been set up.</p>
-</div>
-</div>
-</div>
-<p>We can pull changes from the remote repository to the local one as
+</figure><p>We can pull changes from the remote repository to the local one as
 well:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -520,7 +512,7 @@ any links that you are not going to use.
           Previous: Tracking Changes
         </a>
         <a class="chapter-link float-end" href="../instructor/6_branches.html" rel="next">
-          Next: [Pre-workshop]...
+          Next: Branches...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>

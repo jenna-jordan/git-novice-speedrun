@@ -303,7 +303,19 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="6_branches.html">6. [Pre-workshop] Software Setup</a>
+        <a href="6_branches.html">6. Branches</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="7_pull-request.html">7. Pull Requests</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -405,6 +417,19 @@
 </h2>
 <hr class="half-width">
 <p>will fill out later</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>GitHub, VS Code, bash, and git are needed for this lesson</li>
+</ul>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -1366,24 +1391,7 @@ To https://github.com/vlad/planets.git
 </div>
 <p>Our local and remote repositories are now in this state:</p>
 <figure><img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" class="figure mx-auto d-block"><div class="figcaption">GitHub Repository After First Push</div>
-</figure><div id="the--u-flag" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="the--u-flag" class="callout-inner">
-<h3 class="callout-title">The ‘-u’ Flag</h3>
-<div class="callout-content">
-<p>You may see a <code>-u</code> option used with <code>git push</code>
-in some documentation. This option is synonymous with the
-<code>--set-upstream-to</code> option for the <code>git branch</code>
-command, and is used to associate the current branch with a remote
-branch so that the <code>git pull</code> command can be used without any
-arguments. To do this, simply use <code>git push -u origin main</code>
-once the remote has been set up.</p>
-</div>
-</div>
-</div>
-<p>We can pull changes from the remote repository to the local one as
+</figure><p>We can pull changes from the remote repository to the local one as
 well:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1429,7 +1437,7 @@ local repository.”</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-6_branches"><p>Content from <a href="6_branches.html">[Pre-workshop] Software Setup</a></p>
+</section></section><section id="aio-6_branches"><p>Content from <a href="6_branches.html">Branches</a></p>
 <hr>
 <p>Last updated on 2025-03-10 |
 
@@ -1716,6 +1724,51 @@ than <code>analysis.sh</code>.</p>
 <p>Let’s merge this version into our <code>main</code> branch so we can
 use it for our work going forward.</p>
 <p>We’ll perform this merge by going through a pull request.</p>
+<p>Before we can create a Pull Request on GitHub, we need to push this
+branch to the remote repo</p>
+<p>Let’s push the pythondev branch:</p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
+</div>
+<p>Whoops, we got an error:</p>
+<pre><code>fill in here</code></pre>
+<p>While our main branch was already on both our local and remote
+repositories, our pythondev branch is only on our local computer. You
+can check this by going to GitHub and searching for the pythondev branch
+- you won’t find it!</p>
+<p>We need to use the <code>-u</code> flag in our command and specify
+the destination branch.</p>
+<div class="codewrapper sourceCode" id="cb28">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> git push <span class="at">-u</span> origin pythondev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>fill in here</code></pre>
+</div>
+<div id="the--u-flag" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="the--u-flag" class="callout-inner">
+<h3 class="callout-title">The ‘-u’ Flag</h3>
+<div class="callout-content">
+<p>You may see a <code>-u</code> option used with <code>git push</code>
+in some documentation. This option is synonymous with the
+<code>--set-upstream-to</code> option for the <code>git branch</code>
+command, and is used to associate the current branch with a remote
+branch so that the <code>git pull</code> command can be used without any
+arguments. To do this, simply use
+<code>git push -u origin &lt;branch-name&gt;</code>.</p>
+</div>
+</div>
+</div>
+<p>Now, we can go back to GitHub and verify that we have a new branch
+named pythondev.</p>
 <section><h2 class="section-heading" id="deleting-branchs-move-to-own-episode">Deleting branchs (move to own episode)<a class="anchor" aria-label="anchor" href="#deleting-branchs-move-to-own-episode"></a>
 </h2>
 <hr class="half-width">
@@ -1757,6 +1810,154 @@ so.</p>
 <ul>
 <li>“Branches can be useful for developing while keeping the main line
 static.”</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-7_pull-request"><p>Content from <a href="7_pull-request.html">Pull Requests</a></p>
+<hr>
+<p>Last updated on 2025-03-10 |
+
+        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/7_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>“What are pull requests for?”</li>
+<li>“How can I make a pull request?”</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>“Define the terms fork, clone, origin, remote, upstream”</li>
+<li>“Understand how to make a pull request and what they are useful
+for”</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>Pull requests are a great way to collaborate with others using
+github. Instead of making changes directly to a repository you can
+suggest changes to a repo. This can be useful if you don’t have
+permission to modify a repository directly or you want someone else to
+review your changes.</p>
+</div>
+</div>
+</div>
+<p>On GitHub, in your <code>planets</code> repo, click on the “Pull
+Requests” tab. Then click “New pull request”. Alternatively, GitHub will
+see your new branch with recent changes and will prompt you to “Compare
+&amp; pull request”. Click this button to also be taken to the new pull
+request page.</p>
+<p>Make sure that the “base” branch is <code>main</code> and the
+“compare” branch is <code>pythondev</code>.</p>
+<p>Next, we need to give our PR a title. Let’s call it “Add Python
+Analysis”.</p>
+<p>We can leave a note in the PR description, like:</p>
+<p>“The python analysis was faster than the bash analysis, so I am
+merging only the python analysis to main”.</p>
+<p>Click “Create pull request”.</p>
+<p>Your planets repo should now have 1 pull request. This is the phase
+where you would normally request a reviewer, who can leave comments on
+your code. In repos that you do not own, your PR will need to be
+approved by a codeowner before you can merge it. Since you are the
+codeowner, we can go ahead and click “Merge pull request”.</p>
+<p>Go back to the “Code” tab and make sure you are on the “main” branch.
+You should now see an “analysis.py” file.</p>
+<p>Let’s go back to VS Code. Checkout the main branch, and look at the
+files and history:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--one-line</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>fill in later</code></pre>
+</div>
+<p>The analysis file is not on “main” yet. This is because we need to
+first pull the changes we made with the Pull Request from the remote
+repository.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git pull</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--one-line</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>fill in later</code></pre>
+</div>
+<p>Now our main branch is up to date.</p>
+<section><h2 class="section-heading" id="deleting-branches">Deleting branches<a class="anchor" aria-label="anchor" href="#deleting-branches"></a>
+</h2>
+<hr class="half-width">
+<p>Now that we’ve merged the <code>pythondev</code> into
+<code>main</code>, these changes exist in both branches. This could be
+confusing in the future if we stumble upon the <code>pythondev</code>
+branch again.</p>
+<p>We can delete our old branches so as to avoid this confusion later.
+We can do so by adding the <code>-d</code> flag to the
+<code>git branch</code> command.</p>
+<pre><code>git branch -d pythondev</code></pre>
+<p>{: .bash}</p>
+<pre><code>Deleted branch pythondev (was x792csa1).</code></pre>
+<p>{: .output}</p>
+<p>And because we don’t want to keep the changes in the
+<code>bashdev</code> branch, we can delete the <code>bashdev</code>
+branch as well</p>
+<pre><code>$ git branch -d bashdev</code></pre>
+<p>{: .bash}</p>
+<pre><code>error: The branch 'bashdev' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D bashdev'.</code></pre>
+<p>{: .output}</p>
+<p>Since we’ve never merged the changes from the <code>bashdev</code>
+branch, git warns us about deleting them and tells us to use the
+<code>-D</code> flag instead.</p>
+<p>Since we really want to delete this branch we will go ahead and do
+so.</p>
+<pre><code>git branch -D bashdev</code></pre>
+<p>{: .bash}</p>
+<pre><code>Deleted branch bashdev (was 2n779ds).</code></pre>
+<p>{: .output}</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>“Pull requests suggest changes to repos where you don’t have
+privileges”</li>
 </ul>
 </div>
 </div>
