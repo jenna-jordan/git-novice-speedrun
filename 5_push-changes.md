@@ -95,17 +95,6 @@ To https://github.com/vlad/planets.git
 
 ![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
 
-::::::::::::::::::: callout
-## The '-u' Flag
-
-You may see a `-u` option used with `git push` in some documentation.  This
-option is synonymous with the `--set-upstream-to` option for the `git branch`
-command, and is used to associate the current branch with a remote branch so
-that the `git pull` command can be used without any arguments. To do this,
-simply use `git push -u origin main` once the remote has been set up.
-
-::::::::::::::::::::::::
-
 We can pull changes from the remote repository to the local one as well:
 
 ```bash

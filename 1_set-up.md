@@ -21,3 +21,10 @@ exercises: 2
 ## Installation
 
 will fill out later
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- GitHub, VS Code, bash, and git are needed for this lesson
+
+::::::::::::::::::::::::::::::::::::::::::::::::::

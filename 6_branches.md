@@ -1,7 +1,7 @@
 ---
-title: "[Pre-workshop] Software Setup"
-teaching: 0
-exercises: 2
+title: "Branches"
+teaching: 15
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -256,12 +256,44 @@ our work going forward.
 
 We'll perform this merge by going through a pull request.
 
+Before we can create a Pull Request on GitHub, we need to push this branch to the remote repo
 
+Let's push the pythondev branch:
 
+```bash
+$ git push
+```
 
+Whoops, we got an error:
 
+```
+fill in here
+```
 
+While our main branch was already on both our local and remote repositories, our pythondev branch is only on our local computer. You can check this by going to GitHub and searching for the pythondev branch - you won't find it!
 
+We need to use the `-u` flag in our command and specify the destination branch.
+
+```bash
+$ git push -u origin pythondev
+```
+
+```output
+fill in here
+```
+
+::::::::::::::::::: callout
+## The '-u' Flag
+
+You may see a `-u` option used with `git push` in some documentation.  This
+option is synonymous with the `--set-upstream-to` option for the `git branch`
+command, and is used to associate the current branch with a remote branch so
+that the `git pull` command can be used without any arguments. To do this,
+simply use `git push -u origin <branch-name>`.
+
+::::::::::::::::::::::::
+
+Now, we can go back to GitHub and verify that we have a new branch named pythondev.
 
 
 
