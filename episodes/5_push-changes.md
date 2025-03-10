@@ -1,7 +1,7 @@
 ---
-title: "[Pre-workshop] Software Setup"
-teaching: 0
-exercises: 2
+title: "Pushing changes to GitHub"
+teaching: 10
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

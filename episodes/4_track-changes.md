@@ -1,7 +1,7 @@
 ---
 title: "Tracking Changes"
 teaching: 20
-exercises: 2
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
