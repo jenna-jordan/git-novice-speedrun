@@ -6,7 +6,8 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- TBA
+- What software do I need to have installed?
+- Do I have a GitHub account?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

@@ -22,6 +22,21 @@ exercises: 0
 
 ## What is Version Control?
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+This is the start of the actual workshop. You should be sharing your screen,
+and instruct the learners to make sure their setup looks like yours:
+
+1. A VS Code window is open in the `planets` directory
+2. A bash terminal window is open in VS Code
+3. A browser window with the `planets` repo on GitHub is open
+
+Allow learners time to ensure their setup resembles yours as you talk through
+the content, and are ready to type the commands once you reach the 
+"Setting up Git" section.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 Version control is a name used for software which can help you record changes you make to the files in a directory on your computer. Version control software and tools (such as Git and Subversion/SVN) are often associated with software development, and increasingly, they are being used to collaborate in research and academic environments. Version control systems work best with plain text files such as documents or computer code, but modern version control systems can be used to track changes in most types of file.
 
 At its most basic level, version control software helps us register and track sets of changes made to files on our computer. We can then reason about and share those changes with others. As we build up sets of changes over time, we begin to see some benefits.
@@ -36,6 +51,10 @@ At its most basic level, version control software helps us register and track se
 
 There are many more reasons to use version control, and we'll explore some of these in the library context, but first let's learn a bit about a popular version control tool called Git.
 
+[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531](fig/phd101212s.png)](http://www.phdcomics.com)
+
+"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+
 ## What are Git and GitHub?
 
 We often hear the terms ***Git*** and ***GitHub*** used interchangeably but they are slightly different things.
@@ -47,6 +66,28 @@ Rather than emailing documents with tracked changes and some comments and renami
 Git was originally developed to help software developers work collaboratively on software projects, but it can be and is used for managing revisions to any file type on a computer system, including text documents and spreadsheets. Once installed, interaction with Git is done through the Command Prompt in Windows, or the Terminal on Mac/Linux. Since Word documents contain special formatting, Git unfortunately cannot version control those, nor can it version control PDFs, though both file types can be stored in Git repositories.
 
 ***GitHub*** on the other hand is a popular website for hosting and sharing Git repositories remotely. It offers a web interface and provides functionality and a mixture of both free and paid services for working with such repositories. The majority of the content that GitHub hosts is open source software, though increasingly it is being used for other projects such as open access journals (e.g. [Journal of Open Source Software](https://joss.theoj.org/)), blogs, and regularly updated text books.  In addition to GitHub, there are other Git hosting services that offer many similar features such as [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/) and [Gitee](https://gitee.com/).
+
+### Visualizing Git
+
+Version control systems start with a base version of the document and
+then save just the changes you made at each step of the way. You can
+think of it as a tape: if you rewind the tape and start at the base
+document, then you can play back each change and end up with your
+latest version.
+
+![Changes Are Saved Sequentially](fig/play-changes.svg)
+
+Once you think of changes as separate from the document itself, you
+can then think about "playing back" different sets of changes onto the
+base document and getting different versions of the document. For
+example, two users can make independent sets of changes based on the
+same document.
+
+![Different Versions Can be Saved](fig/versions.svg)
+
+Unless there are conflicts, you can even play two sets of changes onto the same base document.
+
+![Multiple Versions Can be Merged](fig/merge.svg)
 
 ## Git terminology 
 
@@ -131,6 +172,39 @@ $ git config --global init.defaultBranch main
 ```
 
 The `init.defaultBranch` value configures git to set the default branch to `main` instead of `master`.
+
+:::::::::::::::::::::::: callout
+
+## Line Endings
+
+As with other keys, when you hit the 'return' key on your keyboard, 
+your computer encodes this input. 
+For reasons that are long to explain, different operating systems
+use different character(s) to represent the end of a line. 
+(You may also hear these referred to as newlines or line breaks.)
+Because git uses these characters to compare files, 
+it may cause unexpected issues when editing a file on different machines. 
+
+You can change the way git recognizes and encodes line endings
+using the `core.autocrlf` command to `git config`.
+The following settings are recommended:
+
+On OS X and Linux:
+
+```bash
+$ git config --global core.autocrlf input
+```
+
+And on Windows:
+
+```bash
+$ git config --global core.autocrlf true
+```
+
+You can read more about this issue 
+[on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
+
+::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
