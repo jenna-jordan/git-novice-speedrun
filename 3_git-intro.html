@@ -388,6 +388,8 @@ stored on multiple other computers.</li>
 </ul><p>There are many more reasons to use version control, and we’ll explore
 some of these in the library context, but first let’s learn a bit about
 a popular version control tool called Git.</p>
+<p><a href="http://www.phdcomics.com" class="external-link"><img src="fig/phd101212s.png" alt="Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531" class="figure"></a></p>
+<p>“Piled Higher and Deeper” by Jorge Cham, <a href="http://www.phdcomics.com" class="external-link uri">http://www.phdcomics.com</a></p>
 </div>
 </section><section><h2 class="section-heading" id="what-are-git-and-github">What are Git and GitHub?<a class="anchor" aria-label="anchor" href="#what-are-git-and-github"></a></h2>
 <hr class="half-width"><p>We often hear the terms <strong><em>Git</em></strong> and
@@ -427,6 +429,24 @@ it is being used for other projects such as open access journals
 Software</a>), blogs, and regularly updated text books. In addition to
 GitHub, there are other Git hosting services that offer many similar
 features such as <a href="https://about.gitlab.com/" class="external-link">GitLab</a>, <a href="https://bitbucket.org/" class="external-link">Bitbucket</a> and <a href="https://gitee.com/" class="external-link">Gitee</a>.</p>
+<div class="section level3">
+<h3 id="visualizing-git">Visualizing Git<a class="anchor" aria-label="anchor" href="#visualizing-git"></a></h3>
+<p>Version control systems start with a base version of the document and
+then save just the changes you made at each step of the way. You can
+think of it as a tape: if you rewind the tape and start at the base
+document, then you can play back each change and end up with your latest
+version.</p>
+<figure><img src="fig/play-changes.svg" alt="Changes Are Saved Sequentially" class="figure mx-auto d-block"><div class="figcaption">Changes Are Saved Sequentially</div>
+</figure><p>Once you think of changes as separate from the document itself, you
+can then think about “playing back” different sets of changes onto the
+base document and getting different versions of the document. For
+example, two users can make independent sets of changes based on the
+same document.</p>
+<figure><img src="fig/versions.svg" alt="Different Versions Can be Saved" class="figure mx-auto d-block"><div class="figcaption">Different Versions Can be Saved</div>
+</figure><p>Unless there are conflicts, you can even play two sets of changes
+onto the same base document.</p>
+<figure><img src="fig/merge.svg" alt="Multiple Versions Can be Merged" class="figure mx-auto d-block"><div class="figcaption">Multiple Versions Can be Merged</div>
+</figure></div>
 </section><section><h2 class="section-heading" id="git-terminology">Git terminology<a class="anchor" aria-label="anchor" href="#git-terminology"></a></h2>
 <hr class="half-width"><p>One of the main barriers to getting started with Git is understanding
 the terminology necessary to executing commands. Although some of the
@@ -532,6 +552,39 @@ You can feel free to change this at a later time.</p>
 </div>
 <p>The <code>init.defaultBranch</code> value configures git to set the
 default branch to <code>main</code> instead of <code>master</code>.</p>
+<div id="line-endings" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="line-endings" class="callout-inner">
+<h3 class="callout-title">Line Endings</h3>
+<div class="callout-content">
+<p>As with other keys, when you hit the ‘return’ key on your keyboard,
+your computer encodes this input. For reasons that are long to explain,
+different operating systems use different character(s) to represent the
+end of a line. (You may also hear these referred to as newlines or line
+breaks.) Because git uses these characters to compare files, it may
+cause unexpected issues when editing a file on different machines.</p>
+<p>You can change the way git recognizes and encodes line endings using
+the <code>core.autocrlf</code> command to <code>git config</code>. The
+following settings are recommended:</p>
+<p>On OS X and Linux:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
+</div>
+<p>And on Windows:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf true</span></code></pre>
+</div>
+<p>You can read more about this issue <a href="https://help.github.com/articles/dealing-with-line-endings/" class="external-link">on
+this GitHub page</a>.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
