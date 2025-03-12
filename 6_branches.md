@@ -116,11 +116,15 @@ Here you can use `git log` and `ls` to see that the history and
 files are the same as our `main` branch. This will be true until
 some changes are committed to our new branch.
 
+```bash
+$ git log --oneline
+```
+
 Now lets make our python script.  
 For simplicity sake, we will create an empty file
 but imagine we spent hours working on this python script for our analysis.
 
-Use the "New file" button to create a new file called "analysis.py".
+Use the **"New file" button** to create a new file called `analysis.py`.
 
 Now we can add and commit the script to our branch.
 
@@ -207,7 +211,7 @@ $ git branch
 Now we can repeat the process for our bash script in a branch called
 `bashdev`.
 
-This time let's create and switch two the `bashdev` branch
+This time let's create and switch to the `bashdev` branch
 in one command.
 
 We can do so by adding the `-b` flag to checkout.
@@ -226,11 +230,15 @@ $ git branch
 We can use `git log` to see that this branch is 
 the same as our current `main` branch.
 
+```bash
+$ git log --oneline
+```
+
 Now we can make `analysis.sh` and add and commit it.
 Again imagine instead of creating an empty file we worked 
 on it for many hours.
 
-Use the "New File" button to create a new file called "analysis.sh"
+Use the **"New File" button** to create a new file called `analysis.sh`
 
 ```bash
 $ git add analysis.sh
@@ -251,16 +259,14 @@ $ git log --oneline
 
 So it turns out the python `analysis.py` is much faster than `analysis.sh`.
 
-Let's merge this version into our `main` branch so we can use it for
-our work going forward.
-
-We'll perform this merge by going through a pull request.
+We will merge the `pythondev` branch into our `main` branch via a Pull Request so we can use it for our work going forward.
 
 Before we can create a Pull Request on GitHub, we need to push this branch to the remote repo
 
-Let's push the pythondev branch:
+Let's checkout & push the pythondev branch:
 
 ```bash
+$ git checkout pythondev
 $ git push
 ```
 
