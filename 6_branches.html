@@ -251,19 +251,12 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         6. Branches
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#deleting-branchs-move-to-own-episode">Deleting branchs (move to own episode)</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -335,7 +328,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Branches</h1>
-        <p>Last updated on 2025-03-10 |
+        <p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/6_branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -667,35 +660,6 @@ arguments. To do this, simply use
 </div>
 <p>Now, we can go back to GitHub and verify that we have a new branch
 named pythondev.</p>
-<section><h2 class="section-heading" id="deleting-branchs-move-to-own-episode">Deleting branchs (move to own episode)<a class="anchor" aria-label="anchor" href="#deleting-branchs-move-to-own-episode"></a></h2>
-<hr class="half-width"><p>Now that we’ve merged the <code>pythondev</code> into
-<code>main</code>, these changes exist in both branches. This could be
-confusing in the future if we stumble upon the <code>pythondev</code>
-branch again.</p>
-<p>We can delete our old branches so as to avoid this confusion later.
-We can do so by adding the <code>-d</code> flag to the
-<code>git branch</code> command.</p>
-<pre><code>git branch -d pythondev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch pythondev (was x792csa1).</code></pre>
-<p>{: .output}</p>
-<p>And because we don’t want to keep the changes in the
-<code>bashdev</code> branch, we can delete the <code>bashdev</code>
-branch as well</p>
-<pre><code>$ git branch -d bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>error: The branch 'bashdev' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D bashdev'.</code></pre>
-<p>{: .output}</p>
-<p>Since we’ve never merged the changes from the <code>bashdev</code>
-branch, git warns us about deleting them and tells us to use the
-<code>-D</code> flag instead.</p>
-<p>Since we really want to delete this branch we will go ahead and do
-so.</p>
-<pre><code>git branch -D bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch bashdev (was 2n779ds).</code></pre>
-<p>{: .output}</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -712,7 +676,10 @@ static.”</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></div> <!-- / div.lesson-content -->
+
+
+
+      </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="5_push-changes.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="7_pull-request.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -770,8 +737,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/6_branches.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/6_branches.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-03-10",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>

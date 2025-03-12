@@ -335,7 +335,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pull Requests</h1>
-        <p>Last updated on 2025-03-10 |
+        <p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/7_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -387,14 +387,15 @@ review your changes.</p>
 </div>
 </div>
 <p>On GitHub, in your <code>planets</code> repo, click on the “Pull
-Requests” tab. Then click “New pull request”. Alternatively, GitHub will
-see your new branch with recent changes and will prompt you to “Compare
-&amp; pull request”. Click this button to also be taken to the new pull
+Requests” tab.</p>
+<p>Then click “New pull request”. Alternatively, GitHub will see your
+new branch with recent changes and will prompt you to “Compare &amp;
+pull request”. Click this button to also be taken to the new pull
 request page.</p>
 <p>Make sure that the “base” branch is <code>main</code> and the
 “compare” branch is <code>pythondev</code>.</p>
-<p>Next, we need to give our PR a title. Let’s call it “Add Python
-Analysis”.</p>
+<p>Next, we need to give our PR a title. By default, your PR will get
+the title from your last commit. We can leave this as is.</p>
 <p>We can leave a note in the PR description, like:</p>
 <p>“The python analysis was faster than the bash analysis, so I am
 merging only the python analysis to main”.</p>
@@ -442,27 +443,48 @@ branch again.</p>
 <p>We can delete our old branches so as to avoid this confusion later.
 We can do so by adding the <code>-d</code> flag to the
 <code>git branch</code> command.</p>
-<pre><code>git branch -d pythondev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch pythondev (was x792csa1).</code></pre>
-<p>{: .output}</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> pythondev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Deleted branch pythondev (was x792csa1).</code></pre>
+</div>
 <p>And because we don’t want to keep the changes in the
 <code>bashdev</code> branch, we can delete the <code>bashdev</code>
 branch as well</p>
-<pre><code>$ git branch -d bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>error: The branch 'bashdev' is not fully merged.
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git branch <span class="at">-d</span> bashdev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>error: The branch 'bashdev' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D bashdev'.</code></pre>
-<p>{: .output}</p>
+</div>
 <p>Since we’ve never merged the changes from the <code>bashdev</code>
 branch, git warns us about deleting them and tells us to use the
 <code>-D</code> flag instead.</p>
 <p>Since we really want to delete this branch we will go ahead and do
 so.</p>
-<pre><code>git branch -D bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch bashdev (was 2n779ds).</code></pre>
-<p>{: .output}</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> bashdev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Deleted branch bashdev (was 2n779ds).</code></pre>
+</div>
+<p>Finally, we can also delete the pythondev branch on GitHub. Click on
+“Branches”, and to delete the <code>pythondev</code> branch click the
+trashcan icon to the right of the branch name.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -537,8 +559,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/7_pull-request.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/7_pull-request.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-03-10",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>

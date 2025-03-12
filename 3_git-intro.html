@@ -338,7 +338,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to Git &amp; GitHub</h1>
-        <p>Last updated on 2025-03-10 |
+        <p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/3_git-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -489,12 +489,11 @@ actually want to do and <code>options</code> is additional optional
 information which may be needed for the <code>verb</code>.</p>
 </section><section><h2 class="section-heading" id="setting-up-git">Setting up Git<a class="anchor" aria-label="anchor" href="#setting-up-git"></a></h2>
 <hr class="half-width"><p>When we use Git on a new computer for the first time, we need to
-configure a few things. The basic elements of a configuration for Git
+configure a few things. Some basic configurations to set for Git
 are:</p>
-<ul><li>your name and email address,</li>
-<li>what your preferred text editor is,</li>
-<li>the name of your default branch (branches are an important component
-of Git that we will cover later).</li>
+<ul><li>your name</li>
+<li>your email address,</li>
+<li>your preferred text editor</li>
 </ul><p>To start we will check in on our current Git configuration. Open your
 shell terminal window and type:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -502,36 +501,8 @@ shell terminal window and type:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
 </div>
-<p>On MacOS, without any configuration your output might look like
-this:</p>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code><span><span class="va">credential.helper</span><span class="op">=</span><span class="va">osxkeychain</span></span></code></pre>
-</div>
-<p>On Windows, without any configuration your output might look like
-this:</p>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>diff.astextplain.textconv=astextplain
-filter.lfs.clean=git-lfs clean -- %f
-filter.lfs.smudge=git-lfs smudge -- %f
-filter.lfs.process=git-lfs filter-process
-filter.lfs.required=true
-http.sslbackend=openssl
-http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
-core.autocrlf=true
-core.fscache=true
-core.symlinks=false
-pull.rebase=false
-credential.helper=manager-core
-credential.https://dev.azure.com.usehttppath=true
-init.defaultbranch=main</code></pre>
-</div>
-<p>If you have different output, then you may have your Git configured
-already. If you have not configured Git, we will do that together now.
-First, we will tell Git our user name and email.</p>
+
+<p>First, we will tell Git our user name and email.</p>
 <p>Please note: You need to use the same email address in your Git
 configuration in the shell as you entered into GitHub when you created
 your GitHub account. Later in the lesson we will be using GitHub and the
@@ -549,10 +520,20 @@ instructions for keeping your email address private</a>.</p>
 <p>If you enter the commands correctly, the shell will merely return a
 command prompt and no messages. To check your work, ask Git what your
 configuration is using the same command as above:</p>
+<p>Let’s also set our default text editor. A text editor is necessary
+with some of your Git work, and the default from Git is Vim, which is a
+text editor that is hard to learn at first. Since we are using VS Code
+for this lesson, we will set the default editor to <code>code</code>.
+You can feel free to change this at a later time.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"code --wait"</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -560,25 +541,6 @@ configuration is using the same command as above:</p>
 <pre class="output" tabindex="0"><code>user.name=Your Name
 user.email=yourname@domain.name</code></pre>
 </div>
-<p>Let’s also set our default text editor. A text editor is necessary
-with some of your Git work, and the default from Git is Vim, which is a
-text editor that is hard to learn at first. Since we are using VS Code
-for this lesson, we will set the default editor to <code>code</code>.
-You can feel free to change this at a later time.</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"code --wait"</span></span></code></pre>
-</div>
-<p>Lastly, we need to set the name of our default branch to
-<code>main.</code></p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
-</div>
-<p>The <code>init.defaultBranch</code> value configures git to set the
-default branch to <code>main</code> instead of <code>master</code>.</p>
 <div id="line-endings" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -596,19 +558,48 @@ cause unexpected issues when editing a file on different machines.</p>
 the <code>core.autocrlf</code> command to <code>git config</code>. The
 following settings are recommended:</p>
 <p>On OS X and Linux:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
+</div>
+<p>And on Windows:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
-</div>
-<p>And on Windows:</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf true</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf true</span></code></pre>
 </div>
 <p>You can read more about this issue <a href="https://help.github.com/articles/dealing-with-line-endings/" class="external-link">on
 this GitHub page</a>.</p>
+</div>
+</div>
+</div>
+<div id="default-git-branch-naming" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="default-git-branch-naming" class="callout-inner">
+<h3 class="callout-title">Default Git branch naming</h3>
+<div class="callout-content">
+<p>Source file changes are associated with a “branch.” For new learners
+in this lesson, it’s enough to know that branches exist, and this lesson
+uses one branch.<br>
+By default, Git will create a branch called <code>master</code> when you
+create a new repository with <code>git init</code> (as explained in the
+next Episode). This term evokes the racist practice of human slavery and
+the <a href="https://github.com/github/renaming" class="external-link">software development
+community</a> has moved to adopt more inclusive language.</p>
+<p>In 2020, most Git code hosting services transitioned to using
+<code>main</code> as the default branch. As an example, any new
+repository that is opened in GitHub and GitLab default to
+<code>main</code>. However, Git has not yet made the same change. As a
+result, local repositories must be manually configured have the same
+main branch name as most cloud services.</p>
+<p>For versions of Git prior to 2.28, the change can be made on an
+individual repository level. The command for this is in the next
+episode. Note that if this value is unset in your local Git
+configuration, the <code>init.defaultBranch</code> value defaults to
+<code>master</code>.</p>
 </div>
 </div>
 </div>
@@ -690,8 +681,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/3_git-intro.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/3_git-intro.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-03-10",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>

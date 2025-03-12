@@ -481,7 +481,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-3_git-intro"><p>Content from <a href="3_git-intro.html">Introduction to Git &amp; GitHub</a></p>
 <hr>
-<p>Last updated on 2025-03-10 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/3_git-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -667,13 +667,12 @@ information which may be needed for the <code>verb</code>.</p>
 </h2>
 <hr class="half-width">
 <p>When we use Git on a new computer for the first time, we need to
-configure a few things. The basic elements of a configuration for Git
+configure a few things. Some basic configurations to set for Git
 are:</p>
 <ul>
-<li>your name and email address,</li>
-<li>what your preferred text editor is,</li>
-<li>the name of your default branch (branches are an important component
-of Git that we will cover later).</li>
+<li>your name</li>
+<li>your email address,</li>
+<li>your preferred text editor</li>
 </ul>
 <p>To start we will check in on our current Git configuration. Open your
 shell terminal window and type:</p>
@@ -682,6 +681,13 @@ shell terminal window and type:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
 </div>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div class="accordion-body">
 <p>On MacOS, without any configuration your output might look like
 this:</p>
 <div class="codewrapper">
@@ -710,8 +716,13 @@ credential.https://dev.azure.com.usehttppath=true
 init.defaultbranch=main</code></pre>
 </div>
 <p>If you have different output, then you may have your Git configured
-already. If you have not configured Git, we will do that together now.
-First, we will tell Git our user name and email.</p>
+already. If you have not configured Git, we will do that together
+now.</p>
+</div>
+</div>
+</div>
+</div>
+<p>First, we will tell Git our user name and email.</p>
 <p>Please note: You need to use the same email address in your Git
 configuration in the shell as you entered into GitHub when you created
 your GitHub account. Later in the lesson we will be using GitHub and the
@@ -729,10 +740,20 @@ instructions for keeping your email address private</a>.</p>
 <p>If you enter the commands correctly, the shell will merely return a
 command prompt and no messages. To check your work, ask Git what your
 configuration is using the same command as above:</p>
+<p>Let’s also set our default text editor. A text editor is necessary
+with some of your Git work, and the default from Git is Vim, which is a
+text editor that is hard to learn at first. Since we are using VS Code
+for this lesson, we will set the default editor to <code>code</code>.
+You can feel free to change this at a later time.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"code --wait"</span></span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -740,25 +761,6 @@ configuration is using the same command as above:</p>
 <pre class="output" tabindex="0"><code>user.name=Your Name
 user.email=yourname@domain.name</code></pre>
 </div>
-<p>Let’s also set our default text editor. A text editor is necessary
-with some of your Git work, and the default from Git is Vim, which is a
-text editor that is hard to learn at first. Since we are using VS Code
-for this lesson, we will set the default editor to <code>code</code>.
-You can feel free to change this at a later time.</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.editor <span class="st">"code --wait"</span></span></code></pre>
-</div>
-<p>Lastly, we need to set the name of our default branch to
-<code>main.</code></p>
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
-</div>
-<p>The <code>init.defaultBranch</code> value configures git to set the
-default branch to <code>main</code> instead of <code>master</code>.</p>
 <div id="line-endings" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -776,19 +778,48 @@ cause unexpected issues when editing a file on different machines.</p>
 the <code>core.autocrlf</code> command to <code>git config</code>. The
 following settings are recommended:</p>
 <p>On OS X and Linux:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
+</div>
+<p>And on Windows:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
-</div>
-<p>And on Windows:</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf true</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf true</span></code></pre>
 </div>
 <p>You can read more about this issue <a href="https://help.github.com/articles/dealing-with-line-endings/" class="external-link">on
 this GitHub page</a>.</p>
+</div>
+</div>
+</div>
+<div id="default-git-branch-naming" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="default-git-branch-naming" class="callout-inner">
+<h3 class="callout-title">Default Git branch naming</h3>
+<div class="callout-content">
+<p>Source file changes are associated with a “branch.” For new learners
+in this lesson, it’s enough to know that branches exist, and this lesson
+uses one branch.<br>
+By default, Git will create a branch called <code>master</code> when you
+create a new repository with <code>git init</code> (as explained in the
+next Episode). This term evokes the racist practice of human slavery and
+the <a href="https://github.com/github/renaming" class="external-link">software development
+community</a> has moved to adopt more inclusive language.</p>
+<p>In 2020, most Git code hosting services transitioned to using
+<code>main</code> as the default branch. As an example, any new
+repository that is opened in GitHub and GitLab default to
+<code>main</code>. However, Git has not yet made the same change. As a
+result, local repositories must be manually configured have the same
+main branch name as most cloud services.</p>
+<p>For versions of Git prior to 2.28, the change can be made on an
+individual repository level. The command for this is in the next
+episode. Note that if this value is unset in your local Git
+configuration, the <code>init.defaultBranch</code> value defaults to
+<code>master</code>.</p>
 </div>
 </div>
 </div>
@@ -816,7 +847,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-4_track-changes"><p>Content from <a href="4_track-changes.html">Tracking Changes</a></p>
 <hr>
-<p>Last updated on 2025-03-10 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/4_track-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -877,15 +908,17 @@ the <code>planets</code> directory.</p>
 </div>
 <p>Let’s create a file called <code>mars.txt</code> that contains some
 notes about the Red Planet’s suitability as a base.</p>
-<p>Make sure you have the Explorer pane open in VS Code, and click the
-“New File” button. Name the file <code>mars.txt</code>. Click the file
-to open it in a tab to edit.</p>
+<p>Make sure you have the Explorer pane open in VS Code, and
+<strong>click the “New File” button</strong>.</p>
+<p>Name the file <code>mars.txt</code>.</p>
 <p>Type the text below into the <code>mars.txt</code> file:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color</code></pre>
+<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
+</code></pre>
 </div>
+<p>Make sure to end the file with a newline!</p>
 <p>Save the file.</p>
 </section><section><h2 class="section-heading" id="track-changes-to-the-file">Track Changes to the File<a class="anchor" aria-label="anchor" href="#track-changes-to-the-file"></a>
 </h2>
@@ -1469,7 +1502,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-6_branches"><p>Content from <a href="6_branches.html">Branches</a></p>
 <hr>
-<p>Last updated on 2025-03-10 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/6_branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1800,37 +1833,6 @@ arguments. To do this, simply use
 </div>
 <p>Now, we can go back to GitHub and verify that we have a new branch
 named pythondev.</p>
-<section><h2 class="section-heading" id="deleting-branchs-move-to-own-episode">Deleting branchs (move to own episode)<a class="anchor" aria-label="anchor" href="#deleting-branchs-move-to-own-episode"></a>
-</h2>
-<hr class="half-width">
-<p>Now that we’ve merged the <code>pythondev</code> into
-<code>main</code>, these changes exist in both branches. This could be
-confusing in the future if we stumble upon the <code>pythondev</code>
-branch again.</p>
-<p>We can delete our old branches so as to avoid this confusion later.
-We can do so by adding the <code>-d</code> flag to the
-<code>git branch</code> command.</p>
-<pre><code>git branch -d pythondev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch pythondev (was x792csa1).</code></pre>
-<p>{: .output}</p>
-<p>And because we don’t want to keep the changes in the
-<code>bashdev</code> branch, we can delete the <code>bashdev</code>
-branch as well</p>
-<pre><code>$ git branch -d bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>error: The branch 'bashdev' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D bashdev'.</code></pre>
-<p>{: .output}</p>
-<p>Since we’ve never merged the changes from the <code>bashdev</code>
-branch, git warns us about deleting them and tells us to use the
-<code>-D</code> flag instead.</p>
-<p>Since we really want to delete this branch we will go ahead and do
-so.</p>
-<pre><code>git branch -D bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch bashdev (was 2n779ds).</code></pre>
-<p>{: .output}</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1844,14 +1846,9 @@ static.”</li>
 </ul>
 </div>
 </div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</section></section><section id="aio-7_pull-request"><p>Content from <a href="7_pull-request.html">Pull Requests</a></p>
+</div></section><section id="aio-7_pull-request"><p>Content from <a href="7_pull-request.html">Pull Requests</a></p>
 <hr>
-<p>Last updated on 2025-03-10 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/7_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -1902,14 +1899,15 @@ review your changes.</p>
 </div>
 </div>
 <p>On GitHub, in your <code>planets</code> repo, click on the “Pull
-Requests” tab. Then click “New pull request”. Alternatively, GitHub will
-see your new branch with recent changes and will prompt you to “Compare
-&amp; pull request”. Click this button to also be taken to the new pull
+Requests” tab.</p>
+<p>Then click “New pull request”. Alternatively, GitHub will see your
+new branch with recent changes and will prompt you to “Compare &amp;
+pull request”. Click this button to also be taken to the new pull
 request page.</p>
 <p>Make sure that the “base” branch is <code>main</code> and the
 “compare” branch is <code>pythondev</code>.</p>
-<p>Next, we need to give our PR a title. Let’s call it “Add Python
-Analysis”.</p>
+<p>Next, we need to give our PR a title. By default, your PR will get
+the title from your last commit. We can leave this as is.</p>
 <p>We can leave a note in the PR description, like:</p>
 <p>“The python analysis was faster than the bash analysis, so I am
 merging only the python analysis to main”.</p>
@@ -1959,27 +1957,48 @@ branch again.</p>
 <p>We can delete our old branches so as to avoid this confusion later.
 We can do so by adding the <code>-d</code> flag to the
 <code>git branch</code> command.</p>
-<pre><code>git branch -d pythondev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch pythondev (was x792csa1).</code></pre>
-<p>{: .output}</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> pythondev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Deleted branch pythondev (was x792csa1).</code></pre>
+</div>
 <p>And because we don’t want to keep the changes in the
 <code>bashdev</code> branch, we can delete the <code>bashdev</code>
 branch as well</p>
-<pre><code>$ git branch -d bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>error: The branch 'bashdev' is not fully merged.
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git branch <span class="at">-d</span> bashdev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>error: The branch 'bashdev' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D bashdev'.</code></pre>
-<p>{: .output}</p>
+</div>
 <p>Since we’ve never merged the changes from the <code>bashdev</code>
 branch, git warns us about deleting them and tells us to use the
 <code>-D</code> flag instead.</p>
 <p>Since we really want to delete this branch we will go ahead and do
 so.</p>
-<pre><code>git branch -D bashdev</code></pre>
-<p>{: .bash}</p>
-<pre><code>Deleted branch bashdev (was 2n779ds).</code></pre>
-<p>{: .output}</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> bashdev</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Deleted branch bashdev (was 2n779ds).</code></pre>
+</div>
+<p>Finally, we can also delete the pythondev branch on GitHub. Click on
+“Branches”, and to delete the <code>pythondev</code> branch click the
+trashcan icon to the right of the branch name.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2046,8 +2065,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/instructor/aio.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/instructor/aio.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-03-11",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>
