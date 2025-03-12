@@ -36,13 +36,18 @@ $ pwd
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base. 
 
-Make sure you have the Explorer pane open in VS Code, and click the "New File" button. Name the file `mars.txt`. Click the file to open it in a tab to edit.
+Make sure you have the Explorer pane open in VS Code, and **click the "New File" button**. 
+
+Name the file `mars.txt`. 
 
 Type the text below into the `mars.txt` file:
 
 ```output
 Cold and dry, but everything is my favorite color
+
 ```
+
+Make sure to end the file with a newline!
 
 Save the file.
 

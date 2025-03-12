@@ -99,11 +99,11 @@ where `verb` is what we actually want to do and `options` is additional optional
 ## Setting up Git
 
 When we use Git on a new computer for the first time,
-we need to configure a few things. The basic elements of a configuration for Git are:
+we need to configure a few things. Some basic configurations to set for Git are:
 
-- your name and email address,
-- what your preferred text editor is,
-- the name of your default branch (branches are an important component of Git that we will cover later).
+- your name 
+- your email address,
+- your preferred text editor
 
 To start we will check in on our current Git configuration. Open your shell terminal window and type:
 
@@ -111,6 +111,7 @@ To start we will check in on our current Git configuration. Open your shell term
 $ git config --list
 ```
 
+:::::::::::::::::::: instructor
 On MacOS, without any configuration your output might look like this:
 
 ```output
@@ -137,6 +138,9 @@ init.defaultbranch=main
 ```
 
 If you have different output, then you may have your Git configured already. If you have not configured Git, we will do that together now.
+
+:::::::::::::::::::::::::::::
+
 First, we will tell Git our user name and email.
 
 Please note: You need to use the same email address in your Git configuration in the shell as you entered into GitHub when you created your GitHub account. Later in the lesson we will be using GitHub and the email addresses need to match. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).
@@ -150,6 +154,12 @@ $ git config --global user.email "yourname@domain.name"
 
 If you enter the commands correctly, the shell will merely return a command prompt and no messages. To check your work, ask Git what your configuration is using the same command as above:
 
+Let's also set our default text editor. A text editor is necessary with some of your Git work, and the default from Git is Vim, which is a text editor that is hard to learn at first. Since we are using VS Code for this lesson, we will set the default editor to `code`. You can feel free to change this at a later time.
+
+```bash
+$ git config --global core.editor "code --wait"
+```
+
 ```bash
 git config --list
 ```
@@ -159,19 +169,7 @@ user.name=Your Name
 user.email=yourname@domain.name
 ```
 
-Let's also set our default text editor. A text editor is necessary with some of your Git work, and the default from Git is Vim, which is a text editor that is hard to learn at first. Since we are using VS Code for this lesson, we will set the default editor to `code`. You can feel free to change this at a later time.
 
-```bash
-$ git config --global core.editor "code --wait"
-```
-
-Lastly, we need to set the name of our default branch to `main.`
-
-```bash 
-$ git config --global init.defaultBranch main
-```
-
-The `init.defaultBranch` value configures git to set the default branch to `main` instead of `master`.
 
 :::::::::::::::::::::::: callout
 
@@ -203,6 +201,29 @@ $ git config --global core.autocrlf true
 
 You can read more about this issue 
 [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
+
+::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: callout
+
+## Default Git branch naming
+
+Source file changes are associated with a "branch." 
+For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.  
+By default, Git will create a branch called `master` 
+when you create a new repository with `git init` (as explained in the next Episode). This term evokes 
+the racist practice of human slavery and the 
+[software development community](https://github.com/github/renaming)  has moved to adopt 
+more inclusive language. 
+
+In 2020, most Git code hosting services transitioned to using `main` as the default 
+branch. As an example, any new repository that is opened in GitHub and GitLab default 
+to `main`.  However, Git has not yet made the same change.  As a result, local repositories 
+must be manually configured have the same main branch name as most cloud services.  
+
+For versions of Git prior to 2.28, the change can be made on an individual repository level.  The 
+command for this is in the next episode.  Note that if this value is unset in your local Git 
+configuration, the `init.defaultBranch` value defaults to `master`.
 
 ::::::::::::::::::::::::::::::
 

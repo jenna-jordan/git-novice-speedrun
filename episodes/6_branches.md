@@ -295,55 +295,6 @@ simply use `git push -u origin <branch-name>`.
 
 Now, we can go back to GitHub and verify that we have a new branch named pythondev.
 
-
-
-## Deleting branchs (move to own episode)
-Now that we've merged the `pythondev` into `main`, these changes
-exist in both branches. This could be confusing in the future if we
-stumble upon the `pythondev` branch again.
-
-We can delete our old branches so as to avoid this confusion later.
-We can do so by adding the `-d` flag to the `git branch` command.
-
-```
-git branch -d pythondev
-```
-{: .bash}
-
-```
-Deleted branch pythondev (was x792csa1).
-```
-{: .output}
-
-And because we don't want to keep the changes in the `bashdev` branch,
-we can delete the `bashdev` branch as well
-```
-$ git branch -d bashdev
-```
-{: .bash}
-
-```
-error: The branch 'bashdev' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D bashdev'.
-```
-{: .output}
-
-Since we've never merged the changes from the `bashdev` branch,
-git warns us about deleting them and tells us to use the `-D` flag instead.
-
-Since we really want to delete this branch we will go ahead and do so.
-
-```
-git branch -D bashdev
-```
-{: .bash}
-
-```
-Deleted branch bashdev (was 2n779ds).
-```
-{: .output}
-
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - "Branches can be useful for developing while keeping the main line static."

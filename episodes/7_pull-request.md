@@ -28,11 +28,13 @@ you want someone else to review your changes.
 
 :::::::::::::::::::::
 
-On GitHub, in your `planets` repo, click on the "Pull Requests" tab. Then click "New pull request". Alternatively, GitHub will see your new branch with recent changes and will prompt you to "Compare & pull request". Click this button to also be taken to the new pull request page.
+On GitHub, in your `planets` repo, click on the "Pull Requests" tab. 
+
+Then click "New pull request". Alternatively, GitHub will see your new branch with recent changes and will prompt you to "Compare & pull request". Click this button to also be taken to the new pull request page.
 
 Make sure that the "base" branch is `main` and the "compare" branch is `pythondev`.
 
-Next, we need to give our PR a title. Let's call it "Add Python Analysis".
+Next, we need to give our PR a title. By default, your PR will get the title from your last commit. We can leave this as is.
 
 We can leave a note in the PR description, like:
 
@@ -76,44 +78,40 @@ stumble upon the `pythondev` branch again.
 We can delete our old branches so as to avoid this confusion later.
 We can do so by adding the `-d` flag to the `git branch` command.
 
-```
+```bash
 git branch -d pythondev
 ```
-{: .bash}
 
-```
+```output
 Deleted branch pythondev (was x792csa1).
 ```
-{: .output}
 
 And because we don't want to keep the changes in the `bashdev` branch,
 we can delete the `bashdev` branch as well
-```
+
+```bash
 $ git branch -d bashdev
 ```
-{: .bash}
 
-```
+```output
 error: The branch 'bashdev' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D bashdev'.
 ```
-{: .output}
 
 Since we've never merged the changes from the `bashdev` branch,
 git warns us about deleting them and tells us to use the `-D` flag instead.
 
 Since we really want to delete this branch we will go ahead and do so.
 
-```
+```bash
 git branch -D bashdev
 ```
-{: .bash}
 
-```
+```output
 Deleted branch bashdev (was 2n779ds).
 ```
-{: .output}
 
+Finally, we can also delete the pythondev branch on GitHub. Click on "Branches", and to delete the `pythondev` branch click the trashcan icon to the right of the branch name.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
