@@ -68,10 +68,11 @@ episodes:
 - 1_set-up.md
 - 2_create-repo.md
 - 3_git-intro.md
-- 4_track-changes.md
-- 5_push-changes.md
-- 6_branches.md
-- 7_pull-request.md
+- 4_git-setup.md
+- 5_track-changes.md
+- 6_push-changes.md
+- 7_branches.md
+- 8_pull-request.md
 
 # Information for Learners
 learners: 
