@@ -36,9 +36,7 @@ $ pwd
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base. 
 
-Make sure you have the Explorer pane open in VS Code, and **click the "New File" button**. 
-
-Name the file `mars.txt`. 
+Make sure you have the Explorer pane open in VS Code, and **click the "New File" button**. Name the file `mars.txt`. 
 
 Type the text below into the `mars.txt` file:
 
@@ -140,7 +138,7 @@ On branch main
 nothing to commit, working directory clean
 ```
 
-it tells us everything is up to date.
+It tells us everything is up to date.
 If we want to know what we've done recently,
 we can ask Git to show us the project's history using `git log`:
 
@@ -169,14 +167,15 @@ and the log message Git was given when the commit was created
 
 Now suppose Dracula adds more information to the file.
 
-Open the `mars.txt` file again (if you closed it), and add a second line:
+Click back into the `mars.txt` file, and add a second line:
 
 ```output
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
+
 ```
 
-Save the file.
+Save the file (make sure to have a newline at the end!).
 
 When we run `git status` now,
 it tells us that a file it already knows about has been modified:
@@ -316,9 +315,10 @@ we'll add another line to the file:
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+
 ```
 
-Save the file.
+Save the file (with a newline at the end!).
 
 Switch from the Explorer pane view to the Source Control pane view in VS Code.
 
@@ -341,52 +341,13 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ```
 
-The `git diff` command is accomplishing the same thing as clicking on the file under "Changes"
-
-So far, so good:
-we've added one line to the end of the file
+The `git diff` command is accomplishing the same thing as clicking on the file under "Changes": that we've added one line to the end of the file
 (shown with a `+` in the first column).
-Now let's put that change in the staging area
-and see what `git diff` reports:
 
 In the Source Control pane, click the `+` icon next to the `mars.txt` file. 
 The `mars.txt` file gets moved to the "Saved Changes" section.
 
 Clicking the `+` icon accomplished the same thing as typing `git add mars.txt` in the terminal.
-
-Let's continue to compare terminal commands with GUI actions. In the terminal, type:
-
-```bash
-$ git diff
-```
-
-There is no output:
-as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
-However,
-if we do this:
-
-```bash
-$ git diff --staged
-```
-
-```output
-diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-```
-
-it shows us the difference between
-the last committed change
-and what's in the staging area.
-
-Try clicking the `mars.txt` file under "Staged Changes". What do you see? Which command matches the visual output?
 
 Now, let's save our changes. We could use the Terminal to commit our changes:
 
@@ -399,7 +360,7 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
  1 file changed, 1 insertion(+)
 ```
 
-Instead, type the commit message "Discuss concerns about Mars' climate for Mummy" in the "Message" box and click "Commit".
+Or, we can type the commit message "Discuss concerns about Mars' climate for Mummy" in the "Message" box and click "Commit".
 
 Let's check our status:
 
@@ -438,7 +399,11 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ```
 
+::::::::::::::::::::::::: challenge
+
 Look back at the Source Control pane. Where can you see a GUI representation of this log?
+
+::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
