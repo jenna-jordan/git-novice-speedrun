@@ -28,9 +28,9 @@ you want someone else to review your changes.
 
 :::::::::::::::::::::
 
-On GitHub, in your `planets` repo, click on the "Pull Requests" tab. 
+On GitHub, in your `planets` repo, **click on the "Pull Requests" tab**. 
 
-Then click "New pull request". Alternatively, GitHub will see your new branch with recent changes and will prompt you to "Compare & pull request". Click this button to also be taken to the new pull request page.
+Then **click "New pull request"**. Alternatively, GitHub will see your new branch with recent changes and will prompt you to "Compare & pull request". Click this button to also be taken to the new pull request page.
 
 Make sure that the "base" branch is `main` and the "compare" branch is `pythondev`.
 
@@ -40,13 +40,13 @@ We can leave a note in the PR description, like:
 
 "The python analysis was faster than the bash analysis, so I am merging only the python analysis to main".
 
-Click "Create pull request".
+**Click "Create pull request"**.
 
-Your planets repo should now have 1 pull request. This is the phase where you would normally request a reviewer, who can leave comments on your code. In repos that you do not own, your PR will need to be approved by a codeowner before you can merge it. Since you are the codeowner, we can go ahead and click "Merge pull request".
+Your planets repo should now have 1 pull request. This is the phase where you would normally request a reviewer, who can leave comments on your code. In repos that you do not own, your PR will need to be approved by a codeowner before you can merge it. Since you are the codeowner, we can go ahead and **click "Merge pull request"**.
 
 Go back to the "Code" tab and make sure you are on the "main" branch. You should now see an "analysis.py" file.
 
-Let's go back to VS Code. Checkout the main branch, and look at the files and history:
+Let's go **back to VS Code**. Checkout the main branch, and look at the files and history:
 
 ```bash
 $ git checkout main
@@ -71,6 +71,7 @@ fill in later
 Now our main branch is up to date.
 
 ## Deleting branches
+
 Now that we've merged the `pythondev` into `main`, these changes
 exist in both branches. This could be confusing in the future if we
 stumble upon the `pythondev` branch again.
@@ -111,7 +112,7 @@ git branch -D bashdev
 Deleted branch bashdev (was 2n779ds).
 ```
 
-Finally, we can also delete the pythondev branch on GitHub. Click on "Branches", and to delete the `pythondev` branch click the trashcan icon to the right of the branch name.
+Finally, we can also delete the pythondev branch **on GitHub. Click on "Branches"**, and to delete the `pythondev` branch **click the trashcan icon** to the right of the branch name.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
