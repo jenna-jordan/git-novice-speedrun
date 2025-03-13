@@ -393,7 +393,7 @@ $ git add mars.txt
 $ git commit -m "Resolving conflict in mars.txt."
 ```
 
-::::::::::::::::::::::::::: solution
+:::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
