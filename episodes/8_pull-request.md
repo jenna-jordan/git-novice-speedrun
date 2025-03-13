@@ -6,15 +6,15 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "What are pull requests for?"
-- "How can I make a pull request?"
+- What are pull requests for?
+- How can I make a pull request?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Define the terms fork, clone, origin, remote, upstream"
-- "Understand how to make a pull request and what they are useful for"
+- Define the terms fork, clone, origin, remote, upstream
+- Understand how to make a pull request and what they are useful for
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -122,6 +122,6 @@ Finally, we can also delete the pythondev branch **on GitHub. Click on "Branches
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Pull requests suggest changes to repos where you don't have privileges"
+- Pull requests suggest changes to repos where you don't have privileges
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

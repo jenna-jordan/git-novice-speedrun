@@ -6,13 +6,13 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How do I share my changes with others on the web?"
+- How do I share my changes with others on the web?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Push to or pull from a remote repository."
+- Push to or pull from a remote repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

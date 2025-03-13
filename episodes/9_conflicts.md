@@ -6,14 +6,14 @@ exercises: 1
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "What do I do when my changes conflict?"
+- What do I do when my changes conflict?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Explain what conflicts are and when they can occur."
-- "Understand how to resolve conflicts resulting from a merge."
+- Explain what conflicts are and when they can occur.
+- Understand how to resolve conflicts resulting from a merge.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -22,8 +22,8 @@ As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
-[conflicts]({{ page.root }}/reference/#conflicts) by giving us tools to
-[resolve]({{ page.root }}/reference/#resolve) overlapping changes.
+[conflicts](/instructor/reference/#conflicts) by giving us tools to
+[resolve](/instructor/reference/#resolve) overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The
 file `mars.txt` currently looks like this in our `planets` repository:
@@ -398,7 +398,7 @@ $ git commit -m "Resolving conflict in mars.txt."
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Conflicts occur when files are changed in the same place in two commits that are being merged."
-- "The version control system does not allow one to overwrite changes blindly during a merge, but highlights conflicts so that they can be resolved."
+- Conflicts occur when files are changed in the same place in two commits that are being merged.
+- The version control system does not allow one to overwrite changes blindly during a merge, but highlights conflicts so that they can be resolved.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

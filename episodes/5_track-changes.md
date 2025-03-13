@@ -6,17 +6,17 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "How do I record changes in Git?"
-- "How do I check the status of my version control repository?"
-- "How do I record notes about what changes I made and why?"
+- How do I record changes in Git?
+- How do I check the status of my version control repository?
+- How do I record notes about what changes I made and why?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Go through the modify-add-commit cycle for one or more files."
-- "Explain where information is stored at each stage of that cycle."
-- "Distinguish between descriptive and non-descriptive commit messages."
+- Go through the modify-add-commit cycle for one or more files.
+- Explain where information is stored at each stage of that cycle.
+- Distinguish between descriptive and non-descriptive commit messages.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -407,11 +407,11 @@ Look back at the Source Control pane. Where can you see a GUI representation of 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- "`git status` shows the status of a repository."
-- "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
-- "`git add` puts files in the staging area."
-- "`git commit` saves the staged content as a new commit in the local repository."
-- "Always write a log message when committing changes."
+- `git status` shows the status of a repository.
+- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
+- `git add` puts files in the staging area.
+- `git commit` saves the staged content as a new commit in the local repository.
+- Always write a log message when committing changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

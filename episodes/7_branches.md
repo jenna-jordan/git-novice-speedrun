@@ -6,18 +6,18 @@ exercises: 0
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- "What are branches?"
-- "How can I work in parallel using branches?"
+- What are branches?
+- How can I work in parallel using branches?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- "Understand why branches are useful for:"
-- "*working on separate tasks in the same repository concurrently*"
-- "*trying multiple solutions to a problem*"
-- "*check-pointing versions of code*"
-- "Merge branches back into the main branch"
+- Understand why branches are useful for:
+- *working on separate tasks in the same repository concurrently*
+- *trying multiple solutions to a problem*
+- *check-pointing versions of code*
+- Merge branches back into the main branch
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -350,6 +350,6 @@ Now, we can go back to GitHub and verify that we have a new branch named pythond
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- "Branches can be useful for developing while keeping the main line static."
+- Branches can be useful for developing while keeping the main line static.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
