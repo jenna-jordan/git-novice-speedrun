@@ -1,6 +1,6 @@
 ---
 title: "Setup Git Configs"
-teaching: 10
+teaching: 5
 exercises: 0
 ---
 

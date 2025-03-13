@@ -1,6 +1,6 @@
 ---
 title: "Pull Requests"
-teaching: 15
+teaching: 5
 exercises: 0
 ---
 
@@ -54,7 +54,9 @@ $ git log --one-line
 ```
 
 ```output
-fill in later
+e98a594 (HEAD -> main, origin/main) Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
 ```
 
 The analysis file is not on "main" yet. This is because we need to first pull the changes we made with the Pull Request from the remote repository.
@@ -65,7 +67,11 @@ $ git log --one-line
 ```
 
 ```output
-fill in later
+d980f78 (HEAD -> main, origin/main) Merge pull request #1 from vlad/pythondev
+d5f2565 (origin/pythondev, pythondev) Wrote and tested python analysis script
+e98a594 Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
 ```
 
 Now our main branch is up to date.
