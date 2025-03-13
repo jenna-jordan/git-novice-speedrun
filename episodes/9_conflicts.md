@@ -22,8 +22,8 @@ As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
 a piece of software on both our laptop and a server in the lab, we could make
 different changes to each copy.  Version control helps us manage these
-[conflicts](/instructor/reference/#conflicts) by giving us tools to
-[resolve](/instructor/reference/#resolve) overlapping changes.
+conflicts by giving us tools to
+resolve overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The
 file `mars.txt` currently looks like this in our `planets` repository:
@@ -35,15 +35,13 @@ But the Mummy will appreciate the lack of humidity
 
 ```
 
-Let's create a new branch for discussing Mars' temperature and
-checkout that branch.
+Let's create a new branch for discussing Mars' temperature.
 
 ```bash
 $ git branch mars-temp
 ```
 
-But before we make changes related to Mars' temperature in the `mars-temp`
-branch, let's add a line to mars.txt here in the `main` branch.
+But before we checkout the `mars-temp` branch and make changes related to Mars' temperature, let's add a line to mars.txt here in the `main` branch.
 
 ```output
 Cold and dry, but everything is my favorite color
