@@ -386,8 +386,7 @@
 other’s toes. This will even happen with a single person: if we are
 working on a piece of software on both our laptop and a server in the
 lab, we could make different changes to each copy. Version control helps
-us manage these <a href="../instructor/reference/#conflicts">conflicts</a>
-by giving us tools to <a href="../instructor/reference/#resolve">resolve</a> overlapping
+us manage these conflicts by giving us tools to resolve overlapping
 changes.</p>
 <p>To see how we can resolve conflicts, we must first create one. The
 file <code>mars.txt</code> currently looks like this in our
@@ -400,16 +399,15 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 </code></pre>
 </div>
-<p>Let’s create a new branch for discussing Mars’ temperature and
-checkout that branch.</p>
+<p>Let’s create a new branch for discussing Mars’ temperature.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git branch mars-temp</span></code></pre>
 </div>
-<p>But before we make changes related to Mars’ temperature in the
-<code>mars-temp</code> branch, let’s add a line to mars.txt here in the
-<code>main</code> branch.</p>
+<p>But before we checkout the <code>mars-temp</code> branch and make
+changes related to Mars’ temperature, let’s add a line to mars.txt here
+in the <code>main</code> branch.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
