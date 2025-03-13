@@ -13,7 +13,6 @@ title: 'Reference'
 
 ## Glossary 
 
-{:auto_ids}
 changeset
 :   A group of changes to one or more files that are or will be added
     to a single [commit](#commit) in a [version control](#version-control)

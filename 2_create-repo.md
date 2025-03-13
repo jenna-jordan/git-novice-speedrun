@@ -19,3 +19,9 @@ exercises: 0
 ## Create Repo
 
 will fill out later
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- GitHub, VS Code, bash, and git are needed for this lesson
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
