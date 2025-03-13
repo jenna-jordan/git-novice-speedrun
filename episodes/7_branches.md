@@ -120,6 +120,12 @@ some changes are committed to our new branch.
 $ git log --oneline
 ```
 
+```output
+e98a594 (HEAD -> pythondev, main) Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
+```
+
 Now lets make our python script.  
 For simplicity sake, we will create an empty file
 but imagine we spent hours working on this python script for our analysis.
@@ -145,6 +151,13 @@ Lets check our work!
 $ git log --oneline
 ```
 
+```output
+d5f2565 (HEAD -> pythondev) Wrote and tested python analysis script
+e98a594 (main) Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
+```
+
 As expected, we see our commit in the log.
 
 Now let's switch back to the `main` branch.
@@ -166,6 +179,12 @@ Let's confirm that `analysis.py` and our last commit aren't in `main`.
 
 ```bash
 $ git log --oneline
+```
+
+```output
+e98a594 (HEAD -> main) Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
 ```
 
 ::::::::::::::::::::::::::::: callout
@@ -234,6 +253,12 @@ the same as our current `main` branch.
 $ git log --oneline
 ```
 
+```output
+e98a594 (HEAD -> bashdev, main) Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
+```
+
 Now we can make `analysis.sh` and add and commit it.
 Again imagine instead of creating an empty file we worked 
 on it for many hours.
@@ -257,6 +282,13 @@ Lets check our work again before we switch back to the main branch.
 $ git log --oneline
 ```
 
+```output
+dff27fa (HEAD -> bashdev) Wrote and tested bash analysis script
+e98a594 (main) Discuss concerns about Mars' climate for Mummy
+33d27e2 Add concerns about effects of Mars' moons on Wolfman
+7e1e559 Start notes on Mars as a base
+```
+
 So it turns out the python `analysis.py` is much faster than `analysis.sh`.
 
 We will merge the `pythondev` branch into our `main` branch via a Pull Request so we can use it for our work going forward.
@@ -272,8 +304,14 @@ $ git push
 
 Whoops, we got an error:
 
-```
-fill in here
+```output
+fatal: The current branch pythondev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin pythondev
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
 ```
 
 While our main branch was already on both our local and remote repositories, our pythondev branch is only on our local computer. You can check this by going to GitHub and searching for the pythondev branch - you won't find it!
@@ -285,7 +323,16 @@ $ git push -u origin pythondev
 ```
 
 ```output
-fill in here
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.07 KiB | 1.07 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/vlad/planets.git
+ * [new branch]      pythondev -> pythondev
+branch 'pythondev' set up to track 'origin/pythondev'.
 ```
 
 ::::::::::::::::::: callout

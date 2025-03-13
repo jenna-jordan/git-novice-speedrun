@@ -1,7 +1,7 @@
 ---
 title: "[Pre-workshop] Create GitHub Repository"
 teaching: 0
-exercises: 2
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 

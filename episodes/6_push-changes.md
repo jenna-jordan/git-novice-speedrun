@@ -111,9 +111,9 @@ Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
 GitHub, though, this command would download them to our local repository.
 
-Let's verify that our changes made it to GitHub: go to your browser window with the GitHub repo and refresh the page. You should now see the `mars.txt` file. Click on the file, and you can see the contents of the file are the same as in VS Code.
+Let's verify that our changes made it to GitHub: go to your **browser window with the GitHub repo and refresh** the page. You should now see the `mars.txt` file. **Click on the file**, and you can see the contents of the file are the same as in VS Code.
 
-Now click on the "History" link. You should see each commit made to the file, even though we only pushed once.
+Now **click on the "History" link**. You should see each commit made to the file, even though we only pushed once.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
