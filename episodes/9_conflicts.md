@@ -363,9 +363,6 @@ Conflicts can also be minimized with project management strategies:
 - Address the resulting conflict in the text editor of your choice
 - Add the file containing the conflict and commit conflict resolution to the repository
 
-::::::::::::::::::::::::
-
-
 ::::::::::::::::::::::::::::: solution
 ## Solution
 
