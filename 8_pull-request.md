@@ -1,6 +1,6 @@
 ---
 title: "Pull Requests"
-teaching: 5
+teaching: 15
 exercises: 0
 ---
 

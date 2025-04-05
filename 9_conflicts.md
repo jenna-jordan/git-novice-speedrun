@@ -1,6 +1,6 @@
 ---
-title: "[Post-workshop] Resolving Conflicts"
-teaching: 15
+title: "[Optional] Resolving Conflicts"
+teaching: 30
 exercises: 1
 ---
 
