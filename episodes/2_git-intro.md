@@ -18,22 +18,22 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## What is Version Control?
-
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-This is the start of the actual workshop. You should be sharing your screen,
+When the workshop begins, you should be sharing your screen,
 and instruct the learners to make sure their setup looks like yours:
 
-1. A VS Code window is open in the `planets` directory
-2. A bash terminal window is open in VS Code
-3. A browser window with the `planets` repo on GitHub is open
+1. A new VS Code window is open (taking up the left 75% of the screen)
+2. A browser window with GitHub is open (taking up the right 75% of the screen)
 
-Allow learners time to ensure their setup resembles yours as you talk through
-the content, and are ready to type the commands once you reach the 
-"Setting up Git" section.
+Instruct learners to sign in to GitHub if they have not already.
+
+In your browser window, you can have a second tab open with all images for
+this workshop, available at [this URL](http://jennajordan.me/git-novice-speedrun/instructor/images.html)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## What is Version Control?
 
 Version control is a name used for software which can help you record changes you make to the files in a directory on your computer. Version control software and tools (such as Git and Subversion/SVN) are often associated with software development, and increasingly, they are being used to collaborate in research and academic environments. Version control systems work best with plain text files such as documents or computer code, but modern version control systems can be used to track changes in most types of file.
 
