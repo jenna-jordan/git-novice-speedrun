@@ -33,7 +33,7 @@ life_cycle: 'pre-alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/jenna-jordan/git-novice-pr-1hr-lesson'
+source: 'https://github.com/jenna-jordan/git-novice-speedrun'
 
 # Default branch of your lesson
 branch: 'main'
@@ -90,5 +90,5 @@ profiles:
 # sandpaper and varnish versions) should live
 
 carpentry_description: Combines the SWC git novice lesson, Incubator git branches
-  lesson, and LC GitHub lesson for a 1 hour lesson introducing learners to working
+  lesson, and LC GitHub lesson for a 90 min lesson introducing learners to working
   with git, GitHub, branches, and PRs
