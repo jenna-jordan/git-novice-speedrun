@@ -1,6 +1,6 @@
 ---
 title: "Tracking Changes"
-teaching: 25
+teaching: 20
 exercises: 0
 ---
 
