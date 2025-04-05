@@ -34,7 +34,7 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="Combines the SWC git novice lesson, Incubator git branches lesson, and LC GitHub lesson for a 1 hour lesson introducing learners to working with git, GitHub, branches, and PRs" src="assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
+        <img id="incubator-logo" alt="Combines the SWC git novice lesson, Incubator git branches lesson, and LC GitHub lesson for a 90 min lesson introducing learners to working with git, GitHub, branches, and PRs" src="assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
             <a href="https://cdh.carpentries.org/the-lesson-life-cycle.html#early-development-pre-alpha-through-alpha" class="external-link alert-link">
               <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
@@ -91,7 +91,7 @@
       <span class="menu-title">Menu</span>
     </button>
     <div class="nav-logo">
-      <img class="small-logo" alt="Combines the SWC git novice lesson, Incubator git branches lesson, and LC GitHub lesson for a 1 hour lesson introducing learners to working with git, GitHub, branches, and PRs" src="assets/images/incubator-logo-sm.svg">
+      <img class="small-logo" alt="Combines the SWC git novice lesson, Incubator git branches lesson, and LC GitHub lesson for a 90 min lesson introducing learners to working with git, GitHub, branches, and PRs" src="assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
       Git and GitHub in 1 hour
@@ -404,9 +404,9 @@
         
 <section id="aio-1_set-up"><p>Content from <a href="1_set-up.html">[Pre-workshop] Software Setup</a></p>
 <hr>
-<p>Last updated on 2025-03-13 |
+<p>Last updated on 2025-04-05 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/1_set-up.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/1_set-up.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -437,10 +437,69 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+<p>Please complete these setup instructions prior to the workshop. In
+order to participate in this workshop, you must have a GitHub account,
+and have both Git and VS Code installed on your computer.</p>
+<p>If you are participating in this workshop remotely (e.g. over Zoom),
+it is highly recommended that you use two screens: 1 screen with the
+remote meeting, to see the instructor sharing their screen, and 1 screen
+with your applications. You will need to have VS Code and a web browser
+open to GitHub.com.</p>
+<section><h2 class="section-heading" id="github-account">GitHub account<a class="anchor" aria-label="anchor" href="#github-account"></a>
 </h2>
 <hr class="half-width">
-<p>will fill out later</p>
+<p>If you do not already have a GitHub account, visit <a href="https://github.com" class="external-link">github.com</a> to create one.</p>
+<p>You can refer to <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github" class="external-link">this
+doc page</a> for further instructions about creating a GitHub
+account.</p>
+<p>If you already have a GitHub account, please verify that you can sign
+in, and take note of the email(s) associated with the account.</p>
+<p>It is strongly recommended that you set up 2FA for your GitHub
+account, and to use a password manager.</p>
+</section><section><h2 class="section-heading" id="software-installations">Software Installations<a class="anchor" aria-label="anchor" href="#software-installations"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="visual-studio-code">Visual Studio Code<a class="anchor" aria-label="anchor" href="#visual-studio-code"></a>
+</h3>
+<p><a href="https://code.visualstudio.com/download" class="external-link">Download and install
+VS Code</a>. If you are new to using VS Code, you can review this <a href="https://code.visualstudio.com/docs/getstarted/getting-started" class="external-link">Getting
+Started</a> doc.</p>
+</div>
+<div class="section level3">
+<h3 id="git">Git<a class="anchor" aria-label="anchor" href="#git"></a>
+</h3>
+<p>You must have Git installed on your local computer. Typically, Mac
+and Linux computers come pre-installed with git, while Windows users
+must install <a href="https://gitforwindows.org" class="external-link">GitBash</a> (Git for
+Windows). However, you should verify that Git is installed on your
+computer.</p>
+<p>You can verify git is installed by opening a command line application
+(e.g. Terminal) and typing <code>git version</code>. If you see an error
+message stating git is an unknown command, you will need to install
+git.</p>
+<p>If you do not already have git installed, you can refer to <a href="https://github.com/git-guides/install-git" class="external-link">these GitHub docs</a>
+on installing git for any OS.</p>
+</div>
+<div class="section level3">
+<h3 id="bash">Bash<a class="anchor" aria-label="anchor" href="#bash"></a>
+</h3>
+<p>You should have a Bash terminal. If you are on a Windows, you will
+have a Bash terminal by virtue of installing Git for Windows (GitBash).
+If you are on a Mac or Linux, you will already have a Bash terminal. If
+you prefer, you can use a similar terminal like Zsh.</p>
+<p>Rather than using a seperate command line application, you will be
+using the Terminal in VS Code. To learn more about using the Terminal in
+VS Code, refer to <a href="https://code.visualstudio.com/docs/terminal/basics" class="external-link">these
+docs</a>.</p>
+</div>
+</section><section><h2 class="section-heading" id="connect-vs-code-to-github">Connect VS Code to GitHub<a class="anchor" aria-label="anchor" href="#connect-vs-code-to-github"></a>
+</h2>
+<hr class="half-width">
+<p>Please refer to <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_set-up-git-in-vs-code" class="external-link">these
+instructions</a> to sign in to GitHub from VS Code.</p>
+<p>Optionally, you can install the GitHub extension, and follow <a href="https://code.visualstudio.com/docs/sourcecontrol/github" class="external-link">these
+instructions</a> to sign into GitHub.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -462,7 +521,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/2_create-repo.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/2_create-repo.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -516,7 +575,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/3_git-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/3_git-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -694,7 +753,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/4_git-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/4_git-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -869,7 +928,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/5_track-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/5_track-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1336,7 +1395,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/6_push-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/6_push-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1505,7 +1564,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/7_branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/7_branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1917,7 +1976,7 @@ static.</li>
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/8_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/8_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -2095,7 +2154,7 @@ any links that you are not going to use.
 <hr>
 <p>Last updated on 2025-03-13 |
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/episodes/9_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/9_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -2518,7 +2577,7 @@ to the repository</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2581,12 +2640,12 @@ resolved.</li>
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/jenna-jordan/git-novice-pr-1hr-lesson/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:jenna.jrdn@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="https://github.com/jenna-jordan/git-novice-speedrun/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/jenna-jordan/git-novice-speedrun/" class="external-link">Source</a></p>
+				<p><a href="https://github.com/jenna-jordan/git-novice-speedrun/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:jenna.jrdn@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
 
@@ -2606,18 +2665,18 @@ resolved.</li>
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/aio.html",
+  "@id": "https://jenna-jordan.github.io/git-novice-speedrun/aio.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "git, GitHub, branches, PRs",
   "name": "All in One View",
   "creativeWorkStatus": "active",
-  "url": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/aio.html",
-  "identifier": "https://jenna-jordan.github.io/git-novice-pr-1hr-lesson/aio.html",
+  "url": "https://jenna-jordan.github.io/git-novice-speedrun/aio.html",
+  "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/aio.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-01",
-  "datePublished": "2025-04-01"
+  "dateModified": "2025-04-05",
+  "datePublished": "2025-04-05"
 }
 
   </script><script>
