@@ -65,9 +65,9 @@ contact: 'jenna.jrdn@gmail.com'
 
 # Order of episodes in your lesson
 episodes: 
-- 1_set-up.md
-- 2_create-repo.md
-- 3_git-intro.md
+- 1_setup.md
+- 2_git-intro.md
+- 3_create-repo.md
 - 4_git-setup.md
 - 5_track-changes.md
 - 6_push-changes.md
