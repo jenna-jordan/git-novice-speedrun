@@ -1,5 +1,5 @@
 ---
-title: "[Pre-workshop] Create GitHub Repository"
+title: "Create a GitHub Repository"
 teaching: 0
 exercises: 0
 ---

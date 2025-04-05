@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Git & GitHub"
-teaching: 5
+teaching: 10
 exercises: 0
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Branches"
-teaching: 15
+teaching: 20
 exercises: 0
 ---
 
