@@ -563,7 +563,7 @@ any links that you are not going to use.
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>When the workshop begins, you should be sharing your screen, and
 instruct the learners to make sure their setup looks like yours:</p>
@@ -742,6 +742,7 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>How do I create a new repository on GitHub?</li>
+<li>How do I clone the repository to my local computer?</li>
 </ul>
 </div>
 </div>
@@ -752,6 +753,7 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Create <code>planets</code> repository on GitHub</li>
+<li>Clone the <code>planets</code> repository using VS Code</li>
 </ul>
 </div>
 </div>
@@ -763,7 +765,7 @@ any links that you are not going to use.
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>When the workshop begins, you should be sharing your screen, and
 instruct the learners to make sure their setup looks like yours:</p>
@@ -788,10 +790,75 @@ can create repositories locally, and never even connect the local repo
 to a remote repo (hosted on a site like GitHub), the simplist and most
 common pattern to first create a new repo on GitHub, and then clone that
 repo to your local computer.</p>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div class="accordion-body">
+<p>The documentation for creating a new repo on GitHub is available <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" class="external-link">here</a></p>
+<p>If you have taught this lesson before, make sure that you have
+deleted your existing planets repo. The documentation for deleting a
+repo on GitHub is available <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository" class="external-link">here</a></p>
+</div>
+</div>
+</div>
+</div>
 <p>You should already be signed in to GitHub. You can create a new repo
 from anywhere on the site by clicking on the “+” icon in the upper
 right, and then clicking “New Repository”:</p>
-<figure><img src="../fig/github-create-repo" alt="Create a new repo from anywhere in GitHub" class="figure mx-auto d-block"><div class="figcaption">Create a new repo from anywhere in GitHub</div>
+<figure><img src="../fig/github-create-repo.png" alt="Create a new repo from anywhere in GitHub" class="figure mx-auto d-block"><div class="figcaption">Create a new repo from anywhere in GitHub</div>
+</figure><p>Select your Github username as the “owner”.</p>
+<p>Type <code>planets</code> for the repository name.</p>
+<p>Leave all other options as the default - your repo should be public,
+not initialized with a readme, no gitignore selected, no license
+selected, and no template selected.</p>
+<figure><img src="../fig/github-create-planets-repo.png" alt="Create a the planets repo in GitHub" class="figure mx-auto d-block"><div class="figcaption">Create a the planets repo in GitHub</div>
+</figure><p>Finally, click the green “Create Repository” button at the bottom
+right.</p>
+<p>You will be redirected to your newly created and empty planets
+repo.</p>
+<figure><img src="../fig/github-empty-planets-repo.png" alt="Your new planets repo in GitHub" class="figure mx-auto d-block"><div class="figcaption">Your new planets repo in GitHub</div>
+</figure></section><section><h2 class="section-heading" id="clone-your-planets-repo-to-your-local-computer">Clone your planets repo to your local computer<a class="anchor" aria-label="anchor" href="#clone-your-planets-repo-to-your-local-computer"></a>
+</h2>
+<hr class="half-width">
+<p>Now that the planets repo has been created, we can “clone” it (get a
+local copy of the repo) through VS Code.</p>
+<p>Make sure you have a new VS Code window open. If you already have a
+repo/folder open in VS Code, go to the “File” menu and click “New
+window”.</p>
+<p>In your new VS Code window, go to the “Source Control” pane (the 3rd
+one down). Click “Clone Repository”, and then click “Clone from
+GitHub”.</p>
+<figure><img src="../fig/vscode-clone-repo.png" alt="Clone a GitHub repo in VS Code" class="figure mx-auto d-block"><div class="figcaption">Clone a GitHub repo in VS Code</div>
+</figure><p>If you don’t immediately see your planets repo, you can search for it
+by typing “planets” in the search box. When you see your planets repo
+(it should have your username in the URL), click it.</p>
+<figure><img src="../fig/vscode-clone-planets-repo.png" alt="Clone your planets repo via VS Code" class="figure mx-auto d-block"><div class="figcaption">Clone your planets repo via VS Code</div>
+</figure><p>You will now need to choose where on your local computer the planets
+repo will live. You can choose any easily accessible location, such as
+the “Desktop” folder. However, I suggest saving it to a folder named
+“Github” in your “Documents” folder.</p>
+<p>Click “Open” when prompted to open the newly cloned planets repo.</p>
+</section><section><h2 class="section-heading" id="open-a-bash-terminal-in-vs-code">Open a Bash Terminal in VS Code<a class="anchor" aria-label="anchor" href="#open-a-bash-terminal-in-vs-code"></a>
+</h2>
+<hr class="half-width">
+<p>Now that you have your planets repo cloned and open in VS Code, the
+last step is to open a bash terminal.</p>
+<p>To see the terminal pane, go to the “Terminal” menu, and click “New
+terminal”.</p>
+<p>If you are on a Windows computer, you will need to specifically open
+a GitBash terminal. Find the “+” icon in the terminal pane, and click
+the carrot dropdown icon next to it. Click “GitBash”.</p>
+<figure><img src="../fig/vscode-gitbash-terminal.png" alt="Open a GitBash terminal if on Windows" class="figure mx-auto d-block"><div class="figcaption">Open a GitBash terminal if on Windows</div>
+</figure><p>If you are on a Mac or Linux computer, your default terminal should
+be sufficient. You can also choose to open a Bash terminal by following
+the same instructions.</p>
+<p>You should now have your empty planets repo open, with a Bash
+terminal open, and you are ready to start typing your first git
+commands!</p>
+<figure><img src="../fig/vscode-planets-open.png" alt="Ready to begin" class="figure mx-auto d-block"><div class="figcaption">Ready to begin</div>
 </figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -800,7 +867,9 @@ right, and then clicking “New Repository”:</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>Create a new repository from GitHub</li>
+<li>Create a new repository on GitHub</li>
+<li>Clone the repository to your local computer</li>
+<li>Open the terminal in VS Code</li>
 </ul>
 </div>
 </div>
@@ -866,7 +935,7 @@ shell terminal window and type:</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>On MacOS, without any configuration your output might look like
 this:</p>
@@ -2683,7 +2752,7 @@ to the repository</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
