@@ -353,7 +353,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Setup Git Configs</h1>
-        <p>Last updated on 2025-04-05 |
+        <p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/4_git-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -480,13 +480,15 @@ this GitHub page</a>.</p>
 <div id="default-git-branch-naming" class="callout-inner">
 <h3 class="callout-title">Default Git branch naming</h3>
 <div class="callout-content">
-<p>Source file changes are associated with a “branch.” For new learners
-in this lesson, it’s enough to know that branches exist, and this lesson
-uses one branch.<br>
-By default, Git will create a branch called <code>master</code> when you
-create a new repository with <code>git init</code> (as explained in the
-next Episode). This term evokes the racist practice of human slavery and
-the <a href="https://github.com/github/renaming" class="external-link">software development
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
+</div>
+<p>Source file changes are associated with a “branch.” By default, Git
+will create a branch called <code>master</code> when you create a new
+repository with <code>git init</code>. This term evokes the racist
+practice of human slavery and the <a href="https://github.com/github/renaming" class="external-link">software development
 community</a> has moved to adopt more inclusive language.</p>
 <p>In 2020, most Git code hosting services transitioned to using
 <code>main</code> as the default branch. As an example, any new
@@ -495,10 +497,12 @@ repository that is opened in GitHub and GitLab default to
 result, local repositories must be manually configured have the same
 main branch name as most cloud services.</p>
 <p>For versions of Git prior to 2.28, the change can be made on an
-individual repository level. The command for this is in the next
-episode. Note that if this value is unset in your local Git
-configuration, the <code>init.defaultBranch</code> value defaults to
-<code>master</code>.</p>
+individual repository level. Note that if this value is unset in your
+local Git configuration, the <code>init.defaultBranch</code> value
+defaults to <code>master</code>.</p>
+<p>Since we are creating the repository on GitHub, the default branch
+name for the planets repo will be <code>main</code>. Configure this
+setting if you plan on creating git repositories locally first.</p>
 </div>
 </div>
 </div>
@@ -580,8 +584,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/4_git-setup.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/4_git-setup.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-05",
-  "datePublished": "2025-04-05"
+  "dateModified": "2025-04-06",
+  "datePublished": "2025-04-06"
 }
 
   </script><script>

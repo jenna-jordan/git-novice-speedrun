@@ -406,7 +406,7 @@
         
 <section id="aio-1_setup"><p>Content from <a href="1_setup.html">Setup Instructions</a></p>
 <hr>
-<p>Last updated on 2025-04-05 |
+<p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/1_setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 0 minutes</p>
@@ -440,15 +440,21 @@
 </div>
 </div>
 </div>
-<p>Please complete <a href="../1_set-up.html">the setup instructions</a>
-prior to the workshop. In order to participate in this workshop, you
-must have a GitHub account, and have VS Code, git, and bash installed on
-your computer.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
 <p>If you are participating in this workshop remotely (e.g. over Zoom),
 it is highly recommended that you use two screens: 1 screen with the
 remote meeting, to see the instructor sharing their screen, and 1 screen
 with your applications. You will need to have VS Code and a web browser
 open to GitHub.com in order to follow along.</p>
+</div>
+</div>
+</div>
 <section><h2 class="section-heading" id="create-a-github-account">Create a GitHub account<a class="anchor" aria-label="anchor" href="#create-a-github-account"></a>
 </h2>
 <hr class="half-width">
@@ -467,8 +473,9 @@ account, and to use a password manager.</p>
 <h3 id="visual-studio-code">Visual Studio Code<a class="anchor" aria-label="anchor" href="#visual-studio-code"></a>
 </h3>
 <p><a href="https://code.visualstudio.com/download" class="external-link">Download and install
-VS Code</a>. If you are new to using VS Code, you can review this <a href="https://code.visualstudio.com/docs/getstarted/getting-started" class="external-link">Getting
-Started</a> doc.</p>
+VS Code</a>.</p>
+<p>If you are new to using VS Code, you can review this <a href="https://code.visualstudio.com/docs/getstarted/getting-started" class="external-link">Getting
+Started</a> guide.</p>
 </div>
 <div class="section level3">
 <h3 id="git">Git<a class="anchor" aria-label="anchor" href="#git"></a>
@@ -480,10 +487,14 @@ Windows). However, you should verify that Git is installed on your
 computer.</p>
 <p>You can verify git is installed by opening a command line application
 (e.g. Terminal) and typing:</p>
-<pre><code>git version</code></pre>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git version</span></code></pre>
+</div>
 <p>If you see an error message stating git is an unknown command, you
 will need to install git.</p>
-<p>If you do not already have git installed, you can refer to <a href="https://github.com/git-guides/install-git" class="external-link">these GitHub docs</a>
+<p>If you do not already have git installed, you can refer to <a href="https://github.com/git-guides/install-git" class="external-link">this GitHub guide</a>
 on installing git for any OS.</p>
 </div>
 <div class="section level3">
@@ -726,7 +737,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-3_create-repo"><p>Content from <a href="3_create-repo.html">Create a GitHub Repository</a></p>
 <hr>
-<p>Last updated on 2025-04-05 |
+<p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/3_create-repo.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -814,12 +825,12 @@ right, and then clicking “New Repository”:</p>
 <p>Leave all other options as the default - your repo should be public,
 not initialized with a readme, no gitignore selected, no license
 selected, and no template selected.</p>
-<figure><img src="../fig/github-create-planets-repo.png" alt="Create a the planets repo in GitHub" class="figure mx-auto d-block"><div class="figcaption">Create a the planets repo in GitHub</div>
+<figure><img src="../fig/github-create-planets-repo.png" alt="Create the planets repo in GitHub" class="figure mx-auto d-block"><div class="figcaption">Create the planets repo in GitHub</div>
 </figure><p>Finally, click the green “Create Repository” button at the bottom
 right.</p>
 <p>You will be redirected to your newly created and empty planets
 repo.</p>
-<figure><img src="../fig/github-empty-planets-repo.png" alt="Your new planets repo in GitHub" class="figure mx-auto d-block"><div class="figcaption">Your new planets repo in GitHub</div>
+<figure><img src="../fig/github-empty-planets-repo.png" alt="Your new planets repo on GitHub" class="figure mx-auto d-block"><div class="figcaption">Your new planets repo on GitHub</div>
 </figure></section><section><h2 class="section-heading" id="clone-your-planets-repo-to-your-local-computer">Clone your planets repo to your local computer<a class="anchor" aria-label="anchor" href="#clone-your-planets-repo-to-your-local-computer"></a>
 </h2>
 <hr class="half-width">
@@ -838,8 +849,8 @@ by typing “planets” in the search box. When you see your planets repo
 <figure><img src="../fig/vscode-clone-planets-repo.png" alt="Clone your planets repo via VS Code" class="figure mx-auto d-block"><div class="figcaption">Clone your planets repo via VS Code</div>
 </figure><p>You will now need to choose where on your local computer the planets
 repo will live. You can choose any easily accessible location, such as
-the “Desktop” folder. However, I suggest saving it to a folder named
-“Github” in your “Documents” folder.</p>
+the “Desktop” folder. It is standard practice to save all local repos in
+a folder named “GitHub” in your “Documents” folder.</p>
 <p>Click “Open” when prompted to open the newly cloned planets repo.</p>
 </section><section><h2 class="section-heading" id="open-a-bash-terminal-in-vs-code">Open a Bash Terminal in VS Code<a class="anchor" aria-label="anchor" href="#open-a-bash-terminal-in-vs-code"></a>
 </h2>
@@ -880,7 +891,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-4_git-setup"><p>Content from <a href="4_git-setup.html">Setup Git Configs</a></p>
 <hr>
-<p>Last updated on 2025-04-05 |
+<p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/4_git-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -935,7 +946,7 @@ shell terminal window and type:</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>On MacOS, without any configuration your output might look like
 this:</p>
@@ -1050,13 +1061,15 @@ this GitHub page</a>.</p>
 <div id="default-git-branch-naming" class="callout-inner">
 <h3 class="callout-title">Default Git branch naming</h3>
 <div class="callout-content">
-<p>Source file changes are associated with a “branch.” For new learners
-in this lesson, it’s enough to know that branches exist, and this lesson
-uses one branch.<br>
-By default, Git will create a branch called <code>master</code> when you
-create a new repository with <code>git init</code> (as explained in the
-next Episode). This term evokes the racist practice of human slavery and
-the <a href="https://github.com/github/renaming" class="external-link">software development
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
+</div>
+<p>Source file changes are associated with a “branch.” By default, Git
+will create a branch called <code>master</code> when you create a new
+repository with <code>git init</code>. This term evokes the racist
+practice of human slavery and the <a href="https://github.com/github/renaming" class="external-link">software development
 community</a> has moved to adopt more inclusive language.</p>
 <p>In 2020, most Git code hosting services transitioned to using
 <code>main</code> as the default branch. As an example, any new
@@ -1065,10 +1078,12 @@ repository that is opened in GitHub and GitLab default to
 result, local repositories must be manually configured have the same
 main branch name as most cloud services.</p>
 <p>For versions of Git prior to 2.28, the change can be made on an
-individual repository level. The command for this is in the next
-episode. Note that if this value is unset in your local Git
-configuration, the <code>init.defaultBranch</code> value defaults to
-<code>master</code>.</p>
+individual repository level. Note that if this value is unset in your
+local Git configuration, the <code>init.defaultBranch</code> value
+defaults to <code>master</code>.</p>
+<p>Since we are creating the repository on GitHub, the default branch
+name for the planets repo will be <code>main</code>. Configure this
+setting if you plan on creating git repositories locally first.</p>
 </div>
 </div>
 </div>
@@ -2147,7 +2162,7 @@ static.</li>
 </div>
 </div></section><section id="aio-8_pull-request"><p>Content from <a href="8_pull-request.html">Pull Requests</a></p>
 <hr>
-<p>Last updated on 2025-04-05 |
+<p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/8_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -2225,7 +2240,7 @@ and look at the files and history:</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--one-line</span></span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2241,7 +2256,7 @@ repository.</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git pull</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--one-line</span></span></code></pre>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2326,7 +2341,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-9_conflicts"><p>Content from <a href="9_conflicts.html">[Optional] Resolving Conflicts</a></p>
 <hr>
-<p>Last updated on 2025-04-05 |
+<p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/9_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 31 minutes</p>
@@ -2670,7 +2685,13 @@ Fast-forward
  mars.txt | 1 +
  1 file changed, 1 insertions(+), 0 deletions(-)</code></pre>
 </div>
-<p>There is no conflict and our changes are added automatically</p>
+<p>There is no conflict and our changes are added automatically.</p>
+<p>Finally, let’s update our remote repository:</p>
+<div class="codewrapper sourceCode" id="cb33">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
+</div>
 <div id="still-seeing-a-conflict" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -2754,33 +2775,33 @@ to the repository</li>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb34">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># to make sure we're starting in the main branch</span></span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
-<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="co"># create a new branch, but don't change into it</span></span>
-<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a><span class="ex">$</span> git branch new_branch </span>
-<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="co"># make a change to the file</span></span>
-<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
-<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
-<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
-<span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Small change to mars.txt"</span></span>
-<span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a><span class="co"># switch to the new branch</span></span>
-<span id="cb34-11"><a href="#cb34-11" tabindex="-1"></a><span class="ex">$</span> git checkout new_branch </span>
-<span id="cb34-12"><a href="#cb34-12" tabindex="-1"></a><span class="co"># make a change to mars.txt on the same line</span></span>
-<span id="cb34-13"><a href="#cb34-13" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
-<span id="cb34-14"><a href="#cb34-14" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
-<span id="cb34-15"><a href="#cb34-15" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
-<span id="cb34-16"><a href="#cb34-16" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Another change to mars.txt"</span></span>
-<span id="cb34-17"><a href="#cb34-17" tabindex="-1"></a><span class="co"># change back to the main branch</span></span>
-<span id="cb34-18"><a href="#cb34-18" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
-<span id="cb34-19"><a href="#cb34-19" tabindex="-1"></a><span class="co"># attempt to merge the branches</span></span>
-<span id="cb34-20"><a href="#cb34-20" tabindex="-1"></a><span class="ex">$</span> git merge new_branch </span>
-<span id="cb34-21"><a href="#cb34-21" tabindex="-1"></a><span class="co"># address conflicts by removing `&lt;&lt;&lt;`, `===`, and `&gt;&gt;&gt;` lines leaving the desired changes intact</span></span>
-<span id="cb34-22"><a href="#cb34-22" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
-<span id="cb34-23"><a href="#cb34-23" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
-<span id="cb34-24"><a href="#cb34-24" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Resolving conflict in mars.txt."</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="co"># to make sure we're starting in the main branch</span></span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="co"># create a new branch, but don't change into it</span></span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a><span class="ex">$</span> git branch new_branch </span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="co"># make a change to the file</span></span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
+<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
+<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
+<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Small change to mars.txt"</span></span>
+<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a><span class="co"># switch to the new branch</span></span>
+<span id="cb35-11"><a href="#cb35-11" tabindex="-1"></a><span class="ex">$</span> git checkout new_branch </span>
+<span id="cb35-12"><a href="#cb35-12" tabindex="-1"></a><span class="co"># make a change to mars.txt on the same line</span></span>
+<span id="cb35-13"><a href="#cb35-13" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
+<span id="cb35-14"><a href="#cb35-14" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
+<span id="cb35-15"><a href="#cb35-15" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
+<span id="cb35-16"><a href="#cb35-16" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Another change to mars.txt"</span></span>
+<span id="cb35-17"><a href="#cb35-17" tabindex="-1"></a><span class="co"># change back to the main branch</span></span>
+<span id="cb35-18"><a href="#cb35-18" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
+<span id="cb35-19"><a href="#cb35-19" tabindex="-1"></a><span class="co"># attempt to merge the branches</span></span>
+<span id="cb35-20"><a href="#cb35-20" tabindex="-1"></a><span class="ex">$</span> git merge new_branch </span>
+<span id="cb35-21"><a href="#cb35-21" tabindex="-1"></a><span class="co"># address conflicts by removing `&lt;&lt;&lt;`, `===`, and `&gt;&gt;&gt;` lines leaving the desired changes intact</span></span>
+<span id="cb35-22"><a href="#cb35-22" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
+<span id="cb35-23"><a href="#cb35-23" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
+<span id="cb35-24"><a href="#cb35-24" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Resolving conflict in mars.txt."</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -2850,8 +2871,8 @@ resolved.</li>
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/aio.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/aio.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-05",
-  "datePublished": "2025-04-05"
+  "dateModified": "2025-04-06",
+  "datePublished": "2025-04-06"
 }
 
   </script><script>

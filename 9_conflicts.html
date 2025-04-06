@@ -346,7 +346,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>[Optional] Resolving Conflicts</h1>
-        <p>Last updated on 2025-04-05 |
+        <p>Last updated on 2025-04-06 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/9_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -691,7 +691,13 @@ Fast-forward
  mars.txt | 1 +
  1 file changed, 1 insertions(+), 0 deletions(-)</code></pre>
 </div>
-<p>There is no conflict and our changes are added automatically</p>
+<p>There is no conflict and our changes are added automatically.</p>
+<p>Finally, let’s update our remote repository:</p>
+<div class="codewrapper sourceCode" id="cb33">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
+</div>
 <div id="still-seeing-a-conflict" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -769,33 +775,33 @@ to the repository</li>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb34">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># to make sure we're starting in the main branch</span></span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
-<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="co"># create a new branch, but don't change into it</span></span>
-<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a><span class="ex">$</span> git branch new_branch </span>
-<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="co"># make a change to the file</span></span>
-<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
-<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
-<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
-<span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Small change to mars.txt"</span></span>
-<span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a><span class="co"># switch to the new branch</span></span>
-<span id="cb34-11"><a href="#cb34-11" tabindex="-1"></a><span class="ex">$</span> git checkout new_branch </span>
-<span id="cb34-12"><a href="#cb34-12" tabindex="-1"></a><span class="co"># make a change to mars.txt on the same line</span></span>
-<span id="cb34-13"><a href="#cb34-13" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
-<span id="cb34-14"><a href="#cb34-14" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
-<span id="cb34-15"><a href="#cb34-15" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
-<span id="cb34-16"><a href="#cb34-16" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Another change to mars.txt"</span></span>
-<span id="cb34-17"><a href="#cb34-17" tabindex="-1"></a><span class="co"># change back to the main branch</span></span>
-<span id="cb34-18"><a href="#cb34-18" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
-<span id="cb34-19"><a href="#cb34-19" tabindex="-1"></a><span class="co"># attempt to merge the branches</span></span>
-<span id="cb34-20"><a href="#cb34-20" tabindex="-1"></a><span class="ex">$</span> git merge new_branch </span>
-<span id="cb34-21"><a href="#cb34-21" tabindex="-1"></a><span class="co"># address conflicts by removing `&lt;&lt;&lt;`, `===`, and `&gt;&gt;&gt;` lines leaving the desired changes intact</span></span>
-<span id="cb34-22"><a href="#cb34-22" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
-<span id="cb34-23"><a href="#cb34-23" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
-<span id="cb34-24"><a href="#cb34-24" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Resolving conflict in mars.txt."</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="co"># to make sure we're starting in the main branch</span></span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="co"># create a new branch, but don't change into it</span></span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a><span class="ex">$</span> git branch new_branch </span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="co"># make a change to the file</span></span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
+<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
+<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
+<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Small change to mars.txt"</span></span>
+<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a><span class="co"># switch to the new branch</span></span>
+<span id="cb35-11"><a href="#cb35-11" tabindex="-1"></a><span class="ex">$</span> git checkout new_branch </span>
+<span id="cb35-12"><a href="#cb35-12" tabindex="-1"></a><span class="co"># make a change to mars.txt on the same line</span></span>
+<span id="cb35-13"><a href="#cb35-13" tabindex="-1"></a><span class="ex">$</span> nano mars.txt </span>
+<span id="cb35-14"><a href="#cb35-14" tabindex="-1"></a><span class="co"># add changes in mars.txt to the staging area</span></span>
+<span id="cb35-15"><a href="#cb35-15" tabindex="-1"></a><span class="ex">$</span> git add mars.txt </span>
+<span id="cb35-16"><a href="#cb35-16" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Another change to mars.txt"</span></span>
+<span id="cb35-17"><a href="#cb35-17" tabindex="-1"></a><span class="co"># change back to the main branch</span></span>
+<span id="cb35-18"><a href="#cb35-18" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
+<span id="cb35-19"><a href="#cb35-19" tabindex="-1"></a><span class="co"># attempt to merge the branches</span></span>
+<span id="cb35-20"><a href="#cb35-20" tabindex="-1"></a><span class="ex">$</span> git merge new_branch </span>
+<span id="cb35-21"><a href="#cb35-21" tabindex="-1"></a><span class="co"># address conflicts by removing `&lt;&lt;&lt;`, `===`, and `&gt;&gt;&gt;` lines leaving the desired changes intact</span></span>
+<span id="cb35-22"><a href="#cb35-22" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span>
+<span id="cb35-23"><a href="#cb35-23" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
+<span id="cb35-24"><a href="#cb35-24" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Resolving conflict in mars.txt."</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -881,8 +887,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/9_conflicts.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/9_conflicts.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-05",
-  "datePublished": "2025-04-05"
+  "dateModified": "2025-04-06",
+  "datePublished": "2025-04-06"
 }
 
   </script><script>
