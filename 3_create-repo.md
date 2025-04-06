@@ -54,13 +54,13 @@ Type `planets` for the repository name.
 
 Leave all other options as the default - your repo should be public, not initialized with a readme, no gitignore selected, no license selected, and no template selected.
 
-![Create a the planets repo in GitHub](fig/github-create-planets-repo.png)
+![Create the planets repo in GitHub](fig/github-create-planets-repo.png)
 
 Finally, click the green "Create Repository" button at the bottom right.
 
 You will be redirected to your newly created and empty planets repo.
 
-![Your new planets repo in GitHub](fig/github-empty-planets-repo.png)
+![Your new planets repo on GitHub](fig/github-empty-planets-repo.png)
 
 ## Clone your planets repo to your local computer
 
@@ -76,7 +76,7 @@ If you don't immediately see your planets repo, you can search for it by typing 
 
 ![Clone your planets repo via VS Code](fig/vscode-clone-planets-repo.png)
 
-You will now need to choose where on your local computer the planets repo will live. You can choose any easily accessible location, such as the "Desktop" folder. However, I suggest saving it to a folder named "Github" in your "Documents" folder.
+You will now need to choose where on your local computer the planets repo will live. You can choose any easily accessible location, such as the "Desktop" folder. It is standard practice to save all local repos in a folder named "GitHub" in your "Documents" folder.
 
 Click "Open" when prompted to open the newly cloned planets repo.
 
