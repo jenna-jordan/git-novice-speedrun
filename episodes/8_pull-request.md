@@ -50,7 +50,7 @@ Let's go **back to VS Code**. Checkout the main branch, and look at the files an
 
 ```bash
 $ git checkout main
-$ git log --one-line
+$ git log --oneline
 ```
 
 ```output
@@ -63,7 +63,7 @@ The analysis file is not on "main" yet. This is because we need to first pull th
 
 ```bash
 $ git pull
-$ git log --one-line
+$ git log --oneline
 ```
 
 ```output

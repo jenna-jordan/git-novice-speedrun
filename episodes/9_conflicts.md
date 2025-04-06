@@ -303,7 +303,13 @@ Fast-forward
  1 file changed, 1 insertions(+), 0 deletions(-)
 ```
 
-There is no conflict and our changes are added automatically
+There is no conflict and our changes are added automatically.
+
+Finally, let's update our remote repository:
+
+```bash
+$ git push
+```
 
 ::::::::::::::::::: callout
 ## Still seeing a conflict?

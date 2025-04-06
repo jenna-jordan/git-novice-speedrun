@@ -89,8 +89,6 @@ user.name=Your Name
 user.email=yourname@domain.name
 ```
 
-
-
 :::::::::::::::::::::::: callout
 
 ## Line Endings
@@ -128,10 +126,13 @@ You can read more about this issue
 
 ## Default Git branch naming
 
+```bash
+$ git config --global init.defaultBranch main
+```
+
 Source file changes are associated with a "branch." 
-For new learners in this lesson, it's enough to know that branches exist, and this lesson uses one branch.  
 By default, Git will create a branch called `master` 
-when you create a new repository with `git init` (as explained in the next Episode). This term evokes 
+when you create a new repository with `git init`. This term evokes 
 the racist practice of human slavery and the 
 [software development community](https://github.com/github/renaming)  has moved to adopt 
 more inclusive language. 
@@ -141,9 +142,10 @@ branch. As an example, any new repository that is opened in GitHub and GitLab de
 to `main`.  However, Git has not yet made the same change.  As a result, local repositories 
 must be manually configured have the same main branch name as most cloud services.  
 
-For versions of Git prior to 2.28, the change can be made on an individual repository level.  The 
-command for this is in the next episode.  Note that if this value is unset in your local Git 
+For versions of Git prior to 2.28, the change can be made on an individual repository level. Note that if this value is unset in your local Git 
 configuration, the `init.defaultBranch` value defaults to `master`.
+
+Since we are creating the repository on GitHub, the default branch name for the planets repo will be `main`. Configure this setting if you plan on creating git repositories locally first.
 
 ::::::::::::::::::::::::::::::
 

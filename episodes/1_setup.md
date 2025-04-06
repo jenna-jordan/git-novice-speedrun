@@ -18,9 +18,11 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Please complete [the setup instructions](/1_set-up.html) prior to the workshop. In order to participate in this workshop, you must have a GitHub account, and have VS Code, git, and bash installed on your computer.
+::::::::::::::::::::::::::::::::::::: callout
 
 If you are participating in this workshop remotely (e.g. over Zoom), it is highly recommended that you use two screens: 1 screen with the remote meeting, to see the instructor sharing their screen, and 1 screen with your applications. You will need to have VS Code and a web browser open to GitHub.com in order to follow along.
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Create a GitHub account
 
@@ -36,20 +38,23 @@ It is strongly recommended that you set up 2FA for your GitHub account, and to u
 
 ### Visual Studio Code
 
-[Download and install VS Code](https://code.visualstudio.com/download). If you are new to using VS Code, you can review this [Getting Started](https://code.visualstudio.com/docs/getstarted/getting-started) doc.
+[Download and install VS Code](https://code.visualstudio.com/download). 
+
+If you are new to using VS Code, you can review this [Getting Started](https://code.visualstudio.com/docs/getstarted/getting-started) guide.
 
 ### Git
 
 You must have Git installed on your local computer. Typically, Mac and Linux computers come pre-installed with git, while Windows users must install [GitBash](https://gitforwindows.org) (Git for Windows). However, you should verify that Git is installed on your computer.
 
 You can verify git is installed by opening a command line application (e.g. Terminal) and typing: 
-```
-git version
+
+```bash
+$ git version
 ```
 
 If you see an error message stating git is an unknown command, you will need to install git.
 
-If you do not already have git installed, you can refer to [these GitHub docs](https://github.com/git-guides/install-git) on installing git for any OS. 
+If you do not already have git installed, you can refer to [this GitHub guide](https://github.com/git-guides/install-git) on installing git for any OS. 
 
 ### Bash
 
