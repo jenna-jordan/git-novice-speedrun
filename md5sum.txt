@@ -15,5 +15,5 @@
 "episodes/9_conflicts.md" "1aba2af0136c7bb4f1ff7e1d9db5fbd1" "site/built/9_conflicts.md" "2025-04-06"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
 "learners/reference.md" "fda262cb5d91a724bf7043b5707be9d4" "site/built/reference.md" "2025-03-13"
-"learners/setup.md" "9536860e69cd2de75b0f88efcc283ead" "site/built/setup.md" "2025-04-06"
+"learners/setup.md" "c5294ffe49d84070049f9bcd07d34647" "site/built/setup.md" "2025-04-06"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"
