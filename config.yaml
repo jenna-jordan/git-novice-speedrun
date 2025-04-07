@@ -17,7 +17,7 @@ carpentry: 'incubator'
 # carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
-title: 'Git and GitHub in 1 hour'
+title: 'Intro to Git & GitHub (Speedrun edition)'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2025-03-08'
@@ -27,7 +27,7 @@ keywords: 'git, GitHub, branches, PRs'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha'
+life_cycle: 'alpha'
 
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
@@ -65,15 +65,16 @@ contact: 'jenna.jrdn@gmail.com'
 
 # Order of episodes in your lesson
 episodes: 
-- 1_setup.md
-- 2_git-intro.md
-- 3_create-repo.md
-- 4_git-setup.md
-- 5_track-changes.md
-- 6_push-changes.md
-- 7_branches.md
-- 8_pull-request.md
-- 9_conflicts.md
+- 0_setup.md
+- 1_git-intro.md
+- 2_create-repo.md
+- 3_git-setup.md
+- 4_track-changes.md
+- 5_push-changes.md
+- 6_branches.md
+- 7_pull-request.md
+- 8_conflicts.md
+- 9_practice.md
 
 # Information for Learners
 learners: 
