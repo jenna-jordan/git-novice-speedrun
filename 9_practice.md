@@ -1,7 +1,7 @@
 ---
-title: "[Optional] Practice"
-teaching: 30
-exercises: 1
+title: "[Optional] Practice GitHub Skills"
+teaching: 0
+exercises: 6
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
