@@ -28,12 +28,12 @@ on the web rather than on someone's laptop.  Most programmers use hosting
 services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
 [GitLab](https://gitlab.com/) to hold those main copies; we're using GitHub.
 
-Before we share our changes, let's first look at our `planets` repo on GitHub.
+Before we share our changes, let's first look at our `multiverse` repo on GitHub.
 
-Even though we have made changes to our local copy of `planets`, the remote copy on GitHub still looks empty. This is because we have not yet "pushed" our changes (or commits) to the remote repository.
+Even though we have made changes to our local copy of `multiverse`, the remote copy on GitHub still looks empty. This is because we have not yet "pushed" our changes (or commits) to the remote repository.
 
 If you remember back to the previous episode where we added and
-committed our earlier work on `mars.txt`, we had a diagram of the local repository
+committed our earlier work on `earth.txt`, we had a diagram of the local repository
 which looked like this:
 
 ![The Local Repository with Git Staging Area](fig/git-staging-area.svg)
@@ -44,13 +44,13 @@ Taking into account the two repositories, we need a diagram like this:
 
 ::::::::::::::::::: callout
 
-Note that our local repository still contains our earlier work on `mars.txt`, but the
-remote repository on GitHub appears empty as it doesn't contain any files yet.
+Note that our local repository still contains our earlier work on `earth.txt`, but the
+remote repository on GitHub only contains the README file.
 
 Because we created our repo on GitHub first and then cloned it to our local computer, the two repositories are already connected. If we had instead created the local repo first, then the remote repo on GitHub, we would need to manually connect the two repos, with a commmand like:
 
 ```bash
-$ git remote add origin git@github.com:vlad/planets.git
+$ git remote add origin git@github.com:loki-god-of-stories/multiverse.git
 ```
 
 `origin` is a local name used to refer to the remote repository. It could be called
@@ -64,8 +64,8 @@ $ git remote -v
 ```
 
 ```output
-origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)
+origin  https://github.com/loki-god-of-stories/multiverse.git (fetch)
+origin  https://github.com/loki-god-of-stories/multiverse.git (push)
 ```
 
 :::::::::::::::::::::::::::
@@ -80,15 +80,15 @@ $ git push origin main
 ```
 
 ```output
-Enumerating objects: 16, done.
-Counting objects: 100% (16/16), done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (11/11), done.
-Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
-Total 16 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
- * [new branch]      main -> main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 992 bytes | 992.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/loki-god-of-stories/multiverse.git
+   f537d84..2f2d364  main -> main
  ```
 
  Our local and remote repositories are now in this state:
@@ -102,16 +102,16 @@ $ git pull origin main
 ```
 
 ```output
-From https://github.com/vlad/planets
- * branch            main     -> FETCH_HEAD
-Already up-to-date.
+From https://github.com/loki-god-of-stories/multiverse
+ * branch            main       -> FETCH_HEAD
+Already up to date.
 ```
 
 Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
 GitHub, though, this command would download them to our local repository.
 
-Let's verify that our changes made it to GitHub: go to your **browser window with the GitHub repo and refresh** the page. You should now see the `mars.txt` file. **Click on the file**, and you can see the contents of the file are the same as in VS Code.
+Let's verify that our changes made it to GitHub: go to your **browser window with the GitHub repo and refresh** the page. You should now see the `earth.txt` file. **Click on the file**, and you can see the contents of the file are the same as in VS Code.
 
 Now **click on the "History" link**. You should see each commit made to the file, even though we only pushed once.
 

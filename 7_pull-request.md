@@ -28,23 +28,19 @@ you want someone else to review your changes.
 
 :::::::::::::::::::::
 
-On GitHub, in your `planets` repo, **click on the "Pull Requests" tab**. 
+On GitHub, in your `multiverse` repo, **click on the "Pull Requests" tab**. 
 
 Then **click "New pull request"**. Alternatively, GitHub will see your new branch with recent changes and will prompt you to "Compare & pull request". Click this button to also be taken to the new pull request page.
 
-Make sure that the "base" branch is `main` and the "compare" branch is `pythondev`.
+Make sure that the "base" branch is `main` and the "compare" branch is `heimdall-aware`.
 
 Next, we need to give our PR a title. By default, your PR will get the title from your last commit. We can leave this as is.
 
-We can leave a note in the PR description, like:
-
-"The python analysis was faster than the bash analysis, so I am merging only the python analysis to main".
-
 **Click "Create pull request"**.
 
-Your planets repo should now have 1 pull request. This is the phase where you would normally request a reviewer, who can leave comments on your code. In repos that you do not own, your PR will need to be approved by a codeowner before you can merge it. Since you are the codeowner, we can go ahead and **click "Merge pull request"**.
+Your `multiverse` repo should now have 1 pull request. This is the phase where you would normally request a reviewer, who can leave comments on your code. In repos that you do not own, your PR will need to be approved by a codeowner before you can merge it. Since you are the codeowner, we can go ahead and **click "Merge pull request"**.
 
-Go back to the "Code" tab and make sure you are on the "main" branch. You should now see an "analysis.py" file.
+Go back to the "Code" tab and make sure you are on the "main" branch. You should now see an "asgard.txt" file.
 
 Let's go **back to VS Code**. Checkout the main branch, and look at the files and history:
 
@@ -54,71 +50,90 @@ $ git log --oneline
 ```
 
 ```output
-e98a594 (HEAD -> main, origin/main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+2f2d364 (HEAD -> main, origin/main, origin/HEAD) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
 The analysis file is not on "main" yet. This is because we need to first pull the changes we made with the Pull Request from the remote repository.
 
 ```bash
 $ git pull
+```
+
+```output
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 952 bytes | 476.00 KiB/s, done.
+From https://github.com/loki-god-of-stories/multiverse
+   2f2d364..976b48e  main       -> origin/main
+Updating 2f2d364..976b48e
+Fast-forward
+ asgard.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 asgard.txt
+```
+
+```
 $ git log --oneline
 ```
 
 ```output
-d980f78 (HEAD -> main, origin/main) Merge pull request #1 from vlad/pythondev
-d5f2565 (origin/pythondev, pythondev) Wrote and tested python analysis script
-e98a594 Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+976b48e (HEAD -> main, origin/main, origin/HEAD) Merge pull request #1 from loki-god-of-stories/heimdall-aware
+daf95c3 (origin/heimdall-aware, heimdall-aware) Create asgard.txt detailing Heimdall's awareness of invasion
+2f2d364 Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
 Now our main branch is up to date.
 
 ## Deleting branches
 
-Now that we've merged the `pythondev` into `main`, these changes
+Now that we've merged the `heimdall-aware` into `main`, these changes
 exist in both branches. This could be confusing in the future if we
-stumble upon the `pythondev` branch again.
+stumble upon the `heimdall-aware` branch again.
 
 We can delete our old branches so as to avoid this confusion later.
 We can do so by adding the `-d` flag to the `git branch` command.
 
 ```bash
-git branch -d pythondev
+git branch -d heimdall-aware
 ```
 
 ```output
-Deleted branch pythondev (was x792csa1).
+Deleted branch heimdall-aware (was daf95c3).
 ```
 
-And because we don't want to keep the changes in the `bashdev` branch,
-we can delete the `bashdev` branch as well
+And because we don't want to keep the changes in the `heimdall-blind` branch,
+we can delete the `heimdall-blind` branch as well
 
 ```bash
-$ git branch -d bashdev
+$ git branch -d heimdall-blind
 ```
 
 ```output
-error: The branch 'bashdev' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D bashdev'.
+error: The branch 'heimdall-blind' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D heimdall-blind'.
 ```
 
-Since we've never merged the changes from the `bashdev` branch,
+Since we've never merged the changes from the `heimdall-blind` branch,
 git warns us about deleting them and tells us to use the `-D` flag instead.
 
 Since we really want to delete this branch we will go ahead and do so.
 
 ```bash
-git branch -D bashdev
+git branch -D heimdall-blind
 ```
 
 ```output
-Deleted branch bashdev (was 2n779ds).
+Deleted branch heimdall-blind (was 59b9bab).
 ```
 
-Finally, we can also delete the pythondev branch **on GitHub. Click on "Branches"**, and to delete the `pythondev` branch **click the trashcan icon** to the right of the branch name.
+Finally, we can also delete the heimdall-aware branch **on GitHub. Click on "Branches"**, and to delete the `heimdall-aware` branch **click the trashcan icon** to the right of the branch name.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

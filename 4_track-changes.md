@@ -20,28 +20,27 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Mission to Mars
+## Loki writes a story about Thor in New Asgard
 
-Wolfman and Dracula have been hired by Universal Missions (a space services spinoff from Euphoric State University) to investigate if it is possible to send their next planetary lander to Mars. They want to be able to work on the plans at the same time, but they have run into problems doing this in the past. If they take turns, each one will spend a lot of time waiting for the other to finish, but if they work on their own copies and email changes back and forth things will be lost, overwritten, or duplicated.
+Loki, in his role as God of Stories, oversees the many branching timelines in the multiverse. But even an infinitely clever being like Loki has trouble keeping track of all of the events across the multiverse. Fortunately, there is a tool that can help keep track of these events across different timeline branches: git! Loki has decided to start logging events in a git repository named `multiverse`. Each planet will have their own file. Loki starts recording the events of New Asgard on Earth, where his brother Thor lives.
 
 ## Create a file
 
 First let's make sure we're in the right directory.
-You should be in the `planets` directory.
+You should be in the `multiverse` directory.
 
 ```bash
 $ pwd
 ```
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base. 
+Let's create a file called `earth.txt` to start recording the events taking place on the planet Earth.
 
-Make sure you have the Explorer pane open in VS Code, and **click the "New File" button**. Name the file `mars.txt`. 
+Make sure you have the Explorer pane open in VS Code, and **click the "New File" button**. Name the file `earth.txt`. 
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `earth.txt` file:
 
 ```output
-Cold and dry, but everything is my favorite color
+Thor defends New Asgard from invaders.
 
 ```
 
@@ -59,13 +58,12 @@ $ git status
 
 ```output
 On branch main
-
-Initial commit
+Your branch is up to date with 'origin/main'.
 
 Untracked files:
-   (use "git add <file>..." to include in what will be committed)
+  (use "git add <file>..." to include in what will be committed)
+        earth.txt
 
-	mars.txt
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
@@ -74,7 +72,7 @@ that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ```bash
-$ git add mars.txt
+$ git add earth.txt
 ```
 
 and then check that the right thing happened:
@@ -85,42 +83,39 @@ $ git status
 
 ```output
 On branch main
-
-Initial commit
+Your branch is up to date with 'origin/main'.
 
 Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-	new file:   mars.txt
-
+  (use "git restore --staged <file>..." to unstage)
+        new file:   earth.txt
 ```
 
-Git now knows that it's supposed to keep track of `mars.txt`,
+Git now knows that it's supposed to keep track of `earth.txt`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
 ```bash
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Start story for New Asgard in earth.txt"
 ```
 
 ```output
-[main (root-commit) f22b25e] Start notes on Mars as a base
+[main 9b26458] Start story for New Asgard in earth.txt
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 earth.txt
 ```
 
 When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a commit
-(or revision) and its short identifier is `f22b25e`
-(Your commit may have another identifier.)
+(or revision) and its short identifier is `9b26458`
+(Your commit will have another identifier.)
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
 If we just run `git commit` without the `-m` option,
-Git will launch `nano` (or whatever other editor we configured as `core.editor`)
+Git will launch a VS Code window (or whatever other editor we configured as `core.editor`)
 so that we can write a longer message.
 
 [Good commit messages][commit-messages] start with a brief (<50 characters) summary of
@@ -135,7 +130,10 @@ $ git status
 
 ```output
 On branch main
-nothing to commit, working directory clean
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
 ```
 
 It tells us everything is up to date.
@@ -147,11 +145,17 @@ $ git log
 ```
 
 ```output
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+commit 9b26458f5d229d48be61023bcb510f8beb3f13db (HEAD -> main)
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 20:18:55 2025 -0400
 
-    Start notes on Mars as a base
+    Start story for New Asgard in earth.txt
+
+commit f537d84c6ef9b6d988f642400b2017f855f9aaa1 (origin/main, origin/HEAD)
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 18:34:45 2025 -0400
+
+    Initial commit
 ```
 
 `git log` lists all commits  made to a repository in reverse chronological order.
@@ -165,13 +169,13 @@ and the log message Git was given when the commit was created
 
 ## Make more changes to the file
 
-Now suppose Dracula adds more information to the file.
+Now suppose Loki records another event in the file.
 
-Click back into the `mars.txt` file, and add a second line:
+Click back into the `earth.txt` file, and add a second line:
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
 
 ```
 
@@ -186,11 +190,13 @@ $ git status
 
 ```output
 On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   mars.txt
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   earth.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -211,13 +217,13 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
-index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+diff --git a/earth.txt b/earth.txt
+index 0b592c6..d27fc77 100644
+--- a/earth.txt
++++ b/earth.txt
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+ Thor defends New Asgard from invaders.
++Thor and Valkyrie coordinate a counterattack.
 ```
 
 The output is cryptic because
@@ -229,7 +235,7 @@ If we break it down into pieces:
     comparing the old and new versions of the file.
 2.  The second line tells exactly which versions of the file
     Git is comparing;
-    `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
+    `0b592c6` and `d27fc77` are unique computer-generated labels for those versions.
 3.  The third and fourth lines once again show the name of the file being changed.
 4.  The remaining lines are the most interesting, they show us the actual differences
     and the lines on which they occur.
@@ -239,17 +245,18 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ```bash
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-$ git status
+$ git commit -m "Implement counterattack strategy"
 ```
 
 ```output
 On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   mars.txt
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   earth.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -259,12 +266,12 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add earth.txt
+$ git commit -m "Implement counterattack strategy"
 ```
 
 ```output
-[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[main ee67c8b] Implement counterattack strategy
  1 file changed, 1 insertion(+)
 ```
 
@@ -305,16 +312,14 @@ than you would like!
 ## Using the Source Control pane in VS Code
 
 Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
+to the staging area and into long-term storage.
+First, we'll add another line to the file:
 
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
 
 ```
 
@@ -322,7 +327,7 @@ Save the file (with a newline at the end!).
 
 Switch from the Explorer pane view to the Source Control pane view in VS Code.
 
-Under "Changes", you should see your `mars.txt` file. Click the file.
+Under "Changes", you should see your `earth.txt` file. Click the file.
 
 In your Terminal window, type the command:
 
@@ -331,36 +336,36 @@ $ git diff
 ```
 
 ```output
-diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+diff --git a/earth.txt b/earth.txt
+index d27fc77..8938f14 100644
+--- a/earth.txt
++++ b/earth.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ Thor defends New Asgard from invaders.
+ Thor and Valkyrie coordinate a counterattack.
++Thor reunites with Jane Foster at the sanctuary.
 ```
 
 The `git diff` command is accomplishing the same thing as clicking on the file under "Changes": that we've added one line to the end of the file
 (shown with a `+` in the first column).
 
-In the Source Control pane, click the `+` icon next to the `mars.txt` file. 
-The `mars.txt` file gets moved to the "Saved Changes" section.
+In the Source Control pane, click the `+` icon next to the `earth.txt` file. 
+The `earth.txt` file gets moved to the "Saved Changes" section.
 
-Clicking the `+` icon accomplished the same thing as typing `git add mars.txt` in the terminal.
+Clicking the `+` icon accomplished the same thing as typing `git add earth.txt` in the terminal.
 
 Now, let's save our changes. We could use the Terminal to commit our changes:
 
 ```bash
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Complete story with Thor-Jane reunion"
 ```
 
 ```output
-[main 005937f] Discuss concerns about Mars' climate for Mummy
+[main 2f2d364] Complete story with Thor-Jane reunion
  1 file changed, 1 insertion(+)
 ```
 
-Or, we can type the commit message "Discuss concerns about Mars' climate for Mummy" in the "Message" box and click "Commit".
+Or, we can type the commit message "Complete story with Thor-Jane reunion" in the "Message" box and click "Commit".
 
 Let's check our status:
 
@@ -370,7 +375,10 @@ $ git status
 
 ```output
 On branch main
-nothing to commit, working directory clean
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
 ```
 
 and look at the history of what we've done so far:
@@ -380,23 +388,29 @@ $ git log
 ```
 
 ```output
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:14:07 2013 -0400
+commit 2f2d364f559efb1101647591d9fbf2cc30ade8bb (HEAD -> main)
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 20:29:51 2025 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Complete story with Thor-Jane reunion
 
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:07:21 2013 -0400
+commit ee67c8b551612e09be46c97726866d04c7b0d785
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 20:24:35 2025 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Implement counterattack strategy
 
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
+commit 9b26458f5d229d48be61023bcb510f8beb3f13db
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 20:18:55 2025 -0400
 
-    Start notes on Mars as a base
+    Start story for New Asgard in earth.txt
+
+commit f537d84c6ef9b6d988f642400b2017f855f9aaa1 (origin/main, origin/HEAD)
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 18:34:45 2025 -0400
+
+    Initial commit
 ```
 
 ::::::::::::::::::::::::: challenge
