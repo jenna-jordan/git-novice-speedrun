@@ -20,46 +20,45 @@ exercises: 1
 
 As soon as people can work in parallel, they'll likely step on each other's
 toes.  This will even happen with a single person: if we are working on
-a piece of software on both our laptop and a server in the lab, we could make
+a piece of software on two different computers, we could make
 different changes to each copy.  Version control helps us manage these
-conflicts by giving us tools to
-resolve overlapping changes.
+conflicts by giving us tools to resolve overlapping changes.
 
 To see how we can resolve conflicts, we must first create one.  The
-file `mars.txt` currently looks like this in our `planets` repository:
+file `earth.txt` currently looks like this in our `multiverse` repository:
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
 
 ```
 
-Let's create a new branch for discussing Mars' temperature.
+Let's create a new branch to describe 1 possible version of events to occur next.
 
 ```bash
-$ git branch mars-temp
+$ git branch loki-twist
 ```
 
-But before we checkout the `mars-temp` branch and make changes related to Mars' temperature, let's add a line to mars.txt here in the `main` branch.
+But before we checkout the `loki-twist` branch and add the event where Loki enters the picture, let's add a line to `earth.txt` here in the `main` branch.
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-I'll be able to get 40 extra minutes of beauty rest
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
+The invaders retreat as Heimdall's rainbow bridge returns.
 
 ```
 
 and commit that change to the `main` branch
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add a line about the daylight on Mars."
+$ git add earth.txt
+$ git commit -m "Add invaders retreat."
 ```
 
 ```output
-[main 5ae9631] Add a line about the daylight on Mars.
+[main a521b20] Add invaders retreat
  1 file changed, 1 insertion(+)
 ```
 
@@ -70,48 +69,48 @@ $ git log --oneline
 ```
 
 ```output
-60e140a (HEAD -main) Add a line about the daylight on Mars.
-d980f78 (origin/main, mars-temp) Merge pull request #1 from vlad/pythondev
-d5f2565 (origin/pythondev, pythondev) Wrote and tested python analysis script
-e98a594 Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+a521b20 (HEAD -> main) Add invaders retreat
+976b48e (origin/main, origin/HEAD) Merge pull request #1 from loki-god-of-stories/heimdall-aware
+daf95c3 (origin/heimdall-aware) Create asgard.txt detailing Heimdall's awareness of invasion
+2f2d364 Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
-Now that we've made our changes in the `main` branch, let's get to work on our comments about
-the temperature in the `mars-temp` branch.
+Now that we've made our changes in the `main` branch, let's add an event to the `loki-twist` branch.
 
 ```bash
-$ git checkout mars-temp
+$ git checkout loki-twist
 $ git branch
 ```
 
 ```output
-* mars-temp
+* loki-twist
   main
 ```
 
-Let's make a note in `mars.txt` about the temperature. Note that when we open
-this file the line we added about the daylight on Mars will not be present as
+Let's add a line in `earth.txt` with Loki's reveal. Note that when we open
+this file the line we added about the invaders retreating will not be present as
 that change is not part of this branch.
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-Yeti will appreciate the cold
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
+Loki appears, revealing the invasion was his test all along.
 
 ```
 
-Now let's commit this change to the `mars-temp` branch
+Now let's commit this change to the `loki-twist` branch
 
 ```bash
-$ git add mars.txt
-$ git commit -m "Add a line about the temperature on Mars"
+$ git add earth.txt
+$ git commit -m "Add twist ending with Loki as mastermind"
 ```
 
 ```output
-[main 07ebc69] Add a line about the temperature on Mars
+[loki-twist 7b972b4] Add twist ending with Loki as mastermind
  1 file changed, 1 insertion(+)
 ```
 
@@ -122,26 +121,26 @@ $ git log --oneline
 ```
 
 ```output
-847c94d (HEAD -mars-temp) Add a line about the temperature on Mars
-d980f78 (origin/main) Merge pull request #1 from vlad/pythondev
-d5f2565 (origin/pythondev, pythondev) Wrote and tested python analysis script
-e98a594 Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+7b972b4 (HEAD -> loki-twist) Add twist ending with Loki as mastermind
+976b48e (origin/main, origin/HEAD) Merge pull request #1 from loki-god-of-stories/heimdall-aware
+daf95c3 (origin/heimdall-aware) Create asgard.txt detailing Heimdall's awareness of invasion
+2f2d364 Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
 ::::::::::::::: callout
 
-Notice that the commit related to Mars' daylight is not present as it is part of
-the `main` branch, not the `mars-temp` branch.
+Notice that the commit related to the invaders retreating is not present as it is part of
+the `main` branch, not the `loki-twist` branch.
 
 :::::::::::::::::::
 
-Now that we've added changes about the temperature
-we can merge them into the `main` branch. We're going to do this merge in VS Code rather than through a Pull Request in GitHub this time.
+Now that we've added Loki's big reveal, we can merge this branch into the `main` branch. 
+We're going to do this merge in VS Code rather than through a Pull Request in GitHub this time.
 
-First, let's checkout the
-`main` branch.
+First, let's checkout the `main` branch.
 
 ```bash
 $ git checkout main
@@ -149,19 +148,19 @@ $ git branch
 ```
 
 ```output
-  mars-temp
+  loki-twist
 * main
 ```
 
-And then merge the changes from `mars-temp` into our current branch, `main`.
+And then merge the changes from `loki-twist` into our current branch, `main`.
 
 ```bash
-$ git merge mars-temp
+$ git merge loki-twist
 ```
 
 ```output
-Auto-merging mars.txt
-CONFLICT (content): Merge conflict in mars.txt
+Auto-merging earth.txt
+CONFLICT (content): Merge conflict in earth.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
@@ -173,88 +172,65 @@ $ git status
 
 ```output
 On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
 You have unmerged paths.
   (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
 
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
-
-  both modified:   mars.txt
+        both modified:   earth.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
-
 ```
 
 ![The Conflicting Changes](fig/conflict.svg)
 
 Git detects that the changes made in one copy overlap with those made
 in the other and stops us from trampling on our previous work. It also
-marks that conflict in the affected file, `mars.txt`.
+marks that conflict in the affected file, `earth.txt`.
 
-```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-<<<<<<< HEAD
-I'll be able to get 40 extra minutes of beauty rest
-=======
-Yeti will appreciate the cold
->>>>>>07ebc69c450e8475aee9b14b4383acc99f42af1d
-```
+! screenshot here
 
 Our change—the one at the `HEAD` of the `main` branch—is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of our commit from the `mars-temp` branch with `>>>>>>>`.
+and marked the end of our commit from the `loki-twist` branch with `>>>>>>>`.
 (The string of letters and digits after that marker
-identifies the commit we made in the `mars-temp` branch.)
+identifies the commit we made in the `loki-twist` branch.)
 
 It is now up to us to edit this file to remove these markers
 and reconcile the changes.
 We can do anything we want: keep the change made in the `main` branch, keep
-the change made in the `mars-temp` branch, write something new to replace both,
+the change made in the `loki-twist` branch, write something new to replace both,
 or get rid of the change entirely.
 
-Let's keep both of these statements, as they are both valid regarding the Martian
-environment.
+Let's keep both of these events, but save Loki's reveal for after the invaders reatreat.
 
 VS Code will prompt you to "Resolve in Merge Editor". Click this button.
 
 In the Merge Editor, you will see the two versions side by side, and the final version of the file below. We want the final version to look like:
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-I'll be able to get 40 extra minutes of beauty rest
-Yeti will appreciate the cold
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
+The invaders retreat as Heimdall's rainbow bridge returns.
+Loki appears, revealing the invasion was his test all along.
 
 ```
 
 So we want to click "Accept Combination (Current First)". You should now see the resolved version with both lines, the line from the `main` branch first. Click "Complete Merge".
 
-By clicking "Complete Merge", you are doing the same thing as running the command `git add mars.txt`. If you open the Source Control pane, you should see `mars.txt` under "Staged Changes". Let's also check the git status.
+By clicking "Complete Merge", you are doing the same thing as running the command `git add earth.txt`. If you open the Source Control pane, you should see `earth.txt` under "Staged Changes". You can then complete the commit using the VS Code UI or on the command line
 
 ```bash
-$ git status
+$ git commit -m "Merge changes from loki-twist"
 ```
 
 ```output
-On branch main
-All conflicts fixed but you are still merging.
-  (use "git commit" to conclude merge)
-
-Changes to be committed:
-
-	modified:   mars.txt
-
-```
-
-```bash
-$ git commit -m "Merge changes from mars-temp"
-```
-
-```output
-[main 2abf2b1] Merge changes from mars-temp
+[main c5c81b3] Merge changes from loki-twist
 ```
 
 Take a look at the Source Control Graph window (in the lower portion of the Source Control pane) for a visual representation of the git log.
@@ -262,30 +238,57 @@ Take a look at the Source Control Graph window (in the lower portion of the Sour
 Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again.
 
-Let's make another change to the `mars-temp` branch:
-
 ```
-$ git checkout mars-temp
+$ git log
 ```
-
-Add another line to `mars.txt`:
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-Yeti will appreciate the cold
-The polar caps will probably be Yeti's home
+commit c5c81b35d7631b4aa9c7d71d06253c593cbaf644 (HEAD -> main)
+Merge: a521b20 7b972b4
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 21:36:55 2025 -0400
+
+    Merge branch 'loki-twist'
+
+commit 7b972b4d86972ddfbacac225c5c84c8b4a5609ff (loki-twist)
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 21:27:20 2025 -0400
+
+    Add twist ending with Loki as mastermind
+
+commit a521b20ef97343b49b3b25717e485b360fcb8d64
+Author: Loki Odinson <loki.odinson@tva.org>
+Date:   Sat May 17 21:25:13 2025 -0400
+
+    Add invaders retreat
+```
+
+### When conflicts resolve themselves
+
+Let's make another change to the `loki-twist` branch:
+
+```
+$ git checkout loki-twist
+```
+
+Add another line to `earth.txt`:
+
+```output
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
+Loki appears, revealing the invasion was his test all along.
+Thor smiles, having known his brother's scheme from the beginning.
 
 ```
 
 ```bash
-$ git add mars.txt
-$ git commit -m "A note about Yeti's home"
+$ git add earth.txt
+$ git commit -m "Add Thor's knowing reaction to Loki's scheme"
 ```
 
 ```output
-[main 34avo82] A note about Yeti's home
+[loki-twist 959f09c] Add Thor's knowing reaction to Loki's scheme
  1 file changed, 1 insertion(+)
 ```
 
@@ -293,13 +296,13 @@ And merge that change into main branch
 
 ```bash
 $ git checkout main
-$ git merge mars-temp
+$ git merge loki-twist
 ```
 
 ```output
-Updating 12687f6..x792csa1
+Updating c5c81b3..959f09c
 Fast-forward
- mars.txt | 1 +
+ earth.txt | 1 +
  1 file changed, 1 insertions(+), 0 deletions(-)
 ```
 
@@ -315,18 +318,19 @@ $ git push
 ## Still seeing a conflict?
 
 This exercise is dependent on how the merge conflict was resolved
-in our first merge of the mars-temp branch and may still result
-in a conflict when merging additional commits from the mars-temp branch.
+in our first merge of the loki-twist branch and may still result
+in a conflict when merging additional commits from the loki-twist branch.
 
 ::::::::::::::::::::::::::
 
 ```output
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-I'll be able to get 40 extra minutes of beauty rest
-Yeti will appreciate the cold
-The polar caps will probably be Yeti's home
+Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
+The invaders retreat as Heimdall's rainbow bridge returns.
+Loki appears, revealing the invasion was his test all along.
+Thor smiles, having known his brother's scheme from the beginning.
+
 ```
 
 We don't need to merge again because Git knows someone has already done that.
@@ -376,25 +380,25 @@ $ git checkout main
 # create a new branch, but don't change into it
 $ git branch new_branch 
 # make a change to the file
-$ nano mars.txt 
-# add changes in mars.txt to the staging area
-$ git add mars.txt 
-$ git commit -m "Small change to mars.txt"
+$ nano earth.txt 
+# add changes in earth.txt to the staging area
+$ git add earth.txt 
+$ git commit -m "Small change to earth.txt"
 # switch to the new branch
 $ git checkout new_branch 
-# make a change to mars.txt on the same line
-$ nano mars.txt 
-# add changes in mars.txt to the staging area
-$ git add mars.txt 
-$ git commit -m "Another change to mars.txt"
+# make a change to earth.txt on the same line
+$ nano earth.txt 
+# add changes in earth.txt to the staging area
+$ git add earth.txt 
+$ git commit -m "Another change to earth.txt"
 # change back to the main branch
 $ git checkout main 
 # attempt to merge the branches
 $ git merge new_branch 
 # address conflicts by removing `<<<`, `===`, and `>>>` lines leaving the desired changes intact
-$ nano mars.txt
-$ git add mars.txt
-$ git commit -m "Resolving conflict in mars.txt."
+$ nano earth.txt
+$ git add earth.txt
+$ git commit -m "Resolving conflict in earth.txt."
 ```
 
 :::::::::::::::::::::::::::
