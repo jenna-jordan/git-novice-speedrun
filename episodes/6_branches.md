@@ -44,19 +44,18 @@ $ git branch
 
 The '*' indicates which branch we are currently on.
 
-In this lesson, Dracula is trying to run an analysis
-and doesn't know if it will be faster in bash or python.
-To keep his main branch safe he will use separate branches
-for both bash and python analysis.
-Then he will merge the branch with the faster script
-into his main branch.
+In this lesson, Loki needs to track two possible branching timelines,
+with two different versions of events happening on Asgard.
+Only one of these timeline branches will become part of the "main" timeline.
+In one timeline, Heimdall, guardian of the bifrost bridge, is aware of the invasion in New Asgard.
+In another timeline, Heimdall is blinded by powerful magic and is unaware of any trouble in New Asgard.
 
-First let's make the python branch.
+First let's make the branch where Heimdall is aware.
 We use the same `git branch` command but now add the 
 name we want to give our new branch
 
 ```bash
-$ git branch pythondev
+$ git branch heimdall-aware
 ```
 
 We can now check our work with the `git branch` command.
@@ -66,11 +65,11 @@ $ git branch
 ```
 
 ```output
+  heimdall-aware
 * main
-  pythondev
 ```
 
-We can see that we created the `pythondev` branch but we
+We can see that we created the `heimdall-aware` branch but we
 are still in the main branch.
 
 We can also see this in the output of the `git status` command.
@@ -88,13 +87,13 @@ To switch to our new branch we can use the `checkout` command
 we learned earlier and check our work with `git branch`.
 
 ```bash
-$ git checkout pythondev
+$ git checkout heimdall-aware
 $ git branch
 ```
 
 ```output
+* heimdall-aware
   main
-* pythondev
 ```
 
 ::::::::::::::::::::::: callout
@@ -121,28 +120,33 @@ $ git log --oneline
 ```
 
 ```output
-e98a594 (HEAD -> pythondev, main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+2f2d364 (HEAD -> heimdall-aware, origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
-Now lets make our python script.  
-For simplicity sake, we will create an empty file
-but imagine we spent hours working on this python script for our analysis.
+Now lets write what happens on Asgard.
 
-Use the **"New file" button** to create a new file called `analysis.py`.
+Use the **"New file" button** to create a new file called `asgard.txt`.
+
+Add one line to this file (and make sure to end with a newline), and then save it:
+
+```output
+Heimdall watches from afar, aware of New Asgard's plight.
+```
 
 Now we can add and commit the script to our branch.
 
 ```bash
-$ git add analysis.py
-$ git commit -m "Wrote and tested python analysis script"
+$ git add asgard.txt
+$ git commit -m "Create asgard.txt detailing Heimdall's awareness of invasion"
 ```
 
 ```output
-[pythondev x792csa1] Wrote and tested python analysis script
+[heimdall-aware daf95c3] Create asgard.txt detailing Heimdall's awareness of invasion
  1 file changed, 1 insertion(+)
- create mode 100644 analysis.py
+ create mode 100644 asgard.txt
 ```
 
 Lets check our work!
@@ -152,10 +156,11 @@ $ git log --oneline
 ```
 
 ```output
-d5f2565 (HEAD -> pythondev) Wrote and tested python analysis script
-e98a594 (main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+daf95c3 (HEAD -> heimdall-aware) Create asgard.txt detailing Heimdall's awareness of invasion
+2f2d364 (origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
 As expected, we see our commit in the log.
@@ -168,47 +173,48 @@ $ git branch
 ```
 
 ```output
+  heimdall-aware
 * main
-  pythondev
 ```
 
 Let's explore the repository a bit.
 
 Now that we've confirmed we are on the `main` branch again.
-Let's confirm that `analysis.py` and our last commit aren't in `main`.
+Let's confirm that `asgard.txt` and our last commit aren't in `main`.
 
 ```bash
 $ git log --oneline
 ```
 
 ```output
-e98a594 (HEAD -> main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+2f2d364 (HEAD -> main, origin/main, origin/HEAD) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
 ::::::::::::::::::::::::::::: callout
-We no longer see the file `analysis.py` and our latest commit doesn't
+We no longer see the file `asgard.txt` and our latest commit doesn't
 appear in this branch's history. But do not fear! All of our hard work
-remains in the `pythondev` branch. We can confirm this by moving back
+remains in the `heimdall-aware` branch. We can confirm this by moving back
 to that branch.
 
 ```bash
-$ git checkout pythondev
+$ git checkout heimdall-aware
 $ git branch
 ```
 
 ```output
+* heimdall-aware
   main
-* pythondev
 ```
 
 ```bash
 $ git log --oneline
 ```
 
-And we see that our `analysis.py` file and respective commit have been
-preserved in the `pythondev` branch.
+And we see that our `asgard.txt` file and respective commit have been
+preserved in the `heimdall-aware` branch.
 
 Checkout the `main` branch again to prepare for creating another new 
 branch based on the version history in main. New branches will
@@ -221,29 +227,28 @@ $ git branch
 ```
 
 ```output
+  heimdall-aware
 * main
-  pythondev
 ```
 
 :::::::::::::::::::::::::::::::::
 
-Now we can repeat the process for our bash script in a branch called
-`bashdev`.
+Now we can keep track of a different timeline branching off from the main timeline.
 
-This time let's create and switch to the `bashdev` branch
+This time let's create and switch to the `heimdall-blind` branch
 in one command.
 
 We can do so by adding the `-b` flag to checkout.
 
 ```bash
-$ git checkout -b bashdev
+$ git checkout -b heimdall-blind
 $ git branch
 ```
 
 ```output
-* bashdev
+  heimdall-aware
+* heimdall-blind
   main
-  pythonndev
 ```
 
 We can use `git log` to see that this branch is 
@@ -254,26 +259,30 @@ $ git log --oneline
 ```
 
 ```output
-e98a594 (HEAD -> bashdev, main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+2f2d364 (HEAD -> heimdall-blind, origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
-Now we can make `analysis.sh` and add and commit it.
-Again imagine instead of creating an empty file we worked 
-on it for many hours.
+Now we can a file for Asgard again and write the different version of events.
+This time, let's make a markdown file instead of a text file.
 
-Use the **"New File" button** to create a new file called `analysis.sh`
+Use the **"New File" button** to create a new file called `asgard.md` and add this line:
+
+```
+Heimdall's vision is blocked by *ancient magic*, unaware of New Asgard's danger.
+```
 
 ```bash
-$ git add analysis.sh
-$ git commit -m "Wrote and tested bash analysis script"
+$ git add asgard.md
+$ git commit -m "Create asgard.md describing Heimdall's blocked vision"
 ```
 
 ```output
-[bashdev 2n779ds] Wrote and tested bash analysis script
+[heimdall-blind 59b9bab] Create asgard.md describing Heimdall's blocked vision
  1 file changed, 1 insertion(+)
- create mode 100644 analysis.sh
+ create mode 100644 asgard.md
 ```
 
 Lets check our work again before we switch back to the main branch.
@@ -283,56 +292,60 @@ $ git log --oneline
 ```
 
 ```output
-dff27fa (HEAD -> bashdev) Wrote and tested bash analysis script
-e98a594 (main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base
+59b9bab (HEAD -> heimdall-blind) Create asgard.md describing Heimdall's blocked vision
+2f2d364 (origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit
 ```
 
-So it turns out the python `analysis.py` is much faster than `analysis.sh`.
+Loki decides the version of events where Heimdall is aware should be part of the main timeline.
 
-We will merge the `pythondev` branch into our `main` branch via a Pull Request so we can use it for our work going forward.
+We will merge the `heimdall-aware` branch into our `main` branch via a Pull Request so we can use it for our work going forward.
 
 Before we can create a Pull Request on GitHub, we need to push this branch to the remote repo
 
-Let's checkout & push the pythondev branch:
+Let's checkout & push the heimdall-aware branch:
 
 ```bash
-$ git checkout pythondev
+$ git checkout heimdall-aware
 $ git push
 ```
 
 Whoops, we got an error:
 
 ```output
-fatal: The current branch pythondev has no upstream branch.
+fatal: The current branch heimdall-aware has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin pythondev
+    git push --set-upstream origin heimdall-aware
 
 To have this happen automatically for branches without a tracking
 upstream, see 'push.autoSetupRemote' in 'git help config'.
 ```
 
-While our main branch was already on both our local and remote repositories, our pythondev branch is only on our local computer. You can check this by going to GitHub and searching for the pythondev branch - you won't find it!
+While our main branch was already on both our local and remote repositories, our heimdall-aware branch is only on our local computer. You can check this by going to GitHub and searching for the heimdall-aware branch - you won't find it!
 
 We need to use the `-u` flag in our command and specify the destination branch.
 
 ```bash
-$ git push -u origin pythondev
+$ git push -u origin heimdall-aware
 ```
 
 ```output
-Enumerating objects: 12, done.
-Counting objects: 100% (12/12), done.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
 Delta compression using up to 8 threads
-Compressing objects: 100% (8/8), done.
-Writing objects: 100% (12/12), 1.07 KiB | 1.07 MiB/s, done.
-Total 12 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
- * [new branch]      pythondev -> pythondev
-branch 'pythondev' set up to track 'origin/pythondev'.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 406 bytes | 406.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'heimdall-aware' on GitHub by visiting:
+remote:      https://github.com/loki-god-of-stories/multiverse/pull/new/heimdall-aware
+remote: 
+To https://github.com/loki-god-of-stories/multiverse.git
+ * [new branch]      heimdall-aware -> heimdall-aware
+branch 'heimdall-aware' set up to track 'origin/heimdall-aware'.
 ```
 
 ::::::::::::::::::: callout
@@ -346,7 +359,7 @@ simply use `git push -u origin <branch-name>`.
 
 ::::::::::::::::::::::::
 
-Now, we can go back to GitHub and verify that we have a new branch named pythondev.
+Now, we can go back to GitHub and verify that we have a new branch named heimdall-aware.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 

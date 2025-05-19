@@ -65,11 +65,11 @@ First, we will tell Git our user name and email.
 
 Please note: You need to use the same email address in your Git configuration in the shell as you entered into GitHub when you created your GitHub account. Later in the lesson we will be using GitHub and the email addresses need to match. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/).
 
-Type these two commands into your shell, replacing `Your Name` and the email address with your own:
+Type these two commands into your shell, using your own name and email:
 
 ```bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email "yourname@domain.name"
+$ git config --global user.name "Loki Odinson"
+$ git config --global user.email "loki.odinson@tva.org"
 ```
 
 If you enter the commands correctly, the shell will merely return a command prompt and no messages. To check your work, ask Git what your configuration is using the same command as above:
@@ -85,8 +85,9 @@ git config --list
 ```
 
 ```output
-user.name=Your Name
-user.email=yourname@domain.name
+user.name=Loki Odinson
+user.email=loki.odinson@tva.org
+core.editor=code --wait
 ```
 
 :::::::::::::::::::::::: callout
@@ -145,7 +146,7 @@ must be manually configured have the same main branch name as most cloud service
 For versions of Git prior to 2.28, the change can be made on an individual repository level. Note that if this value is unset in your local Git 
 configuration, the `init.defaultBranch` value defaults to `master`.
 
-Since we are creating the repository on GitHub, the default branch name for the planets repo will be `main`. Configure this setting if you plan on creating git repositories locally first.
+Since we are creating the repository on GitHub, the default branch name for the `multiverse` repo will be `main`. Configure this setting if you plan on creating git repositories locally first.
 
 ::::::::::::::::::::::::::::::
 

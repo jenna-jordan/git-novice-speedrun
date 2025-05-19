@@ -13,8 +13,8 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Create `planets` repository on GitHub
-- Clone the `planets` repository using VS Code
+- Create `multiverse` repository on GitHub
+- Clone the `multiverse` repository using VS Code
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -39,7 +39,7 @@ The first thing we need to do is create a new repository. While you can create r
 
 The documentation for creating a new repo on GitHub is available [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
-If you have taught this lesson before, make sure that you have deleted your existing planets repo.
+If you have taught this lesson before, make sure that you have deleted your existing `multiverse` repo.
 The documentation for deleting a repo on GitHub is available [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -50,21 +50,23 @@ You should already be signed in to GitHub. You can create a new repo from anywhe
 
 Select your Github username as the "owner". 
 
-Type `planets` for the repository name. 
+Type `multiverse` for the repository name. 
 
-Leave all other options as the default - your repo should be public, not initialized with a readme, no gitignore selected, no license selected, and no template selected.
+Check the box next to "Add a README file".
 
-![Create the planets repo in GitHub](fig/github-create-planets-repo.png)
+Leave all other options as the default - your repo should be public, no gitignore selected, no license selected, and no template selected.
+
+![Create the multiverse repo in GitHub](fig/github-create-planets-repo.png)
 
 Finally, click the green "Create Repository" button at the bottom right.
 
-You will be redirected to your newly created and empty planets repo.
+You will be redirected to your newly created and empty `multiverse` repo.
 
-![Your new planets repo on GitHub](fig/github-empty-planets-repo.png)
+![Your new multiverse repo on GitHub](fig/github-empty-planets-repo.png)
 
-## Clone your planets repo to your local computer
+## Clone your multiverse repo to your local computer
 
-Now that the planets repo has been created, we can "clone" it (get a local copy of the repo) through VS Code.
+Now that the `multiverse` repo has been created, we can "clone" it (get a local copy of the repo) through VS Code.
 
 Make sure you have a new VS Code window open. If you already have a repo/folder open in VS Code, go to the "File" menu and click "New window".
 
@@ -72,17 +74,17 @@ In your new VS Code window, go to the "Source Control" pane (the 3rd one down). 
 
 ![Clone a GitHub repo in VS Code](fig/vscode-clone-repo.png)
 
-If you don't immediately see your planets repo, you can search for it by typing "planets" in the search box. When you see your planets repo (it should have your username in the URL), click it.
+If you don't immediately see your `multiverse` repo, you can search for it by typing "multiverse" in the search box. When you see your `multiverse` repo (it should have your username in the URL), click it.
 
-![Clone your planets repo via VS Code](fig/vscode-clone-planets-repo.png)
+![Clone your multiverse repo via VS Code](fig/vscode-clone-planets-repo.png)
 
-You will now need to choose where on your local computer the planets repo will live. You can choose any easily accessible location, such as the "Desktop" folder. It is standard practice to save all local repos in a folder named "GitHub" in your "Documents" folder.
+You will now need to choose where on your local computer the `multiverse` repo will live. You can choose any easily accessible location, such as the "Desktop" folder. It is standard practice to save all local repos in a folder named "GitHub" in your "Documents" folder.
 
-Click "Open" when prompted to open the newly cloned planets repo.
+Click "Open" when prompted to open the newly cloned `multiverse` repo.
 
 ## Open a Bash Terminal in VS Code
 
-Now that you have your planets repo cloned and open in VS Code, the last step is to open a bash terminal.
+Now that you have your `multiverse` repo cloned and open in VS Code, the last step is to open a bash terminal.
 
 To see the terminal pane, go to the "Terminal" menu, and click "New terminal".
 
@@ -92,7 +94,7 @@ If you are on a Windows computer, you will need to specifically open a GitBash t
 
 If you are on a Mac or Linux computer, your default terminal should be sufficient. You can also choose to open a Bash terminal by following the same instructions.
 
-You should now have your empty planets repo open, with a Bash terminal open, and you are ready to start typing your first git commands!
+You should now have your empty `multiverse` repo open, with a Bash terminal open, and you are ready to start typing your first git commands!
 
 ![Ready to begin](fig/vscode-planets-open.png)
 
