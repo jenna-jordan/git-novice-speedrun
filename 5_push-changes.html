@@ -363,7 +363,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pushing changes to GitHub</h1>
-        <p>Last updated on 2025-04-07 |
+        <p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/5_push-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -407,14 +407,14 @@ to keep it on the web rather than on someone’s laptop. Most programmers
 use hosting services like <a href="https://github.com" class="external-link">GitHub</a>, <a href="https://bitbucket.org" class="external-link">Bitbucket</a> or <a href="https://gitlab.com/" class="external-link">GitLab</a> to hold those main copies; we’re
 using GitHub.</p>
 <p>Before we share our changes, let’s first look at our
-<code>planets</code> repo on GitHub.</p>
+<code>multiverse</code> repo on GitHub.</p>
 <p>Even though we have made changes to our local copy of
-<code>planets</code>, the remote copy on GitHub still looks empty. This
-is because we have not yet “pushed” our changes (or commits) to the
+<code>multiverse</code>, the remote copy on GitHub still looks empty.
+This is because we have not yet “pushed” our changes (or commits) to the
 remote repository.</p>
 <p>If you remember back to the previous episode where we added and
-committed our earlier work on <code>mars.txt</code>, we had a diagram of
-the local repository which looked like this:</p>
+committed our earlier work on <code>earth.txt</code>, we had a diagram
+of the local repository which looked like this:</p>
 <figure><img src="fig/git-staging-area.svg" alt="The Local Repository with Git Staging Area" class="figure mx-auto d-block"><div class="figcaption">The Local Repository with Git Staging Area</div>
 </figure><p>Taking into account the two repositories, we need a diagram like
 this:</p>
@@ -427,8 +427,8 @@ this:</p>
 <h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Note that our local repository still contains our earlier work on
-<code>mars.txt</code>, but the remote repository on GitHub appears empty
-as it doesn’t contain any files yet.</p>
+<code>earth.txt</code>, but the remote repository on GitHub only
+contains the README file.</p>
 <p>Because we created our repo on GitHub first and then cloned it to our
 local computer, the two repositories are already connected. If we had
 instead created the local repo first, then the remote repo on GitHub, we
@@ -436,7 +436,7 @@ would need to manually connect the two repos, with a commmand like:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git remote add origin git@github.com:vlad/planets.git</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git remote add origin git@github.com:loki-god-of-stories/multiverse.git</span></code></pre>
 </div>
 <p><code>origin</code> is a local name used to refer to the remote
 repository. It could be called anything, but <code>origin</code> is a
@@ -452,8 +452,8 @@ with the command:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)</code></pre>
+<pre class="output" tabindex="0"><code>origin  https://github.com/loki-god-of-stories/multiverse.git (fetch)
+origin  https://github.com/loki-god-of-stories/multiverse.git (push)</code></pre>
 </div>
 </div>
 </div>
@@ -469,15 +469,15 @@ repository on GitHub:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Enumerating objects: 16, done.
-Counting objects: 100% (16/16), done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (11/11), done.
-Writing objects: 100% (16/16), 1.45 KiB | 372.00 KiB/s, done.
-Total 16 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
- * [new branch]      main -&gt; main</code></pre>
+<pre class="output" tabindex="0"><code>Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 992 bytes | 992.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/loki-god-of-stories/multiverse.git
+   f537d84..2f2d364  main -&gt; main</code></pre>
 </div>
 <p>Our local and remote repositories are now in this state:</p>
 <figure><img src="fig/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" class="figure mx-auto d-block"><div class="figcaption">GitHub Repository After First Push</div>
@@ -491,9 +491,9 @@ well:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>From https://github.com/vlad/planets
- * branch            main     -&gt; FETCH_HEAD
-Already up-to-date.</code></pre>
+<pre class="output" tabindex="0"><code>From https://github.com/loki-god-of-stories/multiverse
+ * branch            main       -&gt; FETCH_HEAD
+Already up to date.</code></pre>
 </div>
 <p>Pulling has no effect in this case because the two repositories are
 already synchronized. If someone else had pushed some changes to the
@@ -501,7 +501,7 @@ repository on GitHub, though, this command would download them to our
 local repository.</p>
 <p>Let’s verify that our changes made it to GitHub: go to your
 <strong>browser window with the GitHub repo and refresh</strong> the
-page. You should now see the <code>mars.txt</code> file. <strong>Click
+page. You should now see the <code>earth.txt</code> file. <strong>Click
 on the file</strong>, and you can see the contents of the file are the
 same as in VS Code.</p>
 <p>Now <strong>click on the “History” link</strong>. You should see each
@@ -584,8 +584,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/5_push-changes.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/5_push-changes.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-07",
-  "datePublished": "2025-05-13"
+  "dateModified": "2025-05-19",
+  "datePublished": "2025-05-19"
 }
 
   </script><script>

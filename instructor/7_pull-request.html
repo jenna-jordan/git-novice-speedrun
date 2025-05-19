@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Pull Requests</h1>
-        <p>Last updated on 2025-04-07 |
+        <p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/7_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -415,28 +415,25 @@ review your changes.</p>
 </div>
 </div>
 </div>
-<p>On GitHub, in your <code>planets</code> repo, <strong>click on the
+<p>On GitHub, in your <code>multiverse</code> repo, <strong>click on the
 “Pull Requests” tab</strong>.</p>
 <p>Then <strong>click “New pull request”</strong>. Alternatively, GitHub
 will see your new branch with recent changes and will prompt you to
 “Compare &amp; pull request”. Click this button to also be taken to the
 new pull request page.</p>
 <p>Make sure that the “base” branch is <code>main</code> and the
-“compare” branch is <code>pythondev</code>.</p>
+“compare” branch is <code>heimdall-aware</code>.</p>
 <p>Next, we need to give our PR a title. By default, your PR will get
 the title from your last commit. We can leave this as is.</p>
-<p>We can leave a note in the PR description, like:</p>
-<p>“The python analysis was faster than the bash analysis, so I am
-merging only the python analysis to main”.</p>
 <p><strong>Click “Create pull request”</strong>.</p>
-<p>Your planets repo should now have 1 pull request. This is the phase
-where you would normally request a reviewer, who can leave comments on
-your code. In repos that you do not own, your PR will need to be
-approved by a codeowner before you can merge it. Since you are the
-codeowner, we can go ahead and <strong>click “Merge pull
+<p>Your <code>multiverse</code> repo should now have 1 pull request.
+This is the phase where you would normally request a reviewer, who can
+leave comments on your code. In repos that you do not own, your PR will
+need to be approved by a codeowner before you can merge it. Since you
+are the codeowner, we can go ahead and <strong>click “Merge pull
 request”</strong>.</p>
 <p>Go back to the “Code” tab and make sure you are on the “main” branch.
-You should now see an “analysis.py” file.</p>
+You should now see an “asgard.txt” file.</p>
 <p>Let’s go <strong>back to VS Code</strong>. Checkout the main branch,
 and look at the files and history:</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -448,9 +445,10 @@ and look at the files and history:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>e98a594 (HEAD -&gt; main, origin/main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>2f2d364 (HEAD -&gt; main, origin/main, origin/HEAD) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
 </div>
 <p>The analysis file is not on “main” yet. This is because we need to
 first pull the changes we made with the Pull Request from the remote
@@ -458,70 +456,86 @@ repository.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git pull</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git pull</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>d980f78 (HEAD -&gt; main, origin/main) Merge pull request #1 from vlad/pythondev
-d5f2565 (origin/pythondev, pythondev) Wrote and tested python analysis script
-e98a594 Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 952 bytes | 476.00 KiB/s, done.
+From https://github.com/loki-god-of-stories/multiverse
+   2f2d364..976b48e  main       -&gt; origin/main
+Updating 2f2d364..976b48e
+Fast-forward
+ asgard.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 asgard.txt</code></pre>
+</div>
+<pre><code>$ git log --oneline</code></pre>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>976b48e (HEAD -&gt; main, origin/main, origin/HEAD) Merge pull request #1 from loki-god-of-stories/heimdall-aware
+daf95c3 (origin/heimdall-aware, heimdall-aware) Create asgard.txt detailing Heimdall's awareness of invasion
+2f2d364 Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
 </div>
 <p>Now our main branch is up to date.</p>
 <section><h2 class="section-heading" id="deleting-branches">Deleting branches<a class="anchor" aria-label="anchor" href="#deleting-branches"></a></h2>
-<hr class="half-width"><p>Now that we’ve merged the <code>pythondev</code> into
+<hr class="half-width"><p>Now that we’ve merged the <code>heimdall-aware</code> into
 <code>main</code>, these changes exist in both branches. This could be
-confusing in the future if we stumble upon the <code>pythondev</code>
-branch again.</p>
+confusing in the future if we stumble upon the
+<code>heimdall-aware</code> branch again.</p>
 <p>We can delete our old branches so as to avoid this confusion later.
 We can do so by adding the <code>-d</code> flag to the
 <code>git branch</code> command.</p>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> pythondev</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Deleted branch pythondev (was x792csa1).</code></pre>
-</div>
-<p>And because we don’t want to keep the changes in the
-<code>bashdev</code> branch, we can delete the <code>bashdev</code>
-branch as well</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git branch <span class="at">-d</span> bashdev</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> heimdall-aware</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>error: The branch 'bashdev' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D bashdev'.</code></pre>
+<pre class="output" tabindex="0"><code>Deleted branch heimdall-aware (was daf95c3).</code></pre>
 </div>
-<p>Since we’ve never merged the changes from the <code>bashdev</code>
-branch, git warns us about deleting them and tells us to use the
-<code>-D</code> flag instead.</p>
-<p>Since we really want to delete this branch we will go ahead and do
-so.</p>
+<p>And because we don’t want to keep the changes in the
+<code>heimdall-blind</code> branch, we can delete the
+<code>heimdall-blind</code> branch as well</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> bashdev</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git branch <span class="at">-d</span> heimdall-blind</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Deleted branch bashdev (was 2n779ds).</code></pre>
+<pre class="output" tabindex="0"><code>error: The branch 'heimdall-blind' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D heimdall-blind'.</code></pre>
 </div>
-<p>Finally, we can also delete the pythondev branch <strong>on GitHub.
-Click on “Branches”</strong>, and to delete the <code>pythondev</code>
-branch <strong>click the trashcan icon</strong> to the right of the
-branch name.</p>
+<p>Since we’ve never merged the changes from the
+<code>heimdall-blind</code> branch, git warns us about deleting them and
+tells us to use the <code>-D</code> flag instead.</p>
+<p>Since we really want to delete this branch we will go ahead and do
+so.</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-D</span> heimdall-blind</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Deleted branch heimdall-blind (was 59b9bab).</code></pre>
+</div>
+<p>Finally, we can also delete the heimdall-aware branch <strong>on
+GitHub. Click on “Branches”</strong>, and to delete the
+<code>heimdall-aware</code> branch <strong>click the trashcan
+icon</strong> to the right of the branch name.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -596,8 +610,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/7_pull-request.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/7_pull-request.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-07",
-  "datePublished": "2025-05-13"
+  "dateModified": "2025-05-19",
+  "datePublished": "2025-05-19"
 }
 
   </script><script>

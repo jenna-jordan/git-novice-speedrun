@@ -362,7 +362,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Setup Git Configs</h1>
-        <p>Last updated on 2025-04-07 |
+        <p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/3_git-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -459,13 +459,13 @@ your GitHub account. Later in the lesson we will be using GitHub and the
 email addresses need to match. If you are concerned about privacy,
 please review <a href="https://help.github.com/articles/keeping-your-email-address-private/" class="external-link">GitHub’s
 instructions for keeping your email address private</a>.</p>
-<p>Type these two commands into your shell, replacing
-<code>Your Name</code> and the email address with your own:</p>
+<p>Type these two commands into your shell, using your own name and
+email:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.email <span class="st">"yourname@domain.name"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.name <span class="st">"Loki Odinson"</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.email <span class="st">"loki.odinson@tva.org"</span></span></code></pre>
 </div>
 <p>If you enter the commands correctly, the shell will merely return a
 command prompt and no messages. To check your work, ask Git what your
@@ -488,8 +488,9 @@ You can feel free to change this at a later time.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>user.name=Your Name
-user.email=yourname@domain.name</code></pre>
+<pre class="output" tabindex="0"><code>user.name=Loki Odinson
+user.email=loki.odinson@tva.org
+core.editor=code --wait</code></pre>
 </div>
 <div id="line-endings" class="callout">
 <div class="callout-square">
@@ -552,8 +553,9 @@ individual repository level. Note that if this value is unset in your
 local Git configuration, the <code>init.defaultBranch</code> value
 defaults to <code>master</code>.</p>
 <p>Since we are creating the repository on GitHub, the default branch
-name for the planets repo will be <code>main</code>. Configure this
-setting if you plan on creating git repositories locally first.</p>
+name for the <code>multiverse</code> repo will be <code>main</code>.
+Configure this setting if you plan on creating git repositories locally
+first.</p>
 </div>
 </div>
 </div>
@@ -635,8 +637,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/3_git-setup.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/3_git-setup.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-07",
-  "datePublished": "2025-05-13"
+  "dateModified": "2025-05-19",
+  "datePublished": "2025-05-19"
 }
 
   </script><script>

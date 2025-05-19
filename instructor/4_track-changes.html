@@ -252,7 +252,7 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#mission-to-mars">Mission to Mars</a></li>
+        <ul><li><a href="#loki-writes-a-story-about-thor-in-new-asgard">Loki writes a story about Thor in New Asgard</a></li>
 <li><a href="#create-a-file">Create a file</a></li>
 <li><a href="#track-changes-to-the-file">Track Changes to the File</a></li>
 <li><a href="#make-more-changes-to-the-file">Make more changes to the file</a></li>
@@ -366,7 +366,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Tracking Changes</h1>
-        <p>Last updated on 2025-04-07 |
+        <p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/4_track-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -407,33 +407,34 @@ messages.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="mission-to-mars">Mission to Mars<a class="anchor" aria-label="anchor" href="#mission-to-mars"></a></h2>
-<hr class="half-width"><p>Wolfman and Dracula have been hired by Universal Missions (a space
-services spinoff from Euphoric State University) to investigate if it is
-possible to send their next planetary lander to Mars. They want to be
-able to work on the plans at the same time, but they have run into
-problems doing this in the past. If they take turns, each one will spend
-a lot of time waiting for the other to finish, but if they work on their
-own copies and email changes back and forth things will be lost,
-overwritten, or duplicated.</p>
+<section><h2 class="section-heading" id="loki-writes-a-story-about-thor-in-new-asgard">Loki writes a story about Thor in New Asgard<a class="anchor" aria-label="anchor" href="#loki-writes-a-story-about-thor-in-new-asgard"></a></h2>
+<hr class="half-width"><p>Loki, in his role as God of Stories, oversees the many branching
+timelines in the multiverse. But even an infinitely clever being like
+Loki has trouble keeping track of all of the events across the
+multiverse. Fortunately, there is a tool that can help keep track of
+these events across different timeline branches: git! Loki has decided
+to start logging events in a git repository named
+<code>multiverse</code>. Each planet will have their own file. Loki
+starts recording the events of New Asgard on Earth, where his brother
+Thor lives.</p>
 </section><section><h2 class="section-heading" id="create-a-file">Create a file<a class="anchor" aria-label="anchor" href="#create-a-file"></a></h2>
 <hr class="half-width"><p>First let’s make sure we’re in the right directory. You should be in
-the <code>planets</code> directory.</p>
+the <code>multiverse</code> directory.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> pwd</span></code></pre>
 </div>
-<p>Let’s create a file called <code>mars.txt</code> that contains some
-notes about the Red Planet’s suitability as a base.</p>
+<p>Let’s create a file called <code>earth.txt</code> to start recording
+the events taking place on the planet Earth.</p>
 <p>Make sure you have the Explorer pane open in VS Code, and
 <strong>click the “New File” button</strong>. Name the file
-<code>mars.txt</code>.</p>
-<p>Type the text below into the <code>mars.txt</code> file:</p>
+<code>earth.txt</code>.</p>
+<p>Type the text below into the <code>earth.txt</code> file:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
+<pre class="output" tabindex="0"><code>Thor defends New Asgard from invaders.
 </code></pre>
 </div>
 <p>Make sure to end the file with a newline!</p>
@@ -450,13 +451,12 @@ noticed the new file:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-
-Initial commit
+Your branch is up to date with 'origin/main'.
 
 Untracked files:
-   (use "git add &lt;file&gt;..." to include in what will be committed)
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        earth.txt
 
-	mars.txt
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </div>
 <p>The “untracked files” message means that there’s a file in the
@@ -465,7 +465,7 @@ file using <code>git add</code>:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git add earth.txt</span></code></pre>
 </div>
 <p>and then check that the right thing happened:</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -477,39 +477,36 @@ file using <code>git add</code>:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-
-Initial commit
+Your branch is up to date with 'origin/main'.
 
 Changes to be committed:
-  (use "git rm --cached &lt;file&gt;..." to unstage)
-
-	new file:   mars.txt
-</code></pre>
+  (use "git restore --staged &lt;file&gt;..." to unstage)
+        new file:   earth.txt</code></pre>
 </div>
 <p>Git now knows that it’s supposed to keep track of
-<code>mars.txt</code>, but it hasn’t recorded these changes as a commit
+<code>earth.txt</code>, but it hasn’t recorded these changes as a commit
 yet. To get it to do that, we need to run one more command:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Start notes on Mars as a base"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Start story for New Asgard in earth.txt"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main (root-commit) f22b25e] Start notes on Mars as a base
+<pre class="output" tabindex="0"><code>[main 9b26458] Start story for New Asgard in earth.txt
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt</code></pre>
+ create mode 100644 earth.txt</code></pre>
 </div>
 <p>When we run <code>git commit</code>, Git takes everything we have
 told it to save by using <code>git add</code> and stores a copy
 permanently inside the special <code>.git</code> directory. This
 permanent copy is called a commit (or revision) and its short identifier
-is <code>f22b25e</code> (Your commit may have another identifier.)</p>
+is <code>9b26458</code> (Your commit will have another identifier.)</p>
 <p>We use the <code>-m</code> flag (for “message”) to record a short,
 descriptive, and specific comment that will help us remember later on
 what we did and why. If we just run <code>git commit</code> without the
-<code>-m</code> option, Git will launch <code>nano</code> (or whatever
+<code>-m</code> option, Git will launch a VS Code window (or whatever
 other editor we configured as <code>core.editor</code>) so that we can
 write a longer message.</p>
 <p><a href="https://chris.beams.io/posts/git-commit/" class="external-link">Good commit
@@ -526,7 +523,10 @@ between the summary line and your additional notes.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-nothing to commit, working directory clean</code></pre>
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean</code></pre>
 </div>
 <p>It tells us everything is up to date. If we want to know what we’ve
 done recently, we can ask Git to show us the project’s history using
@@ -539,11 +539,17 @@ done recently, we can ask Git to show us the project’s history using
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
-Date:   Thu Aug 22 09:51:46 2013 -0400
+<pre class="output" tabindex="0"><code>commit 9b26458f5d229d48be61023bcb510f8beb3f13db (HEAD -&gt; main)
+Author: Loki Odinson &lt;loki.odinson@tva.org&gt;
+Date:   Sat May 17 20:18:55 2025 -0400
 
-    Start notes on Mars as a base</code></pre>
+    Start story for New Asgard in earth.txt
+
+commit f537d84c6ef9b6d988f642400b2017f855f9aaa1 (origin/main, origin/HEAD)
+Author: Loki Odinson &lt;loki.odinson@tva.org&gt;
+Date:   Sat May 17 18:34:45 2025 -0400
+
+    Initial commit</code></pre>
 </div>
 <p><code>git log</code> lists all commits made to a repository in
 reverse chronological order. The listing for each commit includes the
@@ -552,14 +558,14 @@ short identifier printed by the <code>git commit</code> command
 earlier), the commit’s author, when it was created, and the log message
 Git was given when the commit was created</p>
 </section><section><h2 class="section-heading" id="make-more-changes-to-the-file">Make more changes to the file<a class="anchor" aria-label="anchor" href="#make-more-changes-to-the-file"></a></h2>
-<hr class="half-width"><p>Now suppose Dracula adds more information to the file.</p>
-<p>Click back into the <code>mars.txt</code> file, and add a second
+<hr class="half-width"><p>Now suppose Loki records another event in the file.</p>
+<p>Click back into the <code>earth.txt</code> file, and add a second
 line:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+<pre class="output" tabindex="0"><code>Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
 </code></pre>
 </div>
 <p>Save the file (make sure to have a newline at the end!).</p>
@@ -574,11 +580,13 @@ already knows about has been modified:</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-	modified:   mars.txt
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   earth.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
@@ -598,13 +606,13 @@ version:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.txt b/mars.txt
-index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+<pre class="output" tabindex="0"><code>diff --git a/earth.txt b/earth.txt
+index 0b592c6..d27fc77 100644
+--- a/earth.txt
++++ b/earth.txt
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman</code></pre>
+ Thor defends New Asgard from invaders.
++Thor and Valkyrie coordinate a counterattack.</code></pre>
 </div>
 <p>The output is cryptic because it is actually a series of commands for
 tools like editors and <code>patch</code> telling them how to
@@ -614,7 +622,7 @@ pieces:</p>
 Unix <code>diff</code> command comparing the old and new versions of the
 file.</li>
 <li>The second line tells exactly which versions of the file Git is
-comparing; <code>df0654a</code> and <code>315bf3a</code> are unique
+comparing; <code>0b592c6</code> and <code>d27fc77</code> are unique
 computer-generated labels for those versions.</li>
 <li>The third and fourth lines once again show the name of the file
 being changed.</li>
@@ -626,18 +634,19 @@ line.</li>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add concerns about effects of Mars' moons on Wolfman"</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Implement counterattack strategy"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-	modified:   mars.txt
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+        modified:   earth.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
@@ -646,13 +655,13 @@ first. Let’s fix that:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add concerns about effects of Mars' moons on Wolfman"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git add earth.txt</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Implement counterattack strategy"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
+<pre class="output" tabindex="0"><code>[main ee67c8b] Implement counterattack strategy
  1 file changed, 1 insertion(+)</code></pre>
 </div>
 <p>Git insists that we add files to the set we want to commit before
@@ -694,15 +703,15 @@ to the file:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+<pre class="output" tabindex="0"><code>Thor defends New Asgard from invaders.
+Thor and Valkyrie coordinate a counterattack.
+Thor reunites with Jane Foster at the sanctuary.
 </code></pre>
 </div>
 <p>Save the file (with a newline at the end!).</p>
 <p>Switch from the Explorer pane view to the Source Control pane view in
 VS Code.</p>
-<p>Under “Changes”, you should see your <code>mars.txt</code> file.
+<p>Under “Changes”, you should see your <code>earth.txt</code> file.
 Click the file.</p>
 <p>In your Terminal window, type the command:</p>
 <div class="codewrapper sourceCode" id="cb24">
@@ -713,38 +722,38 @@ Click the file.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+<pre class="output" tabindex="0"><code>diff --git a/earth.txt b/earth.txt
+index d27fc77..8938f14 100644
+--- a/earth.txt
++++ b/earth.txt
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity</code></pre>
+ Thor defends New Asgard from invaders.
+ Thor and Valkyrie coordinate a counterattack.
++Thor reunites with Jane Foster at the sanctuary.</code></pre>
 </div>
 <p>The <code>git diff</code> command is accomplishing the same thing as
 clicking on the file under “Changes”: that we’ve added one line to the
 end of the file (shown with a <code>+</code> in the first column).</p>
 <p>In the Source Control pane, click the <code>+</code> icon next to the
-<code>mars.txt</code> file. The <code>mars.txt</code> file gets moved to
-the “Saved Changes” section.</p>
+<code>earth.txt</code> file. The <code>earth.txt</code> file gets moved
+to the “Saved Changes” section.</p>
 <p>Clicking the <code>+</code> icon accomplished the same thing as
-typing <code>git add mars.txt</code> in the terminal.</p>
+typing <code>git add earth.txt</code> in the terminal.</p>
 <p>Now, let’s save our changes. We could use the Terminal to commit our
 changes:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Discuss concerns about Mars' climate for Mummy"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Complete story with Thor-Jane reunion"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[main 005937f] Discuss concerns about Mars' climate for Mummy
+<pre class="output" tabindex="0"><code>[main 2f2d364] Complete story with Thor-Jane reunion
  1 file changed, 1 insertion(+)</code></pre>
 </div>
-<p>Or, we can type the commit message “Discuss concerns about Mars’
-climate for Mummy” in the “Message” box and click “Commit”.</p>
+<p>Or, we can type the commit message “Complete story with Thor-Jane
+reunion” in the “Message” box and click “Commit”.</p>
 <p>Let’s check our status:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -755,7 +764,10 @@ climate for Mummy” in the “Message” box and click “Commit”.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>On branch main
-nothing to commit, working directory clean</code></pre>
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean</code></pre>
 </div>
 <p>and look at the history of what we’ve done so far:</p>
 <div class="codewrapper sourceCode" id="cb30">
@@ -766,23 +778,29 @@ nothing to commit, working directory clean</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
-Date:   Thu Aug 22 10:14:07 2013 -0400
+<pre class="output" tabindex="0"><code>commit 2f2d364f559efb1101647591d9fbf2cc30ade8bb (HEAD -&gt; main)
+Author: Loki Odinson &lt;loki.odinson@tva.org&gt;
+Date:   Sat May 17 20:29:51 2025 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Complete story with Thor-Jane reunion
 
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
-Date:   Thu Aug 22 10:07:21 2013 -0400
+commit ee67c8b551612e09be46c97726866d04c7b0d785
+Author: Loki Odinson &lt;loki.odinson@tva.org&gt;
+Date:   Sat May 17 20:24:35 2025 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Implement counterattack strategy
 
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
-Date:   Thu Aug 22 09:51:46 2013 -0400
+commit 9b26458f5d229d48be61023bcb510f8beb3f13db
+Author: Loki Odinson &lt;loki.odinson@tva.org&gt;
+Date:   Sat May 17 20:18:55 2025 -0400
 
-    Start notes on Mars as a base</code></pre>
+    Start story for New Asgard in earth.txt
+
+commit f537d84c6ef9b6d988f642400b2017f855f9aaa1 (origin/main, origin/HEAD)
+Author: Loki Odinson &lt;loki.odinson@tva.org&gt;
+Date:   Sat May 17 18:34:45 2025 -0400
+
+    Initial commit</code></pre>
 </div>
 <div id="discussion1" class="callout discussion">
 <div class="callout-square">
@@ -879,8 +897,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/4_track-changes.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/4_track-changes.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-07",
-  "datePublished": "2025-05-13"
+  "dateModified": "2025-05-19",
+  "datePublished": "2025-05-19"
 }
 
   </script><script>

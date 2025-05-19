@@ -355,7 +355,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Branches</h1>
-        <p>Last updated on 2025-04-07 |
+        <p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/6_branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -417,17 +417,19 @@ version of a repository’s code.</p>
 <pre class="output" tabindex="0"><code>* main</code></pre>
 </div>
 <p>The ’*’ indicates which branch we are currently on.</p>
-<p>In this lesson, Dracula is trying to run an analysis and doesn’t know
-if it will be faster in bash or python. To keep his main branch safe he
-will use separate branches for both bash and python analysis. Then he
-will merge the branch with the faster script into his main branch.</p>
-<p>First let’s make the python branch. We use the same
+<p>In this lesson, Loki needs to track two possible branching timelines,
+with two different versions of events happening on Asgard. Only one of
+these timeline branches will become part of the “main” timeline. In one
+timeline, Heimdall, guardian of the bifrost bridge, is aware of the
+invasion in New Asgard. In another timeline, Heimdall is blinded by
+powerful magic and is unaware of any trouble in New Asgard.</p>
+<p>First let’s make the branch where Heimdall is aware. We use the same
 <code>git branch</code> command but now add the name we want to give our
 new branch</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git branch pythondev</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git branch heimdall-aware</span></code></pre>
 </div>
 <p>We can now check our work with the <code>git branch</code>
 command.</p>
@@ -439,11 +441,11 @@ command.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>* main
-  pythondev</code></pre>
+<pre class="output" tabindex="0"><code>  heimdall-aware
+* main</code></pre>
 </div>
-<p>We can see that we created the <code>pythondev</code> branch but we
-are still in the main branch.</p>
+<p>We can see that we created the <code>heimdall-aware</code> branch but
+we are still in the main branch.</p>
 <p>We can also see this in the output of the <code>git status</code>
 command.</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -463,14 +465,14 @@ command we learned earlier and check our work with
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git checkout pythondev</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git checkout heimdall-aware</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  main
-* pythondev</code></pre>
+<pre class="output" tabindex="0"><code>* heimdall-aware
+  main</code></pre>
 </div>
 <div id="callout1" class="callout">
 <div class="callout-square">
@@ -505,72 +507,80 @@ will be true until some changes are committed to our new branch.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>e98a594 (HEAD -&gt; pythondev, main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>2f2d364 (HEAD -&gt; heimdall-aware, origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
 </div>
-<p>Now lets make our python script.<br>
-For simplicity sake, we will create an empty file but imagine we spent
-hours working on this python script for our analysis.</p>
+<p>Now lets write what happens on Asgard.</p>
 <p>Use the <strong>“New file” button</strong> to create a new file
-called <code>analysis.py</code>.</p>
+called <code>asgard.txt</code>.</p>
+<p>Add one line to this file (and make sure to end with a newline), and
+then save it:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Heimdall watches from afar, aware of New Asgard's plight.</code></pre>
+</div>
 <p>Now we can add and commit the script to our branch.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> git add analysis.py</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Wrote and tested python analysis script"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> git add asgard.txt</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create asgard.txt detailing Heimdall's awareness of invasion"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[pythondev x792csa1] Wrote and tested python analysis script
+<pre class="output" tabindex="0"><code>[heimdall-aware daf95c3] Create asgard.txt detailing Heimdall's awareness of invasion
  1 file changed, 1 insertion(+)
- create mode 100644 analysis.py</code></pre>
+ create mode 100644 asgard.txt</code></pre>
 </div>
 <p>Lets check our work!</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>d5f2565 (HEAD -&gt; pythondev) Wrote and tested python analysis script
-e98a594 (main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>daf95c3 (HEAD -&gt; heimdall-aware) Create asgard.txt detailing Heimdall's awareness of invasion
+2f2d364 (origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
 </div>
 <p>As expected, we see our commit in the log.</p>
 <p>Now let’s switch back to the <code>main</code> branch.</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>* main
-  pythondev</code></pre>
+<pre class="output" tabindex="0"><code>  heimdall-aware
+* main</code></pre>
 </div>
 <p>Let’s explore the repository a bit.</p>
 <p>Now that we’ve confirmed we are on the <code>main</code> branch
-again. Let’s confirm that <code>analysis.py</code> and our last commit
+again. Let’s confirm that <code>asgard.txt</code> and our last commit
 aren’t in <code>main</code>.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>e98a594 (HEAD -&gt; main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>2f2d364 (HEAD -&gt; main, origin/main, origin/HEAD) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
 </div>
 <div id="callout2" class="callout">
 <div class="callout-square">
@@ -579,163 +589,170 @@ aren’t in <code>main</code>.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Callout</h3>
 <div class="callout-content">
-<p>We no longer see the file <code>analysis.py</code> and our latest
+<p>We no longer see the file <code>asgard.txt</code> and our latest
 commit doesn’t appear in this branch’s history. But do not fear! All of
-our hard work remains in the <code>pythondev</code> branch. We can
+our hard work remains in the <code>heimdall-aware</code> branch. We can
 confirm this by moving back to that branch.</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> git checkout pythondev</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git checkout heimdall-aware</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  main
-* pythondev</code></pre>
+<pre class="output" tabindex="0"><code>* heimdall-aware
+  main</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
-<p>And we see that our <code>analysis.py</code> file and respective
-commit have been preserved in the <code>pythondev</code> branch.</p>
+<p>And we see that our <code>asgard.txt</code> file and respective
+commit have been preserved in the <code>heimdall-aware</code>
+branch.</p>
 <p>Checkout the <code>main</code> branch again to prepare for creating
 another new branch based on the version history in main. New branches
 will include the entire history up to the current commit, and we’d like
 to keep these two tasks separate.</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>* main
-  pythondev</code></pre>
+<pre class="output" tabindex="0"><code>  heimdall-aware
+* main</code></pre>
 </div>
 </div>
 </div>
 </div>
-<p>Now we can repeat the process for our bash script in a branch called
-<code>bashdev</code>.</p>
-<p>This time let’s create and switch to the <code>bashdev</code> branch
-in one command.</p>
+<p>Now we can keep track of a different timeline branching off from the
+main timeline.</p>
+<p>This time let’s create and switch to the <code>heimdall-blind</code>
+branch in one command.</p>
 <p>We can do so by adding the <code>-b</code> flag to checkout.</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> bashdev</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> heimdall-blind</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>* bashdev
-  main
-  pythonndev</code></pre>
+<pre class="output" tabindex="0"><code>  heimdall-aware
+* heimdall-blind
+  main</code></pre>
 </div>
 <p>We can use <code>git log</code> to see that this branch is the same
 as our current <code>main</code> branch.</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>e98a594 (HEAD -&gt; bashdev, main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>2f2d364 (HEAD -&gt; heimdall-blind, origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
 </div>
-<p>Now we can make <code>analysis.sh</code> and add and commit it. Again
-imagine instead of creating an empty file we worked on it for many
-hours.</p>
+<p>Now we can a file for Asgard again and write the different version of
+events. This time, let’s make a markdown file instead of a text
+file.</p>
 <p>Use the <strong>“New File” button</strong> to create a new file
-called <code>analysis.sh</code></p>
-<div class="codewrapper sourceCode" id="cb29">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git add analysis.sh</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Wrote and tested bash analysis script"</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[bashdev 2n779ds] Wrote and tested bash analysis script
- 1 file changed, 1 insertion(+)
- create mode 100644 analysis.sh</code></pre>
-</div>
-<p>Lets check our work again before we switch back to the main
-branch.</p>
+called <code>asgard.md</code> and add this line:</p>
+<pre><code>Heimdall's vision is blocked by *ancient magic*, unaware of New Asgard's danger.</code></pre>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> git add asgard.md</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create asgard.md describing Heimdall's blocked vision"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>dff27fa (HEAD -&gt; bashdev) Wrote and tested bash analysis script
-e98a594 (main) Discuss concerns about Mars' climate for Mummy
-33d27e2 Add concerns about effects of Mars' moons on Wolfman
-7e1e559 Start notes on Mars as a base</code></pre>
+<pre class="output" tabindex="0"><code>[heimdall-blind 59b9bab] Create asgard.md describing Heimdall's blocked vision
+ 1 file changed, 1 insertion(+)
+ create mode 100644 asgard.md</code></pre>
 </div>
-<p>So it turns out the python <code>analysis.py</code> is much faster
-than <code>analysis.sh</code>.</p>
-<p>We will merge the <code>pythondev</code> branch into our
+<p>Lets check our work again before we switch back to the main
+branch.</p>
+<div class="codewrapper sourceCode" id="cb33">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>59b9bab (HEAD -&gt; heimdall-blind) Create asgard.md describing Heimdall's blocked vision
+2f2d364 (origin/main, origin/HEAD, main) Complete story with Thor-Jane reunion
+ee67c8b Implement counterattack strategy
+9b26458 Start story for New Asgard in earth.txt
+f537d84 Initial commit</code></pre>
+</div>
+<p>Loki decides the version of events where Heimdall is aware should be
+part of the main timeline.</p>
+<p>We will merge the <code>heimdall-aware</code> branch into our
 <code>main</code> branch via a Pull Request so we can use it for our
 work going forward.</p>
 <p>Before we can create a Pull Request on GitHub, we need to push this
 branch to the remote repo</p>
-<p>Let’s checkout &amp; push the pythondev branch:</p>
-<div class="codewrapper sourceCode" id="cb33">
+<p>Let’s checkout &amp; push the heimdall-aware branch:</p>
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git checkout pythondev</span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git checkout heimdall-aware</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
 </div>
 <p>Whoops, we got an error:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>fatal: The current branch pythondev has no upstream branch.
+<pre class="output" tabindex="0"><code>fatal: The current branch heimdall-aware has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin pythondev
+    git push --set-upstream origin heimdall-aware
 
 To have this happen automatically for branches without a tracking
 upstream, see 'push.autoSetupRemote' in 'git help config'.</code></pre>
 </div>
 <p>While our main branch was already on both our local and remote
-repositories, our pythondev branch is only on our local computer. You
-can check this by going to GitHub and searching for the pythondev branch
-- you won’t find it!</p>
+repositories, our heimdall-aware branch is only on our local computer.
+You can check this by going to GitHub and searching for the
+heimdall-aware branch - you won’t find it!</p>
 <p>We need to use the <code>-u</code> flag in our command and specify
 the destination branch.</p>
-<div class="codewrapper sourceCode" id="cb35">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git push <span class="at">-u</span> origin pythondev</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git push <span class="at">-u</span> origin heimdall-aware</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Enumerating objects: 12, done.
-Counting objects: 100% (12/12), done.
+<pre class="output" tabindex="0"><code>Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
 Delta compression using up to 8 threads
-Compressing objects: 100% (8/8), done.
-Writing objects: 100% (12/12), 1.07 KiB | 1.07 MiB/s, done.
-Total 12 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (2/2), done.
-To https://github.com/vlad/planets.git
- * [new branch]      pythondev -&gt; pythondev
-branch 'pythondev' set up to track 'origin/pythondev'.</code></pre>
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 406 bytes | 406.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'heimdall-aware' on GitHub by visiting:
+remote:      https://github.com/loki-god-of-stories/multiverse/pull/new/heimdall-aware
+remote:
+To https://github.com/loki-god-of-stories/multiverse.git
+ * [new branch]      heimdall-aware -&gt; heimdall-aware
+branch 'heimdall-aware' set up to track 'origin/heimdall-aware'.</code></pre>
 </div>
 <div id="the--u-flag" class="callout">
 <div class="callout-square">
@@ -755,7 +772,7 @@ arguments. To do this, simply use
 </div>
 </div>
 <p>Now, we can go back to GitHub and verify that we have a new branch
-named pythondev.</p>
+named heimdall-aware.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -833,8 +850,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/6_branches.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/instructor/6_branches.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-04-07",
-  "datePublished": "2025-05-13"
+  "dateModified": "2025-05-19",
+  "datePublished": "2025-05-19"
 }
 
   </script><script>
