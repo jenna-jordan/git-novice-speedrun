@@ -263,7 +263,7 @@ Date:   Sat May 17 21:25:13 2025 -0400
     Add invaders retreat
 ```
 
-### When conflicts resolve themselves
+## When conflicts resolve themselves
 
 Let's make another change to the `loki-twist` branch:
 
