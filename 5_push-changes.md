@@ -30,17 +30,7 @@ services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) o
 
 Before we share our changes, let's first look at our `multiverse` repo on GitHub.
 
-Even though we have made changes to our local copy of `multiverse`, the remote copy on GitHub still looks empty. This is because we have not yet "pushed" our changes (or commits) to the remote repository.
-
-If you remember back to the previous episode where we added and
-committed our earlier work on `earth.txt`, we had a diagram of the local repository
-which looked like this:
-
-![The Local Repository with Git Staging Area](fig/git-staging-area.svg)
-
-Taking into account the two repositories, we need a diagram like this:
-
-![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
+Even though we have made changes to our local copy of `multiverse`, the remote copy on GitHub still only has the README file. This is because we have not yet "pushed" our changes (or commits) to the remote repository.
 
 ::::::::::::::::::: callout
 
