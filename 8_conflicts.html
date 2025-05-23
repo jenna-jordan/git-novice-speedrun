@@ -278,12 +278,19 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         9. [Optional] Resolving Conflicts
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#when-conflicts-resolve-themselves">When conflicts resolve themselves</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -663,9 +670,8 @@ Date:   Sat May 17 21:25:13 2025 -0400
 
     Add invaders retreat</code></pre>
 </div>
-<div class="section level3">
-<h3 id="when-conflicts-resolve-themselves">When conflicts resolve themselves<a class="anchor" aria-label="anchor" href="#when-conflicts-resolve-themselves"></a></h3>
-<p>Let’s make another change to the <code>loki-twist</code> branch:</p>
+<section><h2 class="section-heading" id="when-conflicts-resolve-themselves">When conflicts resolve themselves<a class="anchor" aria-label="anchor" href="#when-conflicts-resolve-themselves"></a></h2>
+<hr class="half-width"><p>Let’s make another change to the <code>loki-twist</code> branch:</p>
 <pre><code>$ git checkout loki-twist</code></pre>
 <p>Add another line to <code>earth.txt</code>:</p>
 <div class="codewrapper">
@@ -808,11 +814,7 @@ resolved.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="7_pull-request.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="9_practice.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
