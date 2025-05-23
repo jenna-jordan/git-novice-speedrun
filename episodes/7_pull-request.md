@@ -32,13 +32,17 @@ On GitHub, in your `multiverse` repo, **click on the "Pull Requests" tab**.
 
 Then **click "New pull request"**. Alternatively, GitHub will see your new branch with recent changes and will prompt you to "Compare & pull request". Click this button to also be taken to the new pull request page.
 
+![Open a Pull Request on GitHub for branch heimdall-aware](fig/github-open-pr.png)
+
 Make sure that the "base" branch is `main` and the "compare" branch is `heimdall-aware`.
 
 Next, we need to give our PR a title. By default, your PR will get the title from your last commit. We can leave this as is.
 
 **Click "Create pull request"**.
 
-Your `multiverse` repo should now have 1 pull request. This is the phase where you would normally request a reviewer, who can leave comments on your code. In repos that you do not own, your PR will need to be approved by a codeowner before you can merge it. Since you are the codeowner, we can go ahead and **click "Merge pull request"**.
+![Pull Request is created](fig/github-pr-opened.png)
+
+Your `multiverse` repo should now have 1 pull request. This is the phase where you would normally request a reviewer, who can leave comments on your code. In repos that you do not own, your PR will need to be approved by a codeowner before you can merge it. Since you are the codeowner, we can go ahead and **click "Merge pull request"**. Confirm & complete the merge.
 
 Go back to the "Code" tab and make sure you are on the "main" branch. You should now see an "asgard.txt" file.
 
