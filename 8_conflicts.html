@@ -355,7 +355,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>[Optional] Resolving Conflicts</h1>
-        <p>Last updated on 2025-05-19 |
+        <p>Last updated on 2025-05-23 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/8_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -429,7 +429,7 @@ The invaders retreat as Heimdall's rainbow bridge returns.
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git add earth.txt</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add invaders retreat."</span></span></code></pre>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add invaders retreat"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -584,25 +584,27 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </figure><p>Git detects that the changes made in one copy overlap with those made
 in the other and stops us from trampling on our previous work. It also
 marks that conflict in the affected file, <code>earth.txt</code>.</p>
-<p>! screenshot here</p>
-<p>Our change—the one at the <code>HEAD</code> of the <code>main</code>
-branch—is preceded by <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>. Git has
-then inserted <code>=======</code> as a separator between the
-conflicting changes and marked the end of our commit from the
-<code>loki-twist</code> branch with
-<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. (The string of letters and
-digits after that marker identifies the commit we made in the
+<figure><img src="fig/vscode-merge-conflict.png" alt="Merge conflict in earth.txt" class="figure mx-auto d-block"><div class="figcaption">Merge conflict in earth.txt</div>
+</figure><p>Our change — the one at the <code>HEAD</code> of the
+<code>main</code> branch — is preceded by
+<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>. Git has then inserted
+<code>=======</code> as a separator between the conflicting changes and
+marked the end of our commit from the <code>loki-twist</code> branch
+with <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. (The string of letters
+and digits after that marker identifies the commit we made in the
 <code>loki-twist</code> branch.)</p>
-<p>It is now up to us to edit this file to remove these markers and
-reconcile the changes. We can do anything we want: keep the change made
-in the <code>main</code> branch, keep the change made in the
-<code>loki-twist</code> branch, write something new to replace both, or
-get rid of the change entirely.</p>
+<p>It is now up to us to edit this file and reconcile the changes. We
+can do anything we want: keep the change made in the <code>main</code>
+branch, keep the change made in the <code>loki-twist</code> branch,
+write something new to replace both, or get rid of the change
+entirely.</p>
 <p>Let’s keep both of these events, but save Loki’s reveal for after the
 invaders reatreat.</p>
 <p>VS Code will prompt you to “Resolve in Merge Editor”. Click this
 button.</p>
-<p>In the Merge Editor, you will see the two versions side by side, and
+<figure><img src="fig/vscode-merge-editor.png" alt="Resolving the merge conflict with the merge editor" class="figure mx-auto d-block"><div class="figcaption">Resolving the merge conflict with the merge
+editor</div>
+</figure><p>In the Merge Editor, you will see the two versions side by side, and
 the final version of the file below. We want the final version to look
 like:</p>
 <div class="codewrapper">
@@ -618,7 +620,9 @@ Loki appears, revealing the invasion was his test all along.
 <p>So we want to click “Accept Combination (Current First)”. You should
 now see the resolved version with both lines, the line from the
 <code>main</code> branch first. Click “Complete Merge”.</p>
-<p>By clicking “Complete Merge”, you are doing the same thing as running
+<figure><img src="fig/vscode-merge-resolved.png" alt="The bottom pane contains the resolved earth.txt contents" class="figure mx-auto d-block"><div class="figcaption">The bottom pane contains the resolved earth.txt
+contents</div>
+</figure><p>By clicking “Complete Merge”, you are doing the same thing as running
 the command <code>git add earth.txt</code>. If you open the Source
 Control pane, you should see <code>earth.txt</code> under “Staged
 Changes”. You can then complete the commit using the VS Code UI or on
@@ -636,8 +640,6 @@ the command line</p>
 <p>Take a look at the Source Control Graph window (in the lower portion
 of the Source Control pane) for a visual representation of the git
 log.</p>
-<p>Git keeps track of what we’ve merged with what, so we don’t have to
-fix things by hand again.</p>
 <pre><code>$ git log</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -703,7 +705,9 @@ Fast-forward
  earth.txt | 1 +
  1 file changed, 1 insertions(+), 0 deletions(-)</code></pre>
 </div>
-<p>There is no conflict and our changes are added automatically.</p>
+<p>Git keeps track of what we’ve merged with what, so we don’t have to
+fix things by hand again. There is no conflict and our changes are added
+automatically.</p>
 <p>Finally, let’s update our remote repository:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -761,62 +765,27 @@ collaborators</li>
 <li>Discuss what order tasks should be carried out in with your
 collaborators so that tasks that will change the same file won’t be
 worked on at the same time</li>
-</ul><div id="create-a-conflict-between-branches-and-resolve-it" class="callout challenge">
+</ul><div id="practice-resolving-conflicts-with-a-partner" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="create-a-conflict-between-branches-and-resolve-it" class="callout-inner">
-<h3 class="callout-title">Create a conflict between branches and resolve it</h3>
+<div id="practice-resolving-conflicts-with-a-partner" class="callout-inner">
+<h3 class="callout-title">Practice resolving conflicts with a partner</h3>
 <div class="callout-content">
-<ul><li>Create a new branch off of the main branch</li>
-<li>Make a change to a file in the main branch</li>
-<li>Change to the new branch</li>
-<li>Make a change to the same line in the same file</li>
-<li>Change back to the main branch</li>
-<li>Merge the new branch into the main branch</li>
-<li>Address the resulting conflict in the text editor of your
-choice</li>
-<li>Add the file containing the conflict and commit conflict resolution
-to the repository</li>
-</ul></div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb34">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># to make sure we're starting in the main branch</span></span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
-<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="co"># create a new branch, but don't change into it</span></span>
-<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a><span class="ex">$</span> git branch new_branch </span>
-<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="co"># make a change to the file</span></span>
-<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="ex">$</span> nano earth.txt </span>
-<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a><span class="co"># add changes in earth.txt to the staging area</span></span>
-<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="ex">$</span> git add earth.txt </span>
-<span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Small change to earth.txt"</span></span>
-<span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a><span class="co"># switch to the new branch</span></span>
-<span id="cb34-11"><a href="#cb34-11" tabindex="-1"></a><span class="ex">$</span> git checkout new_branch </span>
-<span id="cb34-12"><a href="#cb34-12" tabindex="-1"></a><span class="co"># make a change to earth.txt on the same line</span></span>
-<span id="cb34-13"><a href="#cb34-13" tabindex="-1"></a><span class="ex">$</span> nano earth.txt </span>
-<span id="cb34-14"><a href="#cb34-14" tabindex="-1"></a><span class="co"># add changes in earth.txt to the staging area</span></span>
-<span id="cb34-15"><a href="#cb34-15" tabindex="-1"></a><span class="ex">$</span> git add earth.txt </span>
-<span id="cb34-16"><a href="#cb34-16" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Another change to earth.txt"</span></span>
-<span id="cb34-17"><a href="#cb34-17" tabindex="-1"></a><span class="co"># change back to the main branch</span></span>
-<span id="cb34-18"><a href="#cb34-18" tabindex="-1"></a><span class="ex">$</span> git checkout main </span>
-<span id="cb34-19"><a href="#cb34-19" tabindex="-1"></a><span class="co"># attempt to merge the branches</span></span>
-<span id="cb34-20"><a href="#cb34-20" tabindex="-1"></a><span class="ex">$</span> git merge new_branch </span>
-<span id="cb34-21"><a href="#cb34-21" tabindex="-1"></a><span class="co"># address conflicts by removing `&lt;&lt;&lt;`, `===`, and `&gt;&gt;&gt;` lines leaving the desired changes intact</span></span>
-<span id="cb34-22"><a href="#cb34-22" tabindex="-1"></a><span class="ex">$</span> nano earth.txt</span>
-<span id="cb34-23"><a href="#cb34-23" tabindex="-1"></a><span class="ex">$</span> git add earth.txt</span>
-<span id="cb34-24"><a href="#cb34-24" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Resolving conflict in earth.txt."</span></span></code></pre>
-</div>
-</div>
+<p>You can repeat this exercise twice, once in your
+<code>multiverse</code> repo, and once in your partner’s.</p>
+<p>You will first need to clone your partner’s <code>multiverse</code>
+repo in order to make edits in it.</p>
+<p>You will each create a new branch in the same <code>multiverse</code>
+repo, and make a small conflicting change (e.g. adding two different
+lines to the end of <code>earth.txt</code>).</p>
+<p>The repo owner should then create a Pull Request and merge their
+branch first.</p>
+<p>The other person should then create a Pull Request to merge their
+branch. They will get a merge conflict.</p>
+<p>In VS Code, they can merge main into their branch and resolve the
+conflict, then push the commit with the resolved merge to GitHub. They
+should now be able to merge their branch into main as well.</p>
 </div>
 </div>
 </div>
@@ -901,8 +870,8 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/8_conflicts.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/8_conflicts.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-05-19",
-  "datePublished": "2025-05-20"
+  "dateModified": "2025-05-23",
+  "datePublished": "2025-05-23"
 }
 
   </script><script>
