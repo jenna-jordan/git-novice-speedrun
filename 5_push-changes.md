@@ -112,8 +112,8 @@ Now **click on the "History" link**. You should see each commit made to the file
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- "A local Git repository can be connected to one or more remote repositories."
-- "`git push` copies changes from a local repository to a remote repository."
-- "`git pull` copies changes from a remote repository to a local repository."
+- A local Git repository can be connected to one or more remote repositories.
+- `git push` copies changes from a local repository to a remote repository.
+- `git pull` copies changes from a remote repository to a local repository.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
