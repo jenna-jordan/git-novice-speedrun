@@ -790,7 +790,7 @@ any links that you are not going to use.
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>When the workshop begins, you should be sharing your screen, and
 instruct the learners to make sure their setup looks like yours:</p>
@@ -820,7 +820,7 @@ repo to your local computer.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
   <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <p>The documentation for creating a new repo on GitHub is available <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" class="external-link">here</a></p>
 <p>If you have taught this lesson before, make sure that you have
@@ -964,7 +964,7 @@ shell terminal window and type:</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>On MacOS, without any configuration your output might look like
 this:</p>
@@ -1664,17 +1664,10 @@ using GitHub.</p>
 <p>Before we share our changes, let’s first look at our
 <code>multiverse</code> repo on GitHub.</p>
 <p>Even though we have made changes to our local copy of
-<code>multiverse</code>, the remote copy on GitHub still looks empty.
-This is because we have not yet “pushed” our changes (or commits) to the
-remote repository.</p>
-<p>If you remember back to the previous episode where we added and
-committed our earlier work on <code>earth.txt</code>, we had a diagram
-of the local repository which looked like this:</p>
-<figure><img src="../fig/git-staging-area.svg" alt="The Local Repository with Git Staging Area" class="figure mx-auto d-block"><div class="figcaption">The Local Repository with Git Staging Area</div>
-</figure><p>Taking into account the two repositories, we need a diagram like
-this:</p>
-<figure><img src="../fig/git-freshly-made-github-repo.svg" alt="Freshly-Made GitHub Repository" class="figure mx-auto d-block"><div class="figcaption">Freshly-Made GitHub Repository</div>
-</figure><div id="callout1" class="callout">
+<code>multiverse</code>, the remote copy on GitHub still only has the
+README file. This is because we have not yet “pushed” our changes (or
+commits) to the remote repository.</p>
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
