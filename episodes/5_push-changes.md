@@ -81,10 +81,6 @@ To https://github.com/loki-god-of-stories/multiverse.git
    f537d84..2f2d364  main -> main
  ```
 
- Our local and remote repositories are now in this state:
-
-![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
-
 We can pull changes from the remote repository to the local one as well:
 
 ```bash
