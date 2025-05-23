@@ -361,6 +361,8 @@ simply use `git push -u origin <branch-name>`.
 
 Now, we can go back to GitHub and verify that we have a new branch named heimdall-aware.
 
+![GitHub has the branch heimdall-aware](fig/github-branch-pushed.png)
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Branches can be useful for developing while keeping the main line static.

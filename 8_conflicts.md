@@ -54,7 +54,7 @@ and commit that change to the `main` branch
 
 ```bash
 $ git add earth.txt
-$ git commit -m "Add invaders retreat."
+$ git commit -m "Add invaders retreat"
 ```
 
 ```output
@@ -192,16 +192,15 @@ Git detects that the changes made in one copy overlap with those made
 in the other and stops us from trampling on our previous work. It also
 marks that conflict in the affected file, `earth.txt`.
 
-! screenshot here
+![Merge conflict in earth.txt](fig/vscode-merge-conflict.png)
 
-Our change—the one at the `HEAD` of the `main` branch—is preceded by `<<<<<<<`.
+Our change — the one at the `HEAD` of the `main` branch — is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
 and marked the end of our commit from the `loki-twist` branch with `>>>>>>>`.
 (The string of letters and digits after that marker
 identifies the commit we made in the `loki-twist` branch.)
 
-It is now up to us to edit this file to remove these markers
-and reconcile the changes.
+It is now up to us to edit this file and reconcile the changes.
 We can do anything we want: keep the change made in the `main` branch, keep
 the change made in the `loki-twist` branch, write something new to replace both,
 or get rid of the change entirely.
@@ -209,6 +208,8 @@ or get rid of the change entirely.
 Let's keep both of these events, but save Loki's reveal for after the invaders reatreat.
 
 VS Code will prompt you to "Resolve in Merge Editor". Click this button.
+
+![Resolving the merge conflict with the merge editor](fig/vscode-merge-editor.png)
 
 In the Merge Editor, you will see the two versions side by side, and the final version of the file below. We want the final version to look like:
 
@@ -223,6 +224,8 @@ Loki appears, revealing the invasion was his test all along.
 
 So we want to click "Accept Combination (Current First)". You should now see the resolved version with both lines, the line from the `main` branch first. Click "Complete Merge".
 
+![The bottom pane contains the resolved earth.txt contents](fig/vscode-merge-resolved.png)
+
 By clicking "Complete Merge", you are doing the same thing as running the command `git add earth.txt`. If you open the Source Control pane, you should see `earth.txt` under "Staged Changes". You can then complete the commit using the VS Code UI or on the command line
 
 ```bash
@@ -234,9 +237,6 @@ $ git commit -m "Merge changes from loki-twist"
 ```
 
 Take a look at the Source Control Graph window (in the lower portion of the Source Control pane) for a visual representation of the git log.
-
-Git keeps track of what we've merged with what,
-so we don't have to fix things by hand again.
 
 ```
 $ git log
@@ -306,6 +306,8 @@ Fast-forward
  1 file changed, 1 insertions(+), 0 deletions(-)
 ```
 
+Git keeps track of what we've merged with what,
+so we don't have to fix things by hand again.
 There is no conflict and our changes are added automatically.
 
 Finally, let's update our remote repository:
@@ -360,48 +362,20 @@ Conflicts can also be minimized with project management strategies:
 
 :::::::::::::::::::: challenge
 
-## Create a conflict between branches and resolve it
+## Practice resolving conflicts with a partner
 
-- Create a new branch off of the main branch
-- Make a change to a file in the main branch
-- Change to the new branch
-- Make a change to the same line in the same file
-- Change back to the main branch
-- Merge the new branch into the main branch
-- Address the resulting conflict in the text editor of your choice
-- Add the file containing the conflict and commit conflict resolution to the repository
+You can repeat this exercise twice, once in your `multiverse` repo, and once in your partner's.
 
-::::::::::::::::::::::::::::: solution
-## Solution
+You will first need to clone your partner's `multiverse` repo in order to make edits in it.
 
-```bash
-# to make sure we're starting in the main branch
-$ git checkout main 
-# create a new branch, but don't change into it
-$ git branch new_branch 
-# make a change to the file
-$ nano earth.txt 
-# add changes in earth.txt to the staging area
-$ git add earth.txt 
-$ git commit -m "Small change to earth.txt"
-# switch to the new branch
-$ git checkout new_branch 
-# make a change to earth.txt on the same line
-$ nano earth.txt 
-# add changes in earth.txt to the staging area
-$ git add earth.txt 
-$ git commit -m "Another change to earth.txt"
-# change back to the main branch
-$ git checkout main 
-# attempt to merge the branches
-$ git merge new_branch 
-# address conflicts by removing `<<<`, `===`, and `>>>` lines leaving the desired changes intact
-$ nano earth.txt
-$ git add earth.txt
-$ git commit -m "Resolving conflict in earth.txt."
-```
+You will each create a new branch in the same `multiverse` repo, and make a small conflicting change (e.g. adding two different lines to the end of `earth.txt`). 
 
-:::::::::::::::::::::::::::
+The repo owner should then create a Pull Request and merge their branch first.
+
+The other person should then create a Pull Request to merge their branch. They will get a merge conflict. 
+
+In VS Code, they can merge main into their branch and resolve the conflict, then push the commit with the resolved merge to GitHub. They should now be able to merge their branch into main as well.
+
 ::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

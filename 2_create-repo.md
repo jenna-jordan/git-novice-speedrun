@@ -56,13 +56,13 @@ Check the box next to "Add a README file".
 
 Leave all other options as the default - your repo should be public, no gitignore selected, no license selected, and no template selected.
 
-![Create the multiverse repo in GitHub](fig/github-create-planets-repo.png)
+![Create the multiverse repo in GitHub](fig/github-create-multiverse-repo.png)
 
 Finally, click the green "Create Repository" button at the bottom right.
 
 You will be redirected to your newly created and empty `multiverse` repo.
 
-![Your new multiverse repo on GitHub](fig/github-empty-planets-repo.png)
+![Your new multiverse repo on GitHub](fig/github-new-multiverse-repo.png)
 
 ## Clone your multiverse repo to your local computer
 
@@ -76,7 +76,7 @@ In your new VS Code window, go to the "Source Control" pane (the 3rd one down). 
 
 If you don't immediately see your `multiverse` repo, you can search for it by typing "multiverse" in the search box. When you see your `multiverse` repo (it should have your username in the URL), click it.
 
-![Clone your multiverse repo via VS Code](fig/vscode-clone-planets-repo.png)
+![Clone your multiverse repo via VS Code](fig/vscode-clone-multiverse-repo.png)
 
 You will now need to choose where on your local computer the `multiverse` repo will live. You can choose any easily accessible location, such as the "Desktop" folder. It is standard practice to save all local repos in a folder named "GitHub" in your "Documents" folder.
 
@@ -96,7 +96,7 @@ If you are on a Mac or Linux computer, your default terminal should be sufficien
 
 You should now have your empty `multiverse` repo open, with a Bash terminal open, and you are ready to start typing your first git commands!
 
-![Ready to begin](fig/vscode-planets-open.png)
+![Ready to begin](fig/vscode-multiverse-repo-open.png)
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
