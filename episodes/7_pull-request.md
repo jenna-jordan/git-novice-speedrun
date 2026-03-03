@@ -46,10 +46,10 @@ Your `multiverse` repo should now have 1 pull request. This is the phase where y
 
 Go back to the "Code" tab and make sure you are on the "main" branch. You should now see an "asgard.txt" file.
 
-Let's go **back to VS Code**. Checkout the main branch, and look at the files and history:
+Let's go **back to VS Code**. Switch to the main branch, and look at the files and history:
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git log --oneline
 ```
 
