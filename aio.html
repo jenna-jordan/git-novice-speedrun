@@ -1681,7 +1681,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-6_branches"><p>Content from <a href="6_branches.html">Branches</a></p>
 <hr>
-<p>Last updated on 2025-05-23 |
+<p>Last updated on 2026-03-03 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/6_branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1781,13 +1781,12 @@ command.</p>
 <pre class="output" tabindex="0"><code>On branch main
 nothing to commit, working directory clean</code></pre>
 </div>
-<p>To switch to our new branch we can use the <code>checkout</code>
-command we learned earlier and check our work with
-<code>git branch</code>.</p>
+<p>To switch to our new branch we can use the <code>switch</code>
+command and check our work with <code>git branch</code>.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git checkout heimdall-aware</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git switch heimdall-aware</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -1803,6 +1802,12 @@ command we learned earlier and check our work with
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
+<p>The git command <code>switch</code> is relatively new. You can also
+use the command <code>checkout</code>. A few years ago, the git commands
+<code>switch</code> and <code>restore</code> were introduced to
+distinguish between the two different functions performed by
+<code>checkout</code>. The <code>checkout</code> command is still
+available for you to use if you prefer it.</p>
 <p>We can use the <code>checkout</code> command to checkout a file from
 a specific commit using commit hashes or <code>HEAD</code> and the
 filename (<code>git checkout HEAD &lt;file&gt;</code>). The
@@ -1878,7 +1883,7 @@ f537d84 Initial commit</code></pre>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -1918,7 +1923,7 @@ confirm this by moving back to that branch.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git checkout heimdall-aware</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git switch heimdall-aware</span>
 <span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -1935,14 +1940,14 @@ confirm this by moving back to that branch.</p>
 <p>And we see that our <code>asgard.txt</code> file and respective
 commit have been preserved in the <code>heimdall-aware</code>
 branch.</p>
-<p>Checkout the <code>main</code> branch again to prepare for creating
+<p>Switch to the <code>main</code> branch again to prepare for creating
 another new branch based on the version history in main. New branches
 will include the entire history up to the current commit, and we’d like
 to keep these two tasks separate.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -1958,11 +1963,12 @@ to keep these two tasks separate.</p>
 main timeline.</p>
 <p>This time let’s create and switch to the <code>heimdall-blind</code>
 branch in one command.</p>
-<p>We can do so by adding the <code>-b</code> flag to checkout.</p>
+<p>We can do so by adding the <code>-c</code> flag to the switch
+command.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> heimdall-blind</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> heimdall-blind</span>
 <span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -2029,11 +2035,11 @@ part of the main timeline.</p>
 work going forward.</p>
 <p>Before we can create a Pull Request on GitHub, we need to push this
 branch to the remote repo</p>
-<p>Let’s checkout &amp; push the heimdall-aware branch:</p>
+<p>Let’s switch to &amp; push the heimdall-aware branch:</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git checkout heimdall-aware</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git switch heimdall-aware</span>
 <span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
 </div>
 <p>Whoops, we got an error:</p>
@@ -2112,7 +2118,7 @@ static.</li>
 </div>
 </div></section><section id="aio-7_pull-request"><p>Content from <a href="7_pull-request.html">Pull Requests</a></p>
 <hr>
-<p>Last updated on 2025-05-23 |
+<p>Last updated on 2026-03-03 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/7_pull-request.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2183,12 +2189,12 @@ are the codeowner, we can go ahead and <strong>click “Merge pull
 request”</strong>. Confirm &amp; complete the merge.</p>
 <p>Go back to the “Code” tab and make sure you are on the “main” branch.
 You should now see an “asgard.txt” file.</p>
-<p>Let’s go <strong>back to VS Code</strong>. Checkout the main branch,
+<p>Let’s go <strong>back to VS Code</strong>. Switch to the main branch,
 and look at the files and history:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
 </div>
 <div class="codewrapper">
@@ -2307,7 +2313,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-8_conflicts"><p>Content from <a href="8_conflicts.html">[Optional] Resolving Conflicts</a></p>
 <hr>
-<p>Last updated on 2025-05-23 |
+<p>Last updated on 2026-03-03 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/8_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2362,8 +2368,8 @@ occur next.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git branch loki-twist</span></code></pre>
 </div>
-<p>But before we checkout the <code>loki-twist</code> branch and add the
-event where Loki enters the picture, let’s add a line to
+<p>But before we switch to the <code>loki-twist</code> branch and add
+the event where Loki enters the picture, let’s add a line to
 <code>earth.txt</code> here in the <code>main</code> branch.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2410,7 +2416,7 @@ let’s add an event to the <code>loki-twist</code> branch.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git checkout loki-twist</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git switch loki-twist</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -2479,11 +2485,11 @@ present as it is part of the <code>main</code> branch, not the
 <p>Now that we’ve added Loki’s big reveal, we can merge this branch into
 the <code>main</code> branch. We’re going to do this merge in VS Code
 rather than through a Pull Request in GitHub this time.</p>
-<p>First, let’s checkout the <code>main</code> branch.</p>
+<p>First, let’s switch to the <code>main</code> branch.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -2617,7 +2623,7 @@ Date:   Sat May 17 21:25:13 2025 -0400
 </h2>
 <hr class="half-width">
 <p>Let’s make another change to the <code>loki-twist</code> branch:</p>
-<pre><code>$ git checkout loki-twist</code></pre>
+<pre><code>$ git switch loki-twist</code></pre>
 <p>Add another line to <code>earth.txt</code>:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2645,7 +2651,7 @@ Thor smiles, having known his brother's scheme from the beginning.
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="ex">$</span> git merge loki-twist</span></code></pre>
 </div>
 <div class="codewrapper">

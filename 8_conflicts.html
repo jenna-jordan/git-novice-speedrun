@@ -363,7 +363,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>[Optional] Resolving Conflicts</h1>
-        <p>Last updated on 2025-05-23 |
+        <p>Last updated on 2026-03-03 |
 
         <a href="https://github.com/jenna-jordan/git-novice-speedrun/edit/main/episodes/8_conflicts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -420,8 +420,8 @@ occur next.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git branch loki-twist</span></code></pre>
 </div>
-<p>But before we checkout the <code>loki-twist</code> branch and add the
-event where Loki enters the picture, let’s add a line to
+<p>But before we switch to the <code>loki-twist</code> branch and add
+the event where Loki enters the picture, let’s add a line to
 <code>earth.txt</code> here in the <code>main</code> branch.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -468,7 +468,7 @@ let’s add an event to the <code>loki-twist</code> branch.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git checkout loki-twist</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git switch loki-twist</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -537,11 +537,11 @@ present as it is part of the <code>main</code> branch, not the
 <p>Now that we’ve added Loki’s big reveal, we can merge this branch into
 the <code>main</code> branch. We’re going to do this merge in VS Code
 rather than through a Pull Request in GitHub this time.</p>
-<p>First, let’s checkout the <code>main</code> branch.</p>
+<p>First, let’s switch to the <code>main</code> branch.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="ex">$</span> git branch</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -673,7 +673,7 @@ Date:   Sat May 17 21:25:13 2025 -0400
 </div>
 <section><h2 class="section-heading" id="when-conflicts-resolve-themselves">When conflicts resolve themselves<a class="anchor" aria-label="anchor" href="#when-conflicts-resolve-themselves"></a></h2>
 <hr class="half-width"><p>Let’s make another change to the <code>loki-twist</code> branch:</p>
-<pre><code>$ git checkout loki-twist</code></pre>
+<pre><code>$ git switch loki-twist</code></pre>
 <p>Add another line to <code>earth.txt</code>:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -701,7 +701,7 @@ Thor smiles, having known his brother's scheme from the beginning.
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git checkout main</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span>
 <span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="ex">$</span> git merge loki-twist</span></code></pre>
 </div>
 <div class="codewrapper">
@@ -878,7 +878,7 @@ any links that you are not going to use.
   "url": "https://jenna-jordan.github.io/git-novice-speedrun/8_conflicts.html",
   "identifier": "https://jenna-jordan.github.io/git-novice-speedrun/8_conflicts.html",
   "dateCreated": "2025-03-08",
-  "dateModified": "2025-05-23",
+  "dateModified": "2026-03-03",
   "datePublished": "2026-03-03"
 }
 
