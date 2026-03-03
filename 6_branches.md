@@ -83,11 +83,11 @@ On branch main
 nothing to commit, working directory clean
 ```
 
-To switch to our new branch we can use the `checkout` command
-we learned earlier and check our work with `git branch`.
+To switch to our new branch we can use the `switch` command 
+and check our work with `git branch`.
 
 ```bash
-$ git checkout heimdall-aware
+$ git switch heimdall-aware
 $ git branch
 ```
 
@@ -97,6 +97,11 @@ $ git branch
 ```
 
 ::::::::::::::::::::::: callout
+
+The git command `switch` is relatively new. You can also use the command `checkout`.
+A few years ago, the git commands `switch` and `restore` were introduced to distinguish
+between the two different functions performed by `checkout`. The `checkout` command
+is still available for you to use if you prefer it.
 
 We can use the `checkout` command to checkout a file from a specific commit
 using commit hashes or `HEAD` and the filename (`git checkout HEAD <file>`). The
@@ -168,7 +173,7 @@ As expected, we see our commit in the log.
 Now let's switch back to the `main` branch.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -200,7 +205,7 @@ remains in the `heimdall-aware` branch. We can confirm this by moving back
 to that branch.
 
 ```bash
-$ git checkout heimdall-aware
+$ git switch heimdall-aware
 $ git branch
 ```
 
@@ -216,13 +221,13 @@ $ git log --oneline
 And we see that our `asgard.txt` file and respective commit have been
 preserved in the `heimdall-aware` branch.
 
-Checkout the `main` branch again to prepare for creating another new 
+Switch to the `main` branch again to prepare for creating another new 
 branch based on the version history in main. New branches will
 include the entire history up to the current commit, and we'd like
 to keep these two tasks separate.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -238,10 +243,10 @@ Now we can keep track of a different timeline branching off from the main timeli
 This time let's create and switch to the `heimdall-blind` branch
 in one command.
 
-We can do so by adding the `-b` flag to checkout.
+We can do so by adding the `-c` flag to the switch command.
 
 ```bash
-$ git checkout -b heimdall-blind
+$ git switch -c heimdall-blind
 $ git branch
 ```
 
@@ -305,10 +310,10 @@ We will merge the `heimdall-aware` branch into our `main` branch via a Pull Requ
 
 Before we can create a Pull Request on GitHub, we need to push this branch to the remote repo
 
-Let's checkout & push the heimdall-aware branch:
+Let's switch to & push the heimdall-aware branch:
 
 ```bash
-$ git checkout heimdall-aware
+$ git switch heimdall-aware
 $ git push
 ```
 

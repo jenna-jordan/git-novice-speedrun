@@ -40,7 +40,7 @@ Let's create a new branch to describe 1 possible version of events to occur next
 $ git branch loki-twist
 ```
 
-But before we checkout the `loki-twist` branch and add the event where Loki enters the picture, let's add a line to `earth.txt` here in the `main` branch.
+But before we switch to the `loki-twist` branch and add the event where Loki enters the picture, let's add a line to `earth.txt` here in the `main` branch.
 
 ```output
 Thor defends New Asgard from invaders.
@@ -81,7 +81,7 @@ f537d84 Initial commit
 Now that we've made our changes in the `main` branch, let's add an event to the `loki-twist` branch.
 
 ```bash
-$ git checkout loki-twist
+$ git switch loki-twist
 $ git branch
 ```
 
@@ -140,10 +140,10 @@ the `main` branch, not the `loki-twist` branch.
 Now that we've added Loki's big reveal, we can merge this branch into the `main` branch. 
 We're going to do this merge in VS Code rather than through a Pull Request in GitHub this time.
 
-First, let's checkout the `main` branch.
+First, let's switch to the `main` branch.
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git branch
 ```
 
@@ -268,7 +268,7 @@ Date:   Sat May 17 21:25:13 2025 -0400
 Let's make another change to the `loki-twist` branch:
 
 ```
-$ git checkout loki-twist
+$ git switch loki-twist
 ```
 
 Add another line to `earth.txt`:
@@ -295,7 +295,7 @@ $ git commit -m "Add Thor's knowing reaction to Loki's scheme"
 And merge that change into main branch
 
 ```bash
-$ git checkout main
+$ git switch main
 $ git merge loki-twist
 ```
 
